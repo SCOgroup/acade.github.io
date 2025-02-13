@@ -20,7 +20,7 @@ superuser: true
 highlight_name: true
 
 # Role/position/tagline
-role: Chief Scientist
+role: 特任副教授/硕士生导师
 
 # Organizations/Affiliations to display in Biography blox
 organizations:
@@ -183,4 +183,4 @@ awards:
 
 ## About Me
 
-Chien Shiung Wu is a professor of artificial intelligence at the Stanford AI Lab. Her research interests include distributed robotics, mobile computing and programmable matter. She leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
+Tian Meng is currently a special associate professor and master's supervisor of the School of Automation at Wuhan University of Technology, and his main research interests are power grid resilience, low-carbon planning of distribution networks, and artificial intelligence.
