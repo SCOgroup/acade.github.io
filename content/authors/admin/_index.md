@@ -3,11 +3,11 @@
 title: 田猛
 
 # Name pronunciation (optional)
-name_pronunciation: Chien Shiung Wu
+name_pronunciation: Meng Tian
 
 # Full name (for SEO)
-first_name: Shiung Wu
-last_name: Chien
+first_name: Meng
+last_name: Tian
 
 # Status emoji
 status:
@@ -24,8 +24,8 @@ role: Chief Scientist
 
 # Organizations/Affiliations to display in Biography blox
 organizations:
-  - name: OpenAI
-    url: https://openai.com/
+  - name: 武汉理工大学
+    url: https://www.whut.edu.cn/
 
 # Social network links
 # Need to use another icon? Simply download the SVG icon to your `assets/media/icons/` folder.
