@@ -8,20 +8,17 @@ main:
     url: /
     weight: 10
   - name: News
-    url: /#news
+    url: news/
     weight: 11
   - name: Publications
-    url: /#Publications
+    url: Publications/
     weight: 12
   - name: Projects
-    url: /#Projects
+    url: Projects/
     weight: 13
   - name: People
     url: People/
     weight: 20
-  - name: Ac
-    url: Ac/
-    weight: 30
   - name: Teaching
     url: teaching/
     weight: 40
