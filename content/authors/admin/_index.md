@@ -23,8 +23,8 @@ organizations:
 # Social network links
 # Need to use another icon? Simply download the SVG icon to your `assets/media/icons/` folder.
 profiles:
-  - icon: brands/github
-    url: https://github.com/gcushen
+  - icon: brands/weixin
+    url: https://weixin.qq.com
 
 interests:
   - Artificial Intelligence
