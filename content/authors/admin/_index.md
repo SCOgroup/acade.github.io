@@ -2,13 +2,6 @@
 # Display name
 title: 智能系统感知控制优化课题组
 
-# Name pronunciation (optional)
-name_pronunciation: SCO Group
-
-# Full name (for SEO)
-first_name: 
-last_name: 
-
 # Is this the primary user of the site?
 superuser: true
 
