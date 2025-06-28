@@ -20,12 +20,10 @@ organizations:
   - name: 武汉理工大学
     url: https://www.whut.edu.cn/
 
-# Social network links
 # Need to use another icon? Simply download the SVG icon to your `assets/media/icons/` folder.
 profiles:
   - icon: brands/weixin
     url: https://weixin.qq.com
 
 ## About us
-
 智能系统感知和控制优化课题组（SCO Group）是专注于智能系统核心技术的创新研究团队。我们致力于融合多学科前沿理论，突破感知-控制-优化的技术闭环，为工业4.0、智慧城市、先进制造等领域提供关键解决方案。
