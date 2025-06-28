@@ -1,26 +1,19 @@
 ---
 # Display name
-title: 田猛
+title: 智能系统感知控制优化课题组
 
 # Name pronunciation (optional)
-name_pronunciation: Meng Tian
+name_pronunciation: SCO
 
 # Full name (for SEO)
-first_name: Meng
-last_name: Tian
-
-# Status emoji
-status:
-  icon: ☕️
+first_name: 
+last_name: 
 
 # Is this the primary user of the site?
 superuser: true
 
 # Highlight the author in author lists? (true/false)
 highlight_name: true
-
-# Role/position/tagline
-role: 特任副教授/硕士生导师
 
 # Organizations/Affiliations to display in Biography blox
 organizations:
