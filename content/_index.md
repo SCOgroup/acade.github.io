@@ -26,7 +26,8 @@ sections:
           size: cover
           position: center
           parallax: false
-  - block: markdown
+  - block: collection
+    id: Publications
     content:
       title: Featured Publications
       filters:
