@@ -6,3 +6,4 @@ summary: "Our intelligent systems and robotics lab"
 
 Welcome to our lab! Here we work on SLAM, autonomous control, and AI perception systems.
 
+add news page
