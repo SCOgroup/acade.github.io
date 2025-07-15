@@ -27,7 +27,7 @@ sections:
           position: center
           parallax: false
   - block: collection
-    id: Publications
+    id: publication
     content:
       title: Featured Publications
       filters:
