@@ -1,17 +1,20 @@
 ---
-title: Publications
+title: "Publications"
 type: page
 ---
 
-## Journals
+## 📰 Journal Articles
 
 {{< publications category="2" >}}
 
-## Conferences
+---
+
+## 📘 Conference Papers
 
 {{< publications category="1" >}}
 
-## Patents
+---
+
+## 🛠️ Patents
 
 {{< publications category="7" >}}
-
