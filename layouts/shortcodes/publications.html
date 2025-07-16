@@ -1,11 +1,15 @@
-{{ $cat := .Get "category" }}
-{{ $pages := where site.RegularPages "Section" "publication" }}
+{{ $cat := .Get "category" | default "*" }} <!-- 添加默认值防止空参数 -->
+{{ $pages := where site.RegularPages "Section" "publication" }} <!-- 修正拼写：publication -->
 {{ $filtered := where $pages ".Params.publication_types" "intersect" (slice $cat) }}
 
-{{ range $filtered.ByDate.Reverse }}
-  {{ with .Params.gb_citation }}
-    <p>{{ . | markdownify }}</p>
-  {{ else }}
-    <p><strong>{{ .Title }}</strong></p>
+{{ if $filtered }}
+  {{ range $filtered.ByDate.Reverse }}
+    {{ with .Params.gb_citation }}
+      <p>{{ . | markdownify }}</p>
+    {{ else }}
+      <p><strong>{{ .Title }}</strong></p>
+    {{ end }}
   {{ end }}
+{{ else }}
+  <p>No publications found</p> <!-- 添加空状态处理 -->
 {{ end }}
