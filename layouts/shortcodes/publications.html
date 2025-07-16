@@ -1,0 +1,11 @@
+{{ $cat := .Get "category" }}
+{{ $pages := where site.RegularPages "Section" "publication" }}
+{{ $filtered := where $pages ".Params.publication_types" "intersect" (slice $cat) }}
+
+{{ range $filtered.ByDate.Reverse }}
+  {{ with .Params.gb_citation }}
+    <p>{{ . | markdownify }}</p>
+  {{ else }}
+    <p><strong>{{ .Title }}</strong></p>
+  {{ end }}
+{{ end }}
