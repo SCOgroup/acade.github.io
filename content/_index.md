@@ -35,7 +35,7 @@ sections:
           - publication
         featured_only: true
     design:
-      view: citation
+      view: card
   - block: collection
     content:
       title: Recent News
