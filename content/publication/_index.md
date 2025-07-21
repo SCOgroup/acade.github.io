@@ -17,4 +17,4 @@ type: page
 
 ## 🛠️ Patents
 
-{{< publications category="7" >}}
+{{< publications category="3" >}}
