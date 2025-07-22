@@ -6,7 +6,7 @@ interests:
   - 视觉SLAM
   - 多传感器融合
 avatar:
-  filename: 张三.jpg      # 存在于 assets/media/authors/张三.jpg
+  filename: zhangsan.jpg      # 存在于 assets/media/authors/张三.jpg
 organization: "武汉理工大学"
 ---
 
