@@ -1,10 +1,12 @@
 ---
 title: "张三"
-role: "Postgraduate Student"
-group: "2023"
-avatar:
-  filename: zhangsan.jpg
+role: "Postgraduate Student"    # ✅ 和 filters 中 role 精确一致
+group: "2023"                   # ✅ 用于 group_by
 interests:
-  - 稠密建图
   - 视觉SLAM
+  - 多传感器融合
+avatar:
+  filename: 张三.jpg      # 存在于 assets/media/authors/张三.jpg
+organization: "武汉理工大学"
 ---
+
