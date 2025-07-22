@@ -13,7 +13,7 @@ sections:
       group_by: "group"
     design:
       view: card
-      columns: 3
+      columns: 1
       spacing:
         padding: [1rem, 1rem, 1rem, 1rem]
       people:
