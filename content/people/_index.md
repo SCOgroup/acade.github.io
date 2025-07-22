@@ -1,15 +1,16 @@
 ---
 title: "People"
+type: widget_page  # ✅ 必须是 widget_page，用于支持 sections
 layout: page
 
 sections:
   - block: collection
     content:
       title: "Staff"
-      page_type: author
+      page_type: author        # ✅ 正确的写法是 page_type，而不是 filters.role
       filters:
-        role: "Staff"
-      group_by: "group"  # 年级（如2023），需写在每个 author 文件中
+        role: "Staff"          # ✅ role 是没问题的，但请确认 authors 里有这个值
+      group_by: "group"
     design:
       view: card
       columns: 3
