@@ -25,7 +25,7 @@ sections:
         show_name: true
         show_role: true
         show_interests: true
-        show_organization: true
+        show_organization: false
 
   - block: collection
     content:
@@ -42,9 +42,9 @@ sections:
       people:
         show_avatar: true
         show_name: true
-        show_role: true
+        show_role: false
         show_interests: true
-        show_organization: true
+        show_organization: false
 
   - block: collection
     content:
@@ -61,7 +61,7 @@ sections:
       people:
         show_avatar: true
         show_name: true
-        show_role: true
+        show_role: false
         show_interests: true
-        show_organization: true
+        show_organization: false
 ---
