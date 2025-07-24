@@ -1,7 +1,6 @@
 ---
 title: "People"
-type: widget_page  # ✅ 必须是 widget_page，用于支持 sections
-layout: page
+type: landing # ✅ 必须是 widget_page，用于支持 sections
 
 sections:
   - block: collection
