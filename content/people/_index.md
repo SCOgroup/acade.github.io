@@ -11,7 +11,7 @@ sections:
   - block: collection
     content:
       title: "Staff"
-      page_type: authors        # ✅ 正确的写法是 page_type，而不是 filters.role
+      page_type: author        # ✅ 正确的写法是 page_type，而不是 filters.role
       filters:
         role: "Staff"          # ✅ role 是没问题的，但请确认 authors 里有这个值
       group_by: "group"
@@ -30,7 +30,7 @@ sections:
   - block: collection
     content:
       title: "Postgraduate Students"
-      page_type: authors
+      page_type: author
       filters:
         role: "Postgraduate Student"
       group_by: "group"
@@ -49,7 +49,7 @@ sections:
   - block: collection
     content:
       title: "Graduated Postgraduates"
-      page_type: authors
+      page_type: author
       filters:
         role: "Graduated Postgraduate"
       group_by: "group"
