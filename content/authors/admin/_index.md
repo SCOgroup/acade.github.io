@@ -8,8 +8,6 @@ superuser: true
 # Highlight the author in author lists? (true/false)
 highlight_name: true
 
-role: "Graduated Postgraduate"
-
 # Organizations/Affiliations to display in Biography blox
 organizations:
   - name: 武汉理工大学
