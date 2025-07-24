@@ -17,7 +17,7 @@ main:
     url: /project/
     weight: 13
   - name: People
-    url: /People/
+    url: /people/
     weight: 20
   - name: Teaching
     url: /teaching/
