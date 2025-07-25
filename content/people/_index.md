@@ -1,18 +1,18 @@
 ---
 title: "People"
-layout: author
+type: landing
 
 design:
-  # Default section spacing
   spacing: "6rem"
 
 sections:
   - block: collection
     content:
       title: "Staff"
-      page_type: author        # ✅ 正确的写法是 page_type，而不是 filters.role
+      content_type: author  # ✅ 拉取 content/authors/* 下的内容
       filters:
-        role: "Staff"          # ✅ role 是没问题的，但请确认 authors 里有这个值
+        - key: role
+          value: "Staff"
       group_by: "group"
     design:
       view: card
@@ -29,9 +29,10 @@ sections:
   - block: collection
     content:
       title: "Postgraduate Students"
-      page_type: author
+      content_type: author
       filters:
-        role: "Postgraduate Student"
+        - key: role
+          value: "Postgraduate Student"
       group_by: "group"
     design:
       view: card
@@ -48,9 +49,10 @@ sections:
   - block: collection
     content:
       title: "Graduated Postgraduates"
-      page_type: author
+      content_type: author
       filters:
-        role: "Graduated Postgraduate"
+        - key: role
+          value: "Graduated Postgraduate"
       group_by: "group"
     design:
       view: card
