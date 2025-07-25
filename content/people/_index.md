@@ -17,12 +17,6 @@ sections:
     design:
       view: card-grid
       columns: 3
-      people:
-        show_avatar: true
-        show_name: true
-        show_role: true
-        show_interests: true
-        show_organization: false
 
   - block: collection
     content:
@@ -34,12 +28,6 @@ sections:
     design:
       view: card-grid
       columns: 3
-      people:
-        show_avatar: true
-        show_name: true
-        show_role: true
-        show_interests: true
-        show_organization: false
 
   - block: collection
     content:
@@ -51,10 +39,4 @@ sections:
     design:
       view: card-grid
       columns: 3
-      people:
-        show_avatar: true
-        show_name: true
-        show_role: true
-        show_interests: true
-        show_organization: false
 ---
