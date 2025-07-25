@@ -10,6 +10,7 @@ sections:
     content:
       title: "Staff"
       content_type: author
+      folders: []                    # ✅ 添加这行
       filters:
         - key: role
           value: "Staff"
@@ -30,6 +31,7 @@ sections:
     content:
       title: "Postgraduate Students"
       content_type: author
+      folders: []                    # ✅ 添加这行
       filters:
         - key: role
           value: "Postgraduate Student"
@@ -50,6 +52,7 @@ sections:
     content:
       title: "Graduated Postgraduates"
       content_type: author
+      folders: []                    # ✅ 添加这行
       filters:
         - key: role
           value: "Graduated Postgraduate"
