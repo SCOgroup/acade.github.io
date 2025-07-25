@@ -10,10 +10,9 @@ sections:
     content:
       title: "Staff"
       content_type: author
-      folders: []                    # ✅ 添加这行
       filters:
-        - key: role
-          value: "Staff"
+        folders: []
+        role: "Staff"
       group_by: "group"
     design:
       view: card
@@ -31,10 +30,9 @@ sections:
     content:
       title: "Postgraduate Students"
       content_type: author
-      folders: []                    # ✅ 添加这行
       filters:
-        - key: role
-          value: "Postgraduate Student"
+        folders: []
+        role: "Postgraduate Student"
       group_by: "group"
     design:
       view: card
@@ -52,10 +50,9 @@ sections:
     content:
       title: "Graduated Postgraduates"
       content_type: author
-      folders: []                    # ✅ 添加这行
       filters:
-        - key: role
-          value: "Graduated Postgraduate"
+        folders: []
+        role: "Graduated Postgraduate"
       group_by: "group"
     design:
       view: card
