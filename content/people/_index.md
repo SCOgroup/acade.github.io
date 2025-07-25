@@ -13,9 +13,9 @@ sections:
       filters:
         folders:
           - people
-        role: Staff
+        #role: Staff
     design:
-      view: article-grid
+      view: card
       columns: 3
       people:
         show_avatar: true
@@ -30,9 +30,9 @@ sections:
       filters:
         folders:
           - people
-        role: Postgraduate Student
+        #role: Postgraduate Student
     design:
-      view: article-grid
+      view: card
       columns: 3
       people:
         show_avatar: true
@@ -47,9 +47,9 @@ sections:
       filters:
         folders:
           - people
-        role: Graduated Postgraduate
+        #role: Graduated Postgraduate
     design:
-      view: article-grid
+      view: card
       columns: 3
       people:
         show_avatar: true
