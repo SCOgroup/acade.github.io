@@ -15,7 +15,7 @@ sections:
           - people
         role: Staff
     design:
-      view: card
+      view: card-grid
       columns: 3
       people:
         show_avatar: true
@@ -32,7 +32,7 @@ sections:
           - people
         role: Postgraduate Student
     design:
-      view: card
+      view: card-grid
       columns: 3
       people:
         show_avatar: true
@@ -49,7 +49,7 @@ sections:
           - people
         role: Graduated Postgraduate
     design:
-      view: card
+      view: card-grid
       columns: 3
       people:
         show_avatar: true
