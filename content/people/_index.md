@@ -1,6 +1,5 @@
 ---
 title: "People"
-type: landing # ✅ 必须是 widget_page，用于支持 sections
 layout: author
 
 design:
