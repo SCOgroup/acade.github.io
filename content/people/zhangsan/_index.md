@@ -1,6 +1,6 @@
 ---
 title: "张三"
-role: "Postgraduate Student"    # ✅ 和 filters 中 role 精确一致
+role: Postgraduate Student    # ✅ 和 filters 中 role 精确一致
 group: "2023"                   # ✅ 用于 group_by
 interests:
   - 视觉SLAM
