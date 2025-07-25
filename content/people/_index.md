@@ -12,7 +12,7 @@ sections:
       title: "Staff"
       filters:
         folders:
-          - authors
+          - author
         role: Staff
     design:
       view: card
@@ -29,7 +29,7 @@ sections:
       title: "Postgraduate Students"
       filters:
         folders:
-          - authors
+          - author
         role: Postgraduate Student
     design:
       view: card
@@ -46,7 +46,7 @@ sections:
       title: "Graduated Postgraduates"
       filters:
         folders:
-          - authors
+          - author
         role: Graduated Postgraduate
     design:
       view: card
