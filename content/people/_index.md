@@ -9,7 +9,7 @@ sections:
   - block: collection
     content:
       title: "Staff"
-      content_type: author  # ✅ 拉取 content/authors/* 下的内容
+      content_type: author
       filters:
         - key: role
           value: "Staff"
