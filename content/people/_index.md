@@ -10,7 +10,6 @@ sections:
   - block: collection
     content:
       title: "Staff"
-      content_type: author
       filters:
         folders:
           - authors
@@ -28,7 +27,6 @@ sections:
   - block: collection
     content:
       title: "Postgraduate Students"
-      content_type: author
       filters:
         folders:
           - authors
@@ -46,7 +44,6 @@ sections:
   - block: collection
     content:
       title: "Graduated Postgraduates"
-      content_type: author
       filters:
         folders:
           - authors
