@@ -1,5 +1,6 @@
 ---
 title: "王五"
+type: author
 role: "Staff"    # ✅ 和 filters 中 role 精确一致
 group: "2019"                   # ✅ 用于 group_by
 interests:
