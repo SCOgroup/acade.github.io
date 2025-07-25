@@ -1,7 +1,7 @@
 ---
 title: "People"
 date: 2024-05-19
-type: landing
+type: page
 
 design:
   spacing: "5rem"
