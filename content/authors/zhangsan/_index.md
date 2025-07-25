@@ -1,5 +1,6 @@
 ---
 title: "张三"
+type: author
 role: "Postgraduate Student"    # ✅ 和 filters 中 role 精确一致
 group: "2023"                   # ✅ 用于 group_by
 interests:
