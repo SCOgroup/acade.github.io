@@ -1,9 +1,10 @@
 ---
 title: "People"
+date: 2024-05-19
 type: landing
 
 design:
-  spacing: "6rem"
+  spacing: "5rem"
 
 sections:
   - block: collection
@@ -11,14 +12,12 @@ sections:
       title: "Staff"
       content_type: author
       filters:
-        folders: []
-        role: "Staff"
-      group_by: "group"
+        folders:
+          - author
+        role: Staff
     design:
       view: card
-      columns: 1
-      spacing:
-        padding: [1rem, 1rem, 1rem, 1rem]
+      columns: 3
       people:
         show_avatar: true
         show_name: true
@@ -31,18 +30,16 @@ sections:
       title: "Postgraduate Students"
       content_type: author
       filters:
-        folders: []
-        role: "Postgraduate Student"
-      group_by: "group"
+        folders:
+          - author
+        role: Postgraduate Student
     design:
       view: card
       columns: 3
-      spacing:
-        padding: [1rem, 1rem, 1rem, 1rem]
       people:
         show_avatar: true
         show_name: true
-        show_role: false
+        show_role: true
         show_interests: true
         show_organization: false
 
@@ -51,18 +48,15 @@ sections:
       title: "Graduated Postgraduates"
       content_type: author
       filters:
-        folders: []
-        role: "Graduated Postgraduate"
-      group_by: "group"
+        folders:
+          - author
+        role: Graduated Postgraduate
     design:
       view: card
       columns: 3
-      spacing:
-        padding: [1rem, 1rem, 1rem, 1rem]
       people:
         show_avatar: true
         show_name: true
-        show_role: false
+        show_role: true
         show_interests: true
         show_organization: false
----
