@@ -13,7 +13,7 @@ sections:
       filters:
         folders:
           - people
-        role: Staff
+        tag: Staff
     design:
       view: card-grid
       columns: 3
@@ -30,7 +30,7 @@ sections:
       filters:
         folders:
           - people
-        role: Postgraduate Student
+        tag: Postgraduate Student
     design:
       view: card-grid
       columns: 3
@@ -47,7 +47,7 @@ sections:
       filters:
         folders:
           - people
-        role: Graduated Postgraduate
+        tag: Graduated Postgraduate
     design:
       view: card-grid
       columns: 3
