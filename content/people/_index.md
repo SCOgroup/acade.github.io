@@ -13,7 +13,7 @@ sections:
       content_type: author
       filters:
         folders:
-          - author
+          - authors
         role: Staff
     design:
       view: card
@@ -31,7 +31,7 @@ sections:
       content_type: author
       filters:
         folders:
-          - author
+          - authors
         role: Postgraduate Student
     design:
       view: card
@@ -49,7 +49,7 @@ sections:
       content_type: author
       filters:
         folders:
-          - author
+          - authors
         role: Graduated Postgraduate
     design:
       view: card
