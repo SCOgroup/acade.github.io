@@ -18,7 +18,7 @@ main:
     weight: 13
   - name: People
     url: /people/
-    weight: 20
+    weight: 14
   - name: Teaching
     url: /teaching/
     weight: 40
