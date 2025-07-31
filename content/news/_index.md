@@ -9,9 +9,9 @@ design:
 sections:
   - block: collection
     content:
-      title: Recent News
-      subtitle: "最新动态与公告"
-      text: "这里展示实验室或团队的近期新闻、公告与成果发布。"
+      title: News
+      subtitle: "动态与公告"
+      text: "这里展示实验室或团队的新闻、公告与成果发布。"
       page_type: post
       count: 0
       filters:
