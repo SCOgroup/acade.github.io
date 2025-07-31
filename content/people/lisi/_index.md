@@ -6,6 +6,6 @@ group: "2021"                   # ✅ 用于 group_by
 interests:
   - 电力输送
   - 电网配置
-avatar: "lisi.jpg"      # 存在于 assets/media/authors/wangzhezhe.jpg
+avatar: "lisi.jpg"      
 organization: "武汉理工大学"
 ---
