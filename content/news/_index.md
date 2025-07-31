@@ -13,7 +13,7 @@ sections:
       subtitle: "最新动态与公告"
       text: "这里展示实验室或团队的近期新闻、公告与成果发布。"
       page_type: post
-      count: 5
+      count: 0
       filters:
         author: ""
         category: ""
