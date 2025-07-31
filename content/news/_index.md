@@ -1,7 +1,31 @@
 ---
-title: "news"
-type: page
-summary: "Our intelligent systems and robotics lab"
----
+title: "News"
+date: 2024-05-19
+type: landing
 
-Welcome to our lab! Here we work on SLAM, autonomous control, and AI perception systems.
+design:
+  spacing: "5rem"
+
+sections:
+  - block: collection
+    content:
+      title: Recent News
+      subtitle: "最新动态与公告"
+      text: "这里展示实验室或团队的近期新闻、公告与成果发布。"
+      page_type: post
+      count: 5
+      filters:
+        author: ""
+        category: ""
+        tag: ""
+        exclude_featured: false
+        exclude_future: false
+        exclude_past: false
+        publication_type: ""
+      offset: 0
+      order: desc
+    design:
+      view: date-title-summary
+      spacing:
+        padding: [0, 0, 0, 0]
+---
