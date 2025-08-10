@@ -54,7 +54,8 @@
       {{ $others = $others | complement (slice .) }} {{/* 排除当前页面 */}}
       
       {{ if gt (len $others) 0 }}
-        {{ $groups := $others | groupBy "Params.group" }}
+        {{/* 修复：使用 group 代替 groupBy */}}
+        {{ $groups := $others | group "Params.group" }}
         {{ range $groupName, $pages := $groups }}
           <div style="margin-top:1.5rem;">
             <h3 style="margin:0 0 0.75rem 0;padding-bottom:0.25rem;border-bottom:1px solid #eee;">
