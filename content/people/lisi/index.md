@@ -1,7 +1,7 @@
 ---
 title: "李四"
 role: "Graduated Postgraduate"
-type: people
+type: author
 tags:
   - Graduated Postgraduate
 group: "2021"
