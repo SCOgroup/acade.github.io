@@ -1,0 +1,19 @@
+{{ $page := . }}
+{{ $avatar := "" }}
+{{ if isset $page.Params "avatar" }}
+  {{ $avatarParam := $page.Params.avatar }}
+  {{ with $page.Resources.Get $avatarParam }}
+    {{ $avatar = .RelPermalink }}
+  {{ else }}
+    {{ with $page.Resources.GetMatch "avatar*" }}
+      {{ $avatar = .RelPermalink }}
+    {{ else }}
+      {{ $avatar = $avatarParam }}
+    {{ end }}
+  {{ end }}
+{{ else }}
+  {{ with $page.Resources.GetMatch "avatar*" }}
+    {{ $avatar = .RelPermalink }}
+  {{ end }}
+{{ end }}
+{{ return $avatar }}
