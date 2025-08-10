@@ -7,7 +7,7 @@ design:
   spacing: "5rem"
 
 sections:
-  - block: custom
+  - block: collection
     content:
       title: "Staff"
       filters:
@@ -18,7 +18,7 @@ sections:
     design:
       columns: 3
 
-  - block: custom
+  - block: collection
     content:
       title: "Postgraduate Students"
       filters:
@@ -29,7 +29,7 @@ sections:
     design:
       columns: 3
 
-  - block: custom
+  - block: collection
     content:
       title: "Graduated Postgraduates"
       filters:
