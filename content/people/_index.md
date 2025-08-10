@@ -9,33 +9,10 @@ design:
 sections:
   - block: collection
     content:
-      title: "Staff"
+      title: "All People"
       filters:
         folders:
           - people
-        tag: Staff
-    design:
-      view: card-grid
-      columns: 3
-
-  - block: collection
-    content:
-      title: "Postgraduate Students"
-      filters:
-        folders:
-          - people
-        tag: Postgraduate Student
-    design:
-      view: card-grid
-      columns: 3
-
-  - block: collection
-    content:
-      title: "Graduated Postgraduates"
-      filters:
-        folders:
-          - people
-        tag: Graduated Postgraduate
     design:
       view: card-grid
       columns: 3
