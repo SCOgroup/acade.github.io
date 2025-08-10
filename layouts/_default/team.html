@@ -1,6 +1,13 @@
 {{ define "main" }}
+{{ $customCSS := resources.Get "css/team.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $customCSS.Permalink }}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 <div class="container py-5">
-  <h1 class="text-center mb-4">{{ .Title }}</h1>
+  <header class="header-section text-center mb-5">
+    <h1 class="display-4 fw-bold">{{ .Title }}</h1>
+    {{ with .Description }}<p class="lead">{{ . }}</p>{{ end }}
+  </header>
   
   {{ with .Content }}
     <div class="row justify-content-center">
@@ -11,60 +18,96 @@
   {{ end }}
   
   {{/* Staff Section */}}
-  <section class="mb-6">
-    <h2 class="text-center mb-4 pb-2 border-bottom">Staff</h2>
+  <section class="category-section mb-5">
+    <h2 class="section-title position-relative text-center mb-4 pb-2">Staff</h2>
     {{ $staff := where site.RegularPages "Section" "people" }}
     {{ $staff = where $staff "Params.tags" "intersect" (slice "Staff") }}
     
     {{ if gt (len $staff) 0 }}
-      <div class="row row-cols-1 g-4">
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
         {{ range $staff }}
           {{ partial "person-card" . }}
         {{ end }}
       </div>
     {{ else }}
-      <div class="alert alert-info text-center">
-        No staff information available.
+      <div class="no-members text-center py-5">
+        <i class="fas fa-user-tie fa-3x mb-3 text-muted"></i>
+        <p class="lead">No staff information available</p>
       </div>
     {{ end }}
   </section>
   
   {{/* Postgraduate Student Section */}}
-  <section class="mb-6">
-    <h2 class="text-center mb-4 pb-2 border-bottom">Postgraduate Students</h2>
+  <section class="category-section mb-5">
+    <h2 class="section-title position-relative text-center mb-4 pb-2">Postgraduate Students</h2>
     {{ $students := where site.RegularPages "Section" "people" }}
     {{ $students = where $students "Params.tags" "intersect" (slice "Postgraduate Student") }}
     
     {{ if gt (len $students) 0 }}
-      <div class="row row-cols-1 g-4">
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
         {{ range $students }}
           {{ partial "person-card" . }}
         {{ end }}
       </div>
     {{ else }}
-      <div class="alert alert-info text-center">
-        No postgraduate student information available.
+      <div class="no-members text-center py-5">
+        <i class="fas fa-graduation-cap fa-3x mb-3 text-muted"></i>
+        <p class="lead">No postgraduate student information available</p>
       </div>
     {{ end }}
   </section>
   
   {{/* Graduated Postgraduate Section */}}
-  <section class="mb-6">
-    <h2 class="text-center mb-4 pb-2 border-bottom">Graduated Postgraduates</h2>
+  <section class="category-section mb-5">
+    <h2 class="section-title position-relative text-center mb-4 pb-2">Graduated Postgraduates</h2>
     {{ $graduates := where site.RegularPages "Section" "people" }}
     {{ $graduates = where $graduates "Params.tags" "intersect" (slice "Graduated Postgraduate") }}
     
     {{ if gt (len $graduates) 0 }}
-      <div class="row row-cols-1 g-4">
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
         {{ range $graduates }}
           {{ partial "person-card" . }}
         {{ end }}
       </div>
     {{ else }}
-      <div class="alert alert-info text-center">
-        No graduated postgraduate information available.
+      <div class="no-members text-center py-5">
+        <i class="fas fa-user-graduate fa-3x mb-3 text-muted"></i>
+        <p class="lead">No graduated postgraduate information available</p>
       </div>
     {{ end }}
   </section>
 </div>
 {{ end }}
+
+<style>
+  .header-section {
+    background: linear-gradient(135deg, #2c3e50, #1a2530);
+    color: white;
+    padding: 3rem 0;
+    border-radius: 0 0 20px 20px;
+    margin: 0 -15px 3rem;
+  }
+  
+  .section-title {
+    font-weight: 700;
+    color: #2c3e50;
+  }
+  
+  .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: #3498db;
+    border-radius: 2px;
+  }
+  
+  .no-members {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    color: #6c757d;
+  }
+</style>
