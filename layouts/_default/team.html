@@ -17,7 +17,7 @@
     {{ $staff = where $staff "Params.tags" "intersect" (slice "Staff") }}
     
     {{ if gt (len $staff) 0 }}
-      <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="row row-cols-1 g-4">
         {{ range $staff }}
           {{ partial "person-card" . }}
         {{ end }}
@@ -36,7 +36,7 @@
     {{ $students = where $students "Params.tags" "intersect" (slice "Postgraduate Student") }}
     
     {{ if gt (len $students) 0 }}
-      <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="row row-cols-1 g-4">
         {{ range $students }}
           {{ partial "person-card" . }}
         {{ end }}
@@ -55,7 +55,7 @@
     {{ $graduates = where $graduates "Params.tags" "intersect" (slice "Graduated Postgraduate") }}
     
     {{ if gt (len $graduates) 0 }}
-      <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="row row-cols-1 g-4">
         {{ range $graduates }}
           {{ partial "person-card" . }}
         {{ end }}
