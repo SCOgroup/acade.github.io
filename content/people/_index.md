@@ -2,6 +2,7 @@
 title: "Research Team"
 description: "Meet our talented team of researchers and academics"
 type: team
+layout: team
 date: 2024-05-19
 ---
 
