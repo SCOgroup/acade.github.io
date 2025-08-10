@@ -21,7 +21,6 @@ sections:
       show_avatar: true
       show_role: true
 
-    sections:
   - block: collection
     content:
       title: "Postgraduate Students"
@@ -36,7 +35,6 @@ sections:
       show_avatar: true
       show_role: true
 
-       sections:
   - block: collection
     content:
       title: "Graduated Postgraduates"
