@@ -18,7 +18,10 @@ sections:
     design:
       view: card-grid
       columns: 3
+      show_avatar: true
+      show_role: true
 
+    sections:
   - block: collection
     content:
       title: "Postgraduate Students"
@@ -30,7 +33,10 @@ sections:
     design:
       view: card-grid
       columns: 3
+      show_avatar: true
+      show_role: true
 
+       sections:
   - block: collection
     content:
       title: "Graduated Postgraduates"
@@ -42,4 +48,6 @@ sections:
     design:
       view: card-grid
       columns: 3
+      show_avatar: true
+      show_role: true
 ---
