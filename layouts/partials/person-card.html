@@ -2,50 +2,52 @@
 {{ $avatar := partial "get-avatar" . }}
 
 <div class="col mb-4">
-  <div class="card h-100 shadow-sm border-0">
-    <div class="card-body d-flex p-3">
-      {{/* 左侧头像 */}}
-      <div class="flex-shrink-0 me-3" style="width: 120px; height: 120px;">
+  <div class="person-card h-100">
+    <div class="card-body text-center">
+      {{/* 头像容器 - 固定大小 */}}
+      <div class="avatar-container mb-3">
         {{ if $avatar }}
           <img src="{{ $avatar }}" alt="{{ $person.Title }}" 
-               class="rounded-circle w-100 h-100 object-fit-cover"
-               onerror="this.onerror=null; this.src='data:image/svg+xml;charset=utf-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22120%22 height=%22120%22 viewBox=%220 0 120 120%22%3E%3Crect fill=%22%23f5f5f5%22 width=%22120%22 height=%22120%22 rx=%2260%22/%3E%3Ctext fill=%22%23999%22 font-family=%22Arial%22 font-size=%2212%22 x=%2260%22 y=%2265%22 text-anchor=%22middle%22%3ENo Avatar%3C/text%3E%3C/svg%3E'">
+               class="avatar"
+               onerror="this.onerror=null; this.src='data:image/svg+xml;charset=utf-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22160%22 height=%22160%22 viewBox=%220 0 160 160%22%3E%3Crect fill=%22%23f5f5f5%22 width=%22160%22 height=%22160%22 rx=%2280%22/%3E%3Ctext fill=%22%23999%22 font-family=%22Arial%22 font-size=%2214%22 x=%2280%22 y=%2285%22 text-anchor=%22middle%22%3ENo Avatar%3C/text%3E%3C/svg%3E'">
         {{ else }}
-          <div class="d-flex align-items-center justify-content-center rounded-circle bg-light text-muted w-100 h-100">
-            No Avatar
+          <div class="avatar-placeholder d-flex align-items-center justify-content-center">
+            <i class="fas fa-user fa-3x text-muted"></i>
           </div>
         {{ end }}
       </div>
       
-      {{/* 右侧文字信息 */}}
-      <div class="flex-grow-1">
-        <h3 class="h5 card-title mb-2">{{ $person.Title }}</h3>
-        
-        {{ with $person.Params.role }}
-          <div class="text-muted mb-2">{{ . }}</div>
-        {{ end }}
-        
-        {{ with $person.Params.organizations }}
-          <div class="text-muted small mb-2">{{ (index . 0).name }}</div>
-        {{ end }}
-        
-        {{ with $person.Params.interests }}
-          <div class="mt-3">
-            <div class="fw-bold small">Research Interests:</div>
-            <div class="d-flex flex-wrap gap-1 mt-1">
-              {{ range . }}
-                <span class="badge bg-light text-dark border small">{{ . }}</span>
-              {{ end }}
-            </div>
+      {{/* 姓名 */}}
+      <h3 class="person-name">{{ $person.Title }}</h3>
+      
+      {{/* 角色 */}}
+      {{ with $person.Params.role }}
+        <div class="person-role">{{ . }}</div>
+      {{ end }}
+      
+      {{/* 组织 */}}
+      {{ with $person.Params.organizations }}
+        <div class="person-organization">{{ (index . 0).name }}</div>
+      {{ end }}
+      
+      {{/* 研究兴趣 */}}
+      {{ with $person.Params.interests }}
+        <div class="interests-section mt-3">
+          <div class="interests-title">Research Interests</div>
+          <div class="interests-container">
+            {{ range . }}
+              <span class="interest-badge">{{ . }}</span>
+            {{ end }}
           </div>
-        {{ end }}
-        
-        {{ with $person.Params.group }}
-          <div class="text-muted small mt-2">
-            Group: {{ . }}
-          </div>
-        {{ end }}
-      </div>
+        </div>
+      {{ end }}
+      
+      {{/* 组别信息 */}}
+      {{ with $person.Params.group }}
+        <div class="group-info mt-3">
+          <i class="fas fa-users me-1"></i> Group: {{ . }}
+        </div>
+      {{ end }}
     </div>
   </div>
 </div>
