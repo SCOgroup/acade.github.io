@@ -1,12 +1,13 @@
-{{/* layouts/_default/people.html */}}
 {{ define "main" }}
-<div class="container py-5">
-  <h1 class="text-center mb-5">{{ .Title }}</h1>
+<div class="container">
+  {{ .Content }}
   
+  {{/* 显示所有人员分类 */}}
   {{ range .Params.sections }}
-    <section class="mb-6">
-      <h2 class="text-center mb-4">{{ .content.title }}</h2>
+    <section class="mb-5">
+      <h2 class="mb-4">{{ .content.title }}</h2>
       
+      {{/* 获取该分类的人员 */}}
       {{ $tag := index .content.filters.tags 0 }}
       {{ $people := where site.RegularPages "Type" "people" }}
       {{ $people = where $people "Params.tags" "intersect" (slice $tag) }}
@@ -15,48 +16,12 @@
         <div class="row row-cols-1 row-cols-md-{{ .design.columns | default 3 }} g-4">
           {{ range $people }}
             <div class="col">
-              <div class="card h-100 shadow-sm border-0">
-                <div class="card-body text-center p-4">
-                  {{/* 头像 */}}
-                  {{ $avatar := partial "get-avatar" . }}
-                  <div class="mb-3 mx-auto" style="width: 120px; height: 120px;">
-                    {{ if $avatar }}
-                      <img src="{{ $avatar }}" alt="{{ .Title }}" 
-                           class="rounded-circle w-100 h-100 object-fit-cover"
-                           onerror="this.onerror=null; this.replaceWith(this.alt=''; this.className='d-flex align-items-center justify-content-center rounded-circle bg-light text-muted'; this.innerHTML='无头像')">
-                    {{ else }}
-                      <div class="d-flex align-items-center justify-content-center rounded-circle bg-light text-muted w-100 h-100">
-                        无头像
-                      </div>
-                    {{ end }}
-                  </div>
-                  
-                  {{/* 姓名 */}}
-                  <h3 class="h5 card-title mb-2">{{ .Title }}</h3>
-                  
-                  {{/* 角色 */}}
-                  {{ with .Params.role }}
-                    <div class="text-muted mb-3">{{ . }}</div>
-                  {{ end }}
-                  
-                  {{/* 研究兴趣 */}}
-                  {{ with .Params.interests }}
-                    <div class="card-text">
-                      <div class="fw-bold mb-2">研究方向：</div>
-                      <div class="d-flex flex-wrap justify-content-center gap-1">
-                        {{ range first 5 . }}
-                          <span class="badge bg-primary bg-opacity-10 text-primary">{{ . }}</span>
-                        {{ end }}
-                      </div>
-                    </div>
-                  {{ end }}
-                </div>
-              </div>
+              {{ partial "person-card" . }}
             </div>
           {{ end }}
         </div>
       {{ else }}
-        <div class="alert alert-info text-center">
+        <div class="alert alert-info">
           暂无{{ .content.title }}
         </div>
       {{ end }}
