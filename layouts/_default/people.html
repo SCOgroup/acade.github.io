@@ -1,0 +1,31 @@
+{{ define "main" }}
+<div class="container">
+  {{ .Content }}
+  
+  {{/* 显示所有人员分类 */}}
+  {{ range .Params.sections }}
+    <section class="mb-5">
+      <h2 class="mb-4">{{ .content.title }}</h2>
+      
+      {{/* 获取该分类的人员 */}}
+      {{ $tag := index .content.filters.tags 0 }}
+      {{ $people := where site.RegularPages "Type" "people" }}
+      {{ $people = where $people "Params.tags" "intersect" (slice $tag) }}
+      
+      {{ if gt (len $people) 0 }}
+        <div class="row row-cols-1 row-cols-md-{{ .design.columns | default 3 }} g-4">
+          {{ range $people }}
+            <div class="col">
+              {{ partial "person-card" . }}
+            </div>
+          {{ end }}
+        </div>
+      {{ else }}
+        <div class="alert alert-info">
+          暂无{{ .content.title }}
+        </div>
+      {{ end }}
+    </section>
+  {{ end }}
+</div>
+{{ end }}
