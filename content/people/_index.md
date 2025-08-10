@@ -7,7 +7,7 @@ design:
   spacing: "5rem"
 
 sections:
-  - block: collection
+  - block: custom
     content:
       title: "Staff"
       filters:
@@ -16,12 +16,9 @@ sections:
         tags:
           - Staff
     design:
-      view: card-grid
       columns: 3
-      show_avatar: true
-      show_role: true
 
-  - block: collection
+  - block: custom
     content:
       title: "Postgraduate Students"
       filters:
@@ -30,12 +27,9 @@ sections:
         tags:
           - Postgraduate Student
     design:
-      view: card-grid
       columns: 3
-      show_avatar: true
-      show_role: true
 
-  - block: collection
+  - block: custom
     content:
       title: "Graduated Postgraduates"
       filters:
@@ -44,8 +38,5 @@ sections:
         tags:
           - Graduated Postgraduate
     design:
-      view: card-grid
       columns: 3
-      show_avatar: true
-      show_role: true
 ---
