@@ -1,7 +1,7 @@
 ---
 title: "研究团队"
 type: team
-layout：team
+layouts：team
 date: 2024-05-19
 ---
 
