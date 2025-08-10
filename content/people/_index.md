@@ -1,7 +1,6 @@
 ---
 title: "研究团队"
 type: team
-layout: team  # 明确指定布局
 date: 2024-05-19
 ---
 
