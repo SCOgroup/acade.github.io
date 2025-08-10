@@ -2,7 +2,7 @@
 {{ $avatar := partial "get-avatar" . }}
 
 <div class="col">
-  <div class="card h-100 shadow-sm border-0">
+  <div class="card h-100 shadow-sm border-0 hover-shadow transition">
     <div class="card-body text-center p-4">
       {{/* 头像 */}}
       <div class="mb-3 mx-auto" style="width: 120px; height: 120px;">
@@ -20,22 +20,32 @@
       {{/* 姓名 */}}
       <h3 class="h5 card-title mb-2">{{ $person.Title }}</h3>
       
-      {{/* 角色 */}}
-      {{ with $person.Params.role }}
-        <div class="text-muted mb-3">{{ . }}</div>
-      {{ end }}
+      {{/* 角色和毕业年份 */}}
+      <div class="text-muted mb-3">
+        {{ $person.Params.role }}
+        {{ with $person.Params.group }}
+          <span class="ms-1">({{ . }}组)</span>
+        {{ end }}
+      </div>
       
       {{/* 研究兴趣 */}}
       {{ with $person.Params.interests }}
         <div class="card-text">
           <div class="fw-bold mb-2">研究方向：</div>
           <div class="d-flex flex-wrap justify-content-center gap-1">
-            {{ range first 5 . }}
+            {{ range . }}
               <span class="badge bg-primary bg-opacity-10 text-primary">{{ . }}</span>
             {{ end }}
           </div>
         </div>
       {{ end }}
     </div>
+    
+    {{/* 毕业学校 */}}
+    {{ with index $person.Params.organizations 0 }}
+      <div class="card-footer bg-transparent border-0 text-center pt-0 pb-3">
+        <span class="text-muted">{{ .name }}</span>
+      </div>
+    {{ end }}
   </div>
 </div>
