@@ -1,11 +1,19 @@
 {{ define "main" }}
 <div class="container py-5">
-  <h1 class="text-center mb-5">{{ .Title }}</h1>
+  <h1 class="text-center mb-4">{{ .Title }}</h1>
   
-  {{/* 教职员工部分 */}}
+  {{ with .Content }}
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center mb-5">
+        <div class="lead">{{ . | markdownify }}</div>
+      </div>
+    </div>
+  {{ end }}
+  
+  {{/* Staff Section */}}
   <section class="mb-6">
-    <h2 class="text-center mb-4">教职员工</h2>
-    {{ $staff := where site.RegularPages "Type" "people" }}
+    <h2 class="text-center mb-4 pb-2 border-bottom">Staff</h2>
+    {{ $staff := where site.RegularPages "Section" "people" }}
     {{ $staff = where $staff "Params.tags" "intersect" (slice "Staff") }}
     
     {{ if gt (len $staff) 0 }}
@@ -16,15 +24,15 @@
       </div>
     {{ else }}
       <div class="alert alert-info text-center">
-        暂无教职员工信息
+        No staff information available.
       </div>
     {{ end }}
   </section>
   
-  {{/* 在读研究生部分 */}}
+  {{/* Postgraduate Student Section */}}
   <section class="mb-6">
-    <h2 class="text-center mb-4">在读研究生</h2>
-    {{ $students := where site.RegularPages "Type" "people" }}
+    <h2 class="text-center mb-4 pb-2 border-bottom">Postgraduate Students</h2>
+    {{ $students := where site.RegularPages "Section" "people" }}
     {{ $students = where $students "Params.tags" "intersect" (slice "Postgraduate Student") }}
     
     {{ if gt (len $students) 0 }}
@@ -35,15 +43,15 @@
       </div>
     {{ else }}
       <div class="alert alert-info text-center">
-        暂无在读研究生信息
+        No postgraduate student information available.
       </div>
     {{ end }}
   </section>
   
-  {{/* 已毕业研究生部分 */}}
+  {{/* Graduated Postgraduate Section */}}
   <section class="mb-6">
-    <h2 class="text-center mb-4">已毕业研究生</h2>
-    {{ $graduates := where site.RegularPages "Type" "people" }}
+    <h2 class="text-center mb-4 pb-2 border-bottom">Graduated Postgraduates</h2>
+    {{ $graduates := where site.RegularPages "Section" "people" }}
     {{ $graduates = where $graduates "Params.tags" "intersect" (slice "Graduated Postgraduate") }}
     
     {{ if gt (len $graduates) 0 }}
@@ -54,7 +62,7 @@
       </div>
     {{ else }}
       <div class="alert alert-info text-center">
-        暂无已毕业研究生信息
+        No graduated postgraduate information available.
       </div>
     {{ end }}
   </section>
