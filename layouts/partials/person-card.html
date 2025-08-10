@@ -4,12 +4,12 @@
 <div class="col">
   <div class="card h-100 shadow-sm border-0 hover-shadow transition">
     <div class="card-body text-center p-4">
-      {{/* 头像 */}}
+      {{/* 头像 - 修复 onerror 语法 */}}
       <div class="mb-3 mx-auto" style="width: 120px; height: 120px;">
         {{ if $avatar }}
           <img src="{{ $avatar }}" alt="{{ $person.Title }}" 
                class="rounded-circle w-100 h-100 object-fit-cover"
-               onerror="this.onerror=null; this.replaceWith(this.alt=''; this.className='d-flex align-items-center justify-content-center rounded-circle bg-light text-muted w-100 h-100'; this.innerHTML='无头像')">
+               onerror="this.onerror=null; this.replaceWith((function(){var div=document.createElement('div');div.className='d-flex align-items-center justify-content-center rounded-circle bg-light text-muted w-100 h-100';div.textContent='无头像';return div;})())">
         {{ else }}
           <div class="d-flex align-items-center justify-content-center rounded-circle bg-light text-muted w-100 h-100">
             无头像
