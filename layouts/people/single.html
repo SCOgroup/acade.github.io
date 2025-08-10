@@ -1,0 +1,114 @@
+{{ define "main" }}
+<article class="person-page" style="max-width:900px;margin:0 auto;padding:1rem;">
+  <header style="display:flex;gap:1rem;align-items:center;">
+    <div style="flex:0 0 160px;">
+      {{ $thumb := partial "get-avatar" . }}
+      {{ if $thumb }}
+        <img src="{{ $thumb }}" alt="{{ .Title }}" style="width:160px;height:160px;object-fit:cover;border-radius:8px;" 
+             onerror="this.onerror=null; this.parentElement.innerHTML='<div style=\'width:160px;height:160px;background:#eee;display:flex;align-items:center;justify-content:center;border-radius:8px;color:#999;\'>无头像</div>'" />
+      {{ else }}
+        <div style="width:160px;height:160px;background:#eee;display:flex;align-items:center;justify-content:center;border-radius:8px;color:#999;">
+          无头像
+        </div>
+      {{ end }}
+    </div>
+
+    <div style="flex:1;">
+      <h1 style="margin:0 0 0.25rem 0;">{{ .Title }}</h1>
+      {{ with .Params.role }}<div style="color:#444;margin-bottom:0.25rem;">{{ . }}</div>{{ end }}
+      {{ with .Params.organization }}<div style="color:#666;margin-bottom:0.5rem;">{{ . }}</div>{{ end }}
+
+      {{ with .Params.interests }}
+        <div style="margin-top:0.25rem;">
+          <strong>研究兴趣：</strong>
+          {{ delimit . ", " }}
+        </div>
+      {{ end }}
+
+      {{ with .Params.tags }}
+        <div style="margin-top:0.25rem;color:#666;">
+          <strong>标签：</strong>
+          {{ delimit . ", " }}
+        </div>
+      {{ end }}
+    </div>
+  </header>
+
+  <section style="margin-top:1rem;line-height:1.7;">
+    {{ if .Content }}
+      {{ .Content }}
+    {{ else if .Params.summary }}
+      <p>{{ .Params.summary }}</p>
+    {{ end }}
+  </section>
+
+  <hr style="margin:2rem 0;" />
+
+  {{/* 列出与当前 role 相同的其他成员（排除当前页面），按 group 分组显示 */}}
+  <section>
+    <h2>同组成员（按 group 分组）</h2>
+    {{ $currentRole := .Params.role }}
+    {{ if $currentRole }}
+      {{ $allPeople := where site.RegularPages "Type" "people" }}
+      {{ $others := where $allPeople "Params.role" "eq" $currentRole }}
+      {{ $others = $others | complement (slice .) }} {{/* 排除当前页面 */}}
+      
+      {{ if gt (len $others) 0 }}
+        {{ $groups := $others | groupBy "Params.group" }}
+        {{ range $groupName, $pages := $groups }}
+          <div style="margin-top:1.5rem;">
+            <h3 style="margin:0 0 0.75rem 0;padding-bottom:0.25rem;border-bottom:1px solid #eee;">
+              {{ if $groupName }}{{ $groupName }}{{ else }}未分组{{ end }}
+            </h3>
+            <div style="display:grid;grid-template-columns:repeat(auto-fill, minmax(320px, 1fr));gap:1rem;">
+              {{ range $pages }}
+                {{ $pThumb := partial "get-avatar" . }}
+                <a href="{{ .RelPermalink }}" style="display:flex;align-items:center;gap:0.75rem;padding:0.75rem;border:1px solid #eee;border-radius:8px;text-decoration:none;color:inherit;transition:all 0.2s;background:white;box-shadow:0 1px 3px rgba(0,0,0,0.05);">
+                  <div style="width:64px;height:64px;flex:0 0 64px;border-radius:6px;overflow:hidden;">
+                    {{ if $pThumb }}
+                      <img src="{{ $pThumb }}" alt="{{ .Title }}" style="width:100%;height:100%;object-fit:cover;" 
+                           onerror="this.onerror=null; this.parentElement.innerHTML='<div style=\'width:100%;height:100%;background:#f5f5f5;display:flex;align-items:center;justify-content:center;color:#999;font-size:0.7em;\'>无图</div>'" />
+                    {{ else }}
+                      <div style="width:100%;height:100%;background:#f5f5f5;display:flex;align-items:center;justify-content:center;color:#999;">
+                        无图
+                      </div>
+                    {{ end }}
+                  </div>
+                  <div style="overflow:hidden;">
+                    <div style="font-weight:600;font-size:1.1rem;margin-bottom:0.15rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">
+                      {{ .Title }}
+                    </div>
+                    {{ with .Params.role }}
+                      <div style="color:#666;font-size:0.9rem;margin-bottom:0.15rem;">
+                        {{ . }}
+                      </div>
+                    {{ end }}
+                    {{ with .Params.interests }}
+                      <div style="color:#444;font-size:0.85rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">
+                        {{ $maxInterests := 3 }}
+                        {{ if gt (len .) $maxInterests }}
+                          {{ delimit (first $maxInterests .) ", " }}...
+                        {{ else }}
+                          {{ delimit . ", " }}
+                        {{ end }}
+                      </div>
+                    {{ end }}
+                  </div>
+                </a>
+              {{ end }}
+            </div>
+          </div>
+        {{ end }}
+      {{ else }}
+        <p style="color:#666;padding:1rem;background:#f9f9f9;border-radius:6px;">
+          暂无其他同角色成员。
+        </p>
+      {{ end }}
+    {{ else }}
+      <p style="color:#666;padding:1rem;background:#f9f9f9;border-radius:6px;">
+        当前成员未设置角色信息，无法显示同组成员。
+      </p>
+    {{ end }}
+  </section>
+</article>
+{{ end }}
