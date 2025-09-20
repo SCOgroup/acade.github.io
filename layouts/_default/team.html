@@ -12,7 +12,7 @@
     <h1 class="display-4 fw-bold">{{ .Title }}</h1>
     {{ with .Description }}<p class="lead">{{ . }}</p>{{ end }}
   </header>
-  
+
   {{ with .Content }}
     <div class="row justify-content-center">
       <div class="col-lg-8 text-center mb-5">
@@ -20,17 +20,48 @@
       </div>
     </div>
   {{ end }}
-  
+
   {{/* Staff Section */}}
   <section class="category-section mb-5">
-    <h2 class="section-title text-center mb-4 pb-2">Staff</h2>
+    <h2 class="section-title position-relative text-center mb-4 pb-2">Staff</h2>
     {{ $staff := where site.RegularPages "Section" "people" }}
     {{ $staff = where $staff "Params.tags" "intersect" (slice "Staff") }}
-    
+
     {{ if gt (len $staff) 0 }}
       <div class="row row-cols-1 row-cols-md-2 g-4">
         {{ range $staff }}
-          {{ partial "person-card" . }}
+          <div class="col">
+            <!-- 人员卡片 -->
+            <div class="card person-card h-100">
+              <div class="avatar-container">
+                {{ with .Params.avatar }}
+                  <img src="{{ .path | relURL }}" alt="{{ $.Title }}" class="avatar">
+                {{ else }}
+                  <img src="/img/default-avatar.png" alt="default avatar" class="avatar">
+                {{ end }}
+              </div>
+              <div class="card-body text-center">
+                <h3 class="person-name">{{ .Title }}</h3>
+                {{ with .Params.role }}<p class="person-role">{{ . }}</p>{{ end }}
+                {{ with .Params.organizations }}
+                  <p class="person-organization">{{ (index . 0).name }}</p>
+                {{ end }}
+                {{ with .Params.group }}
+                  <div class="group-info">{{ replace . "group:" "" }}</div>
+                {{ end }}
+                {{ with .Params.interests }}
+                  <div class="interests-section">
+                    <div class="interests-title">Interests</div>
+                    <div class="interests-container">
+                      {{ range . }}
+                        <span class="interest-badge">{{ . }}</span>
+                      {{ end }}
+                    </div>
+                  </div>
+                {{ end }}
+              </div>
+            </div>
+          </div>
         {{ end }}
       </div>
     {{ else }}
@@ -40,17 +71,48 @@
       </div>
     {{ end }}
   </section>
-  
+
   {{/* Postgraduate Student Section */}}
   <section class="category-section mb-5">
-    <h2 class="section-title text-center mb-4 pb-2">Postgraduate Students</h2>
+    <h2 class="section-title position-relative text-center mb-4 pb-2">Postgraduate Students</h2>
     {{ $students := where site.RegularPages "Section" "people" }}
     {{ $students = where $students "Params.tags" "intersect" (slice "Postgraduate Student") }}
-    
+
     {{ if gt (len $students) 0 }}
       <div class="row row-cols-1 row-cols-md-3 g-4">
         {{ range $students }}
-          {{ partial "person-card" . }}
+          <div class="col">
+            <!-- 人员卡片 -->
+            <div class="card person-card h-100">
+              <div class="avatar-container">
+                {{ with .Params.avatar }}
+                  <img src="{{ .path | relURL }}" alt="{{ $.Title }}" class="avatar">
+                {{ else }}
+                  <img src="/img/default-avatar.png" alt="default avatar" class="avatar">
+                {{ end }}
+              </div>
+              <div class="card-body text-center">
+                <h3 class="person-name">{{ .Title }}</h3>
+                {{ with .Params.role }}<p class="person-role">{{ . }}</p>{{ end }}
+                {{ with .Params.organizations }}
+                  <p class="person-organization">{{ (index . 0).name }}</p>
+                {{ end }}
+                {{ with .Params.group }}
+                  <div class="group-info">{{ replace . "group:" "" }}</div>
+                {{ end }}
+                {{ with .Params.interests }}
+                  <div class="interests-section">
+                    <div class="interests-title">Interests</div>
+                    <div class="interests-container">
+                      {{ range . }}
+                        <span class="interest-badge">{{ . }}</span>
+                      {{ end }}
+                    </div>
+                  </div>
+                {{ end }}
+              </div>
+            </div>
+          </div>
         {{ end }}
       </div>
     {{ else }}
@@ -60,17 +122,48 @@
       </div>
     {{ end }}
   </section>
-  
+
   {{/* Graduated Postgraduate Section */}}
   <section class="category-section mb-5">
-    <h2 class="section-title text-center mb-4 pb-2">Graduated Postgraduates</h2>
+    <h2 class="section-title position-relative text-center mb-4 pb-2">Graduated Postgraduates</h2>
     {{ $graduates := where site.RegularPages "Section" "people" }}
     {{ $graduates = where $graduates "Params.tags" "intersect" (slice "Graduated Postgraduate") }}
-    
+
     {{ if gt (len $graduates) 0 }}
       <div class="row row-cols-1 row-cols-md-3 g-4">
         {{ range $graduates }}
-          {{ partial "person-card" . }}
+          <div class="col">
+            <!-- 人员卡片 -->
+            <div class="card person-card h-100">
+              <div class="avatar-container">
+                {{ with .Params.avatar }}
+                  <img src="{{ .path | relURL }}" alt="{{ $.Title }}" class="avatar">
+                {{ else }}
+                  <img src="/img/default-avatar.png" alt="default avatar" class="avatar">
+                {{ end }}
+              </div>
+              <div class="card-body text-center">
+                <h3 class="person-name">{{ .Title }}</h3>
+                {{ with .Params.role }}<p class="person-role">{{ . }}</p>{{ end }}
+                {{ with .Params.organizations }}
+                  <p class="person-organization">{{ (index . 0).name }}</p>
+                {{ end }}
+                {{ with .Params.group }}
+                  <div class="group-info">{{ replace . "group:" "" }}</div>
+                {{ end }}
+                {{ with .Params.interests }}
+                  <div class="interests-section">
+                    <div class="interests-title">Interests</div>
+                    <div class="interests-container">
+                      {{ range . }}
+                        <span class="interest-badge">{{ . }}</span>
+                      {{ end }}
+                    </div>
+                  </div>
+                {{ end }}
+              </div>
+            </div>
+          </div>
         {{ end }}
       </div>
     {{ else }}
@@ -84,90 +177,79 @@
 
 <style>
   .header-section {
-    background: linear-gradient(135deg, #3498db, #8e44ad);
+    background: linear-gradient(135deg, #2c3e50, #1a2530);
     color: white;
     padding: 3rem 0;
-    border-radius: 0 0 30px 30px;
+    border-radius: 0 0 20px 20px;
     margin: 0 -15px 3rem;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
   }
-  
   .section-title {
     font-weight: 700;
-    font-size: 2rem;
     color: #2c3e50;
     position: relative;
     padding-bottom: 15px;
   }
-  
   .section-title::after {
     content: '';
     position: absolute;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 100px;
+    width: 80px;
     height: 4px;
-    background: linear-gradient(90deg, #3498db, #8e44ad);
+    background: #3498db;
     border-radius: 2px;
   }
-  
-  .no-members {
-    background-color: #f8f9fa;
-    border-radius: 12px;
-    color: #6c757d;
-  }
-  
   .person-card {
     background: white;
-    border-radius: 15px;
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
     transition: all 0.3s ease;
-    height: 100%;
     border: none;
   }
-  
   .person-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
   }
-  
   .avatar-container {
     padding-top: 1.5rem;
     display: flex;
     justify-content: center;
   }
-  
   .avatar {
-    width: 150px;
-    height: 150px;
+    width: 160px;
+    height: 160px;
     border-radius: 50%;
     object-fit: cover;
-    border: 6px solid white;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    border: 5px solid white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   }
-  
   .person-name {
     font-size: 1.35rem;
     font-weight: 700;
     color: #2c3e50;
     margin: 0.5rem 0;
   }
-  
   .person-role {
-    color: #8e44ad;
+    color: #3498db;
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 1.05rem;
     margin-bottom: 0.25rem;
   }
-  
   .person-organization {
     color: #6c757d;
     font-size: 0.95rem;
     margin-bottom: 0.5rem;
   }
-  
+  .group-info {
+    color: #6c757d;
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 0.8rem 0;
+    border-top: 1px dashed #dee2e6;
+    margin: 0 1rem;
+  }
   .interests-title {
     font-weight: 600;
     color: #2c3e50;
@@ -176,33 +258,20 @@
     text-transform: uppercase;
     letter-spacing: 0.5px;
   }
-  
   .interests-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 0.4rem;
   }
-  
   .interest-badge {
-    background: linear-gradient(135deg, #3498db, #8e44ad);
-    color: white;
+    background-color: #e3f2fd;
+    color: #3498db;
     border-radius: 20px;
     padding: 0.4em 0.9em;
     font-size: 0.9rem;
     display: inline-block;
     transition: all 0.2s ease;
-  }
-  .interest-badge:hover {
-    opacity: 0.85;
-  }
-  
-  .group-info {
-    color: #3498db;
-    font-size: 1rem;
-    font-weight: 600;
-    margin: 0.8rem 0;
-    text-align: center;
   }
 </style>
 {{ end }}
