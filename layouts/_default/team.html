@@ -10,17 +10,17 @@
   {{ $people := where .Site.RegularPages "Type" "people" }}
 
   <!-- 按 group 分组 -->
-  {{ range $group, $members := $people.GroupBy "Params.group" }}
-    <h2 class="text-2xl font-semibold mt-12 mb-6 text-center">{{ $group }}</h2>
+  {{ range $group := $people.GroupByParam "group" }}
+    <h2 class="text-2xl font-semibold mt-12 mb-6 text-center">{{ $group.Key }}</h2>
 
     <!-- 根据分组名称决定列数 -->
     {{ $cols := "grid-cols-3" }}
-    {{ if eq (lower (delimit (slice .Key) "")) "staff" }}
+    {{ if eq (lower $group.Key) "staff" }}
       {{ $cols = "grid-cols-2" }}
     {{ end }}
 
     <div class="grid grid-cols-1 sm:{{ $cols }} gap-8">
-      {{ range $members }}
+      {{ range $group.Pages }}
         <div class="person-card text-center p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition">
 
           <!-- 头像兼容逻辑 -->
