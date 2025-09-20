@@ -8,7 +8,7 @@
       {{ range where .Site.Pages "Params.role" "Staff" }}
       <div class="bg-white shadow-md rounded-lg p-6 flex flex-col items-center text-center">
         {{ with .Params.avatar }}
-        <img src="{{ .path | relURL }}" alt="{{ $.Title }}" class="w-32 h-32 rounded-full mb-4">
+        <img src="{{ . | relURL }}" alt="{{ $.Title }}" class="w-32 h-32 rounded-full mb-4">
         {{ end }}
         <h3 class="text-xl font-semibold">{{ .Title }}</h3>
         {{ with .Params.role }}
@@ -32,7 +32,7 @@
       {{ range where .Site.Pages "Params.role" "Postgraduate Student" }}
       <div class="bg-white shadow-md rounded-lg p-6 flex flex-col items-center text-center">
         {{ with .Params.avatar }}
-        <img src="{{ .path | relURL }}" alt="{{ $.Title }}" class="w-32 h-32 rounded-full mb-4">
+        <img src="{{ . | relURL }}" alt="{{ $.Title }}" class="w-32 h-32 rounded-full mb-4">
         {{ end }}
         <h3 class="text-xl font-semibold">{{ .Title }}</h3>
         {{ with .Params.group }}
@@ -53,7 +53,7 @@
       {{ range where .Site.Pages "Params.role" "Graduated Postgraduate" }}
       <div class="bg-white shadow-md rounded-lg p-6 flex flex-col items-center text-center">
         {{ with .Params.avatar }}
-        <img src="{{ .path | relURL }}" alt="{{ $.Title }}" class="w-32 h-32 rounded-full mb-4">
+        <img src="{{ . | relURL }}" alt="{{ $.Title }}" class="w-32 h-32 rounded-full mb-4">
         {{ end }}
         <h3 class="text-xl font-semibold">{{ .Title }}</h3>
         {{ with .Params.group }}
