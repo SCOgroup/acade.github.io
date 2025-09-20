@@ -19,11 +19,11 @@
         <!-- 头像 -->
         {{ $avatar := "" }}
         {{ with .Params.avatar }}
-          {{ $local := $.Page.Resources.GetMatch . }}
+          {{ $local := .Page.Resources.GetMatch . }}  <!-- Page Bundle 内图片 -->
           {{ if $local }}
             {{ $avatar = $local.RelPermalink }}
           {{ else }}
-            {{ $avatar = printf "/%s" . }}
+            {{ $avatar = printf "/%s" . }}          <!-- fallback static -->
           {{ end }}
         {{ end }}
 
@@ -33,17 +33,13 @@
           <img src="/images/default-avatar.png" alt="Default avatar" class="w-32 h-32 rounded-full mb-4 opacity-60">
         {{ end }}
 
-        <!-- 姓名 -->
         <h3 class="text-xl font-semibold">{{ .Title }}</h3>
-        <!-- 机构 -->
         {{ with .Params.organization }}
           <p class="text-gray-600">{{ . }}</p>
         {{ end }}
-        <!-- 分组 -->
         {{ with .Params.group }}
           <p class="text-gray-500">Group {{ . }}</p>
         {{ end }}
-        <!-- 兴趣 -->
         {{ with .Params.interests }}
           <p class="text-sm text-gray-500 mt-2">{{ delimit . ", " }}</p>
         {{ end }}
@@ -62,7 +58,7 @@
         <!-- 头像 -->
         {{ $avatar := "" }}
         {{ with .Params.avatar }}
-          {{ $local := $.Page.Resources.GetMatch . }}
+          {{ $local := .Page.Resources.GetMatch . }}
           {{ if $local }}
             {{ $avatar = $local.RelPermalink }}
           {{ else }}
@@ -76,17 +72,13 @@
           <img src="/images/default-avatar.png" alt="Default avatar" class="w-32 h-32 rounded-full mb-4 opacity-60">
         {{ end }}
 
-        <!-- 姓名 -->
         <h3 class="text-xl font-semibold">{{ .Title }}</h3>
-        <!-- 机构 -->
         {{ with .Params.organization }}
           <p class="text-gray-600">{{ . }}</p>
         {{ end }}
-        <!-- 分组 -->
         {{ with .Params.group }}
           <p class="text-gray-500">Group {{ . }}</p>
         {{ end }}
-        <!-- 兴趣 -->
         {{ with .Params.interests }}
           <p class="text-sm text-gray-500 mt-2">{{ delimit . ", " }}</p>
         {{ end }}
@@ -105,7 +97,7 @@
         <!-- 头像 -->
         {{ $avatar := "" }}
         {{ with .Params.avatar }}
-          {{ $local := $.Page.Resources.GetMatch . }}
+          {{ $local := .Page.Resources.GetMatch . }}
           {{ if $local }}
             {{ $avatar = $local.RelPermalink }}
           {{ else }}
@@ -119,17 +111,13 @@
           <img src="/images/default-avatar.png" alt="Default avatar" class="w-32 h-32 rounded-full mb-4 opacity-60">
         {{ end }}
 
-        <!-- 姓名 -->
         <h3 class="text-xl font-semibold">{{ .Title }}</h3>
-        <!-- 机构 -->
         {{ with .Params.organization }}
           <p class="text-gray-600">{{ . }}</p>
         {{ end }}
-        <!-- 分组 -->
         {{ with .Params.group }}
           <p class="text-gray-500">Group {{ . }}</p>
         {{ end }}
-        <!-- 兴趣 -->
         {{ with .Params.interests }}
           <p class="text-sm text-gray-500 mt-2">{{ delimit . ", " }}</p>
         {{ end }}
@@ -138,7 +126,7 @@
     </div>
   </section>
 
-  <!-- 团队介绍放最下面 -->
+  <!-- 团队介绍文字 -->
   <footer class="text-center mt-12 max-w-2xl mx-auto text-gray-700">
     <p>
       Our research team consists of dedicated professionals and students working together
