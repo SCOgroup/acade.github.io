@@ -1,242 +1,71 @@
 {{ define "main" }}
-<!-- 加载 CSS -->
-{{ $css := resources.Get "css/team.css" }}
-{{ if $css }}
-  {{ $style := $css | minify | fingerprint }}
-  <link rel="stylesheet" href="{{ $style.Permalink }}">
-{{ end }}
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<div class="container mx-auto px-6 py-12">
 
-<div class="container py-5">
-  <header class="header-section text-center mb-5">
-    <h1 class="display-4 fw-bold">{{ .Title }}</h1>
-    {{ with .Description }}<p class="lead">{{ . }}</p>{{ end }}
-  </header>
-
-  {{ with .Content }}
-    <div class="row justify-content-center">
-      <div class="col-lg-8 text-center mb-5">
-        <div class="lead">{{ . | markdownify }}</div>
+  <!-- Staff -->
+  <section class="mb-12">
+    <h2 class="text-3xl font-bold mb-6">Staff</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+      {{ range where .Site.Pages "Params.role" "Staff" }}
+      <div class="bg-white shadow-md rounded-lg p-6 flex flex-col items-center text-center">
+        {{ with .Params.avatar }}
+        <img src="{{ .path | relURL }}" alt="{{ $.Title }}" class="w-32 h-32 rounded-full mb-4">
+        {{ end }}
+        <h3 class="text-xl font-semibold">{{ .Title }}</h3>
+        {{ with .Params.role }}
+        <p class="text-gray-600">{{ . }}</p>
+        {{ end }}
+        {{ with .Params.group }}
+        <p class="text-gray-500">{{ replace . "group: " "" }}</p>
+        {{ end }}
+        {{ with .Params.interests }}
+        <p class="text-sm text-gray-500 mt-2">{{ delimit . ", " }}</p>
+        {{ end }}
       </div>
+      {{ end }}
     </div>
-  {{ end }}
-
-  {{/* ========== Staff Section (2 per row) ========== */}}
-  <section class="category-section mb-5">
-    <h2 class="section-title text-center mb-4 pb-2">Staff</h2>
-    {{ $staff := where site.RegularPages "Section" "people" }}
-    {{ $staff = where $staff "Params.tags" "intersect" (slice "Staff") }}
-
-    {{ if gt (len $staff) 0 }}
-      <div class="row row-cols-1 row-cols-md-2 g-4">
-        {{ range $staff }}
-          <div class="col">
-            <div class="person-card text-center p-4">
-              <div class="avatar-container mb-3">
-                {{ with .Params.avatar }}
-                  {{ if (reflect.IsMap .) }}
-                    <img src="{{ .path | relURL }}" alt="{{ $.Title }}" class="avatar">
-                  {{ else }}
-                    <img src="{{ . | relURL }}" alt="{{ $.Title }}" class="avatar">
-                  {{ end }}
-                {{ else }}
-                  <img src="/img/default-avatar.png" alt="default avatar" class="avatar">
-                {{ end }}
-              </div>
-              <h3 class="person-name">{{ .Title }}</h3>
-              {{ with .Params.role }}<p class="person-role">{{ . }}</p>{{ end }}
-              {{ with .Params.organizations }}
-                {{ range . }}<p class="person-organization">{{ .name }}</p>{{ end }}
-              {{ end }}
-              {{ with .Params.group }}
-                <p class="group-info">{{ replace . "group:" "" }}</p>
-              {{ end }}
-              {{ with .Params.interests }}
-                <div class="interests-section">
-                  <p class="interests-title">Research Interests</p>
-                  <div class="interests-container">
-                    {{ range . }}
-                      <span class="interest-badge">{{ . }}</span>
-                    {{ end }}
-                  </div>
-                </div>
-              {{ end }}
-            </div>
-          </div>
-        {{ end }}
-      </div>
-    {{ else }}
-      <div class="no-members text-center py-5">
-        <i class="fas fa-user-tie fa-3x mb-3 text-muted"></i>
-        <p class="lead">No staff information available</p>
-      </div>
-    {{ end }}
   </section>
 
-  {{/* ========== Postgraduate Students (3 per row) ========== */}}
-  <section class="category-section mb-5">
-    <h2 class="section-title text-center mb-4 pb-2">Postgraduate Students</h2>
-    {{ $students := where site.RegularPages "Section" "people" }}
-    {{ $students = where $students "Params.tags" "intersect" (slice "Postgraduate Student") }}
-
-    {{ if gt (len $students) 0 }}
-      <div class="row row-cols-1 row-cols-md-3 g-4">
-        {{ range $students }}
-          <div class="col">
-            <div class="person-card text-center p-4">
-              <div class="avatar-container mb-3">
-                {{ with .Params.avatar }}
-                  {{ if (reflect.IsMap .) }}
-                    <img src="{{ .path | relURL }}" alt="{{ $.Title }}" class="avatar">
-                  {{ else }}
-                    <img src="{{ . | relURL }}" alt="{{ $.Title }}" class="avatar">
-                  {{ end }}
-                {{ else }}
-                  <img src="/img/default-avatar.png" alt="default avatar" class="avatar">
-                {{ end }}
-              </div>
-              <h3 class="person-name">{{ .Title }}</h3>
-              {{ with .Params.role }}<p class="person-role">{{ . }}</p>{{ end }}
-              {{ with .Params.group }}
-                <p class="group-info">{{ replace . "group:" "" }}</p>
-              {{ end }}
-              {{ with .Params.interests }}
-                <div class="interests-section">
-                  <p class="interests-title">Research Interests</p>
-                  <div class="interests-container">
-                    {{ range . }}
-                      <span class="interest-badge">{{ . }}</span>
-                    {{ end }}
-                  </div>
-                </div>
-              {{ end }}
-            </div>
-          </div>
+  <!-- Postgraduate Students -->
+  <section class="mb-12">
+    <h2 class="text-3xl font-bold mb-6">Postgraduate Students</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      {{ range where .Site.Pages "Params.role" "Postgraduate Student" }}
+      <div class="bg-white shadow-md rounded-lg p-6 flex flex-col items-center text-center">
+        {{ with .Params.avatar }}
+        <img src="{{ .path | relURL }}" alt="{{ $.Title }}" class="w-32 h-32 rounded-full mb-4">
+        {{ end }}
+        <h3 class="text-xl font-semibold">{{ .Title }}</h3>
+        {{ with .Params.group }}
+        <p class="text-gray-500">{{ replace . "group: " "" }}</p>
+        {{ end }}
+        {{ with .Params.interests }}
+        <p class="text-sm text-gray-500 mt-2">{{ delimit . ", " }}</p>
         {{ end }}
       </div>
-    {{ else }}
-      <div class="no-members text-center py-5">
-        <i class="fas fa-graduation-cap fa-3x mb-3 text-muted"></i>
-        <p class="lead">No postgraduate student information available</p>
-      </div>
-    {{ end }}
+      {{ end }}
+    </div>
   </section>
 
-  {{/* ========== Graduated Postgraduates (3 per row) ========== */}}
-  <section class="category-section mb-5">
-    <h2 class="section-title text-center mb-4 pb-2">Graduated Postgraduates</h2>
-    {{ $graduates := where site.RegularPages "Section" "people" }}
-    {{ $graduates = where $graduates "Params.tags" "intersect" (slice "Graduated Postgraduate") }}
-
-    {{ if gt (len $graduates) 0 }}
-      <div class="row row-cols-1 row-cols-md-3 g-4">
-        {{ range $graduates }}
-          <div class="col">
-            <div class="person-card text-center p-4">
-              <div class="avatar-container mb-3">
-                {{ with .Params.avatar }}
-                  {{ if (reflect.IsMap .) }}
-                    <img src="{{ .path | relURL }}" alt="{{ $.Title }}" class="avatar">
-                  {{ else }}
-                    <img src="{{ . | relURL }}" alt="{{ $.Title }}" class="avatar">
-                  {{ end }}
-                {{ else }}
-                  <img src="/img/default-avatar.png" alt="default avatar" class="avatar">
-                {{ end }}
-              </div>
-              <h3 class="person-name">{{ .Title }}</h3>
-              {{ with .Params.role }}<p class="person-role">{{ . }}</p>{{ end }}
-              {{ with .Params.group }}
-                <p class="group-info">{{ replace . "group:" "" }}</p>
-              {{ end }}
-              {{ with .Params.interests }}
-                <div class="interests-section">
-                  <p class="interests-title">Research Interests</p>
-                  <div class="interests-container">
-                    {{ range . }}
-                      <span class="interest-badge">{{ . }}</span>
-                    {{ end }}
-                  </div>
-                </div>
-              {{ end }}
-            </div>
-          </div>
+  <!-- Graduated Postgraduates -->
+  <section class="mb-12">
+    <h2 class="text-3xl font-bold mb-6">Graduated Postgraduates</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      {{ range where .Site.Pages "Params.role" "Graduated Postgraduate" }}
+      <div class="bg-white shadow-md rounded-lg p-6 flex flex-col items-center text-center">
+        {{ with .Params.avatar }}
+        <img src="{{ .path | relURL }}" alt="{{ $.Title }}" class="w-32 h-32 rounded-full mb-4">
+        {{ end }}
+        <h3 class="text-xl font-semibold">{{ .Title }}</h3>
+        {{ with .Params.group }}
+        <p class="text-gray-500">{{ replace . "group: " "" }}</p>
+        {{ end }}
+        {{ with .Params.interests }}
+        <p class="text-sm text-gray-500 mt-2">{{ delimit . ", " }}</p>
         {{ end }}
       </div>
-    {{ else }}
-      <div class="no-members text-center py-5">
-        <i class="fas fa-user-graduate fa-3x mb-3 text-muted"></i>
-        <p class="lead">No graduated postgraduate information available</p>
-      </div>
-    {{ end }}
+      {{ end }}
+    </div>
   </section>
+
 </div>
-
-<style>
-  .header-section {
-    background: linear-gradient(135deg, #2c3e50, #1a2530);
-    color: white;
-    padding: 3rem 0;
-    border-radius: 0 0 20px 20px;
-    margin: 0 -15px 3rem;
-  }
-  .section-title {
-    font-weight: 700;
-    color: #2c3e50;
-    padding-bottom: 15px;
-    position: relative;
-  }
-  .section-title::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 4px;
-    background: #3498db;
-    border-radius: 2px;
-  }
-  .person-card {
-    background: white;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease;
-    height: 100%;
-  }
-  .person-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
-  }
-  .avatar {
-    width: 140px;
-    height: 140px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 5px solid white;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  }
-  .person-name {
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: #2c3e50;
-  }
-  .person-role {
-    color: #3498db;
-    font-weight: 600;
-  }
-  .group-info {
-    color: #6c757d;
-    font-size: 0.9rem;
-    margin-top: 0.5rem;
-  }
-  .interest-badge {
-    background-color: #e3f2fd;
-    color: #3498db;
-    border-radius: 20px;
-    padding: 0.3em 0.7em;
-    font-size: 0.8rem;
-  }
-</style>
 {{ end }}
