@@ -1,71 +1,69 @@
 {{ define "main" }}
 <div class="container mx-auto px-6 py-12">
+  <!-- 页面标题与描述 -->
+  <h1 class="text-4xl font-extrabold text-center mb-6">{{ .Title }}</h1>
+  {{ with .Params.description }}
+    <p class="text-lg text-center text-gray-600 mb-10">{{ . }}</p>
+  {{ end }}
 
-  <!-- Staff -->
-  <section class="mb-12">
-    <h2 class="text-3xl font-bold mb-6">Staff</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-      {{ range where .Site.Pages "Params.role" "Staff" }}
-      <div class="bg-white shadow-md rounded-lg p-6 flex flex-col items-center text-center">
-        {{ with .Params.avatar }}
-        <img src="{{ . | relURL }}" alt="{{ $.Title }}" class="w-32 h-32 rounded-full mb-4">
-        {{ end }}
-        <h3 class="text-xl font-semibold">{{ .Title }}</h3>
-        {{ with .Params.role }}
-        <p class="text-gray-600">{{ . }}</p>
-        {{ end }}
-        {{ with .Params.group }}
-        <p class="text-gray-500">{{ replace . "group: " "" }}</p>
-        {{ end }}
-        {{ with .Params.interests }}
-        <p class="text-sm text-gray-500 mt-2">{{ delimit . ", " }}</p>
-        {{ end }}
-      </div>
+  <!-- 获取 people 页面 -->
+  {{ $people := where .Site.RegularPages "Type" "people" }}
+
+  <!-- 按 group 分组 -->
+  {{ range $group, $members := $people.GroupBy "Params.group" }}
+    <h2 class="text-2xl font-semibold mt-12 mb-6 text-center">{{ $group }}</h2>
+
+    <!-- 根据分组名称决定列数 -->
+    {{ $cols := "grid-cols-3" }}
+    {{ if eq (lower (delimit (slice .Key) "")) "staff" }}
+      {{ $cols = "grid-cols-2" }}
+    {{ end }}
+
+    <div class="grid grid-cols-1 sm:{{ $cols }} gap-8">
+      {{ range $members }}
+        <div class="person-card text-center p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition">
+
+          <!-- 头像兼容逻辑 -->
+          {{ $avatar := "" }}
+          {{ with .Params.avatar }}
+            {{ $local := $.Resources.GetMatch . }}   <!-- 尝试 bundle 内 -->
+            {{ if $local }}
+              {{ $avatar = $local.RelPermalink }}
+            {{ else }}
+              {{ $avatar = printf "/%s" . }}         <!-- 否则走 static 路径 -->
+            {{ end }}
+          {{ end }}
+
+          {{ if $avatar }}
+            <img src="{{ $avatar }}" alt="{{ .Title }}" class="w-32 h-32 rounded-full mb-4 mx-auto shadow-lg object-cover">
+          {{ else }}
+            <img src="/images/default-avatar.png" alt="Default avatar" class="w-32 h-32 rounded-full mb-4 mx-auto opacity-60">
+          {{ end }}
+
+          <!-- 姓名 -->
+          <h3 class="text-xl font-bold">{{ .Title }}</h3>
+
+          <!-- 职位 -->
+          {{ with .Params.role }}
+            <p class="text-blue-600 font-medium">{{ . }}</p>
+          {{ end }}
+
+          <!-- 机构 -->
+          {{ with .Params.organization }}
+            <p class="text-gray-500">{{ . }}</p>
+          {{ end }}
+
+          <!-- 研究兴趣 -->
+          {{ with .Params.interests }}
+            <div class="flex flex-wrap justify-center gap-2 mt-3">
+              {{ range . }}
+                <span class="px-3 py-1 bg-blue-50 text-blue-600 rounded-full text-sm">{{ . }}</span>
+              {{ end }}
+            </div>
+          {{ end }}
+        </div>
       {{ end }}
     </div>
-  </section>
-
-  <!-- Postgraduate Students -->
-  <section class="mb-12">
-    <h2 class="text-3xl font-bold mb-6">Postgraduate Students</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-      {{ range where .Site.Pages "Params.role" "Postgraduate Student" }}
-      <div class="bg-white shadow-md rounded-lg p-6 flex flex-col items-center text-center">
-        {{ with .Params.avatar }}
-        <img src="{{ . | relURL }}" alt="{{ $.Title }}" class="w-32 h-32 rounded-full mb-4">
-        {{ end }}
-        <h3 class="text-xl font-semibold">{{ .Title }}</h3>
-        {{ with .Params.group }}
-        <p class="text-gray-500">{{ replace . "group: " "" }}</p>
-        {{ end }}
-        {{ with .Params.interests }}
-        <p class="text-sm text-gray-500 mt-2">{{ delimit . ", " }}</p>
-        {{ end }}
-      </div>
-      {{ end }}
-    </div>
-  </section>
-
-  <!-- Graduated Postgraduates -->
-  <section class="mb-12">
-    <h2 class="text-3xl font-bold mb-6">Graduated Postgraduates</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-      {{ range where .Site.Pages "Params.role" "Graduated Postgraduate" }}
-      <div class="bg-white shadow-md rounded-lg p-6 flex flex-col items-center text-center">
-        {{ with .Params.avatar }}
-        <img src="{{ . | relURL }}" alt="{{ $.Title }}" class="w-32 h-32 rounded-full mb-4">
-        {{ end }}
-        <h3 class="text-xl font-semibold">{{ .Title }}</h3>
-        {{ with .Params.group }}
-        <p class="text-gray-500">{{ replace . "group: " "" }}</p>
-        {{ end }}
-        {{ with .Params.interests }}
-        <p class="text-sm text-gray-500 mt-2">{{ delimit . ", " }}</p>
-        {{ end }}
-      </div>
-      {{ end }}
-    </div>
-  </section>
-
+  {{ end }}
 </div>
 {{ end }}
