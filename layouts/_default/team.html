@@ -1,50 +1,42 @@
 {{ define "main" }}
 <div class="container mx-auto px-6 py-12">
 
-  <!-- 页面标题 -->
+  <!-- Header -->
   <header class="text-center mb-8">
     <h1 class="text-4xl font-bold mb-2">{{ .Title }}</h1>
     {{ with .Description }}
       <p class="text-lg text-gray-600">{{ . }}</p>
     {{ end }}
+    {{ with .Content }}
+      <div class="mt-4 text-gray-700 max-w-2xl mx-auto">{{ . }}</div>
+    {{ end }}
   </header>
 
   <!-- Staff -->
-  <section class="mb-12">
-    <h2 class="text-3xl font-bold mb-6 text-center">Staff</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-      {{ range where .Site.RegularPages "Params.role" "Staff" }}
-      {{ $page := . }}
+  <section class="mb-12 text-center">
+    <h2 class="text-3xl font-bold mb-6">Staff</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-center">
+      {{ range where .Site.Pages "Params.role" "Staff" }}
       <div class="bg-white shadow-md rounded-lg p-6 flex flex-col items-center text-center">
-
-        <!-- 头像 -->
         {{ $avatar := "" }}
-        {{ with $page.Params.avatar }}
-          {{ $local := $page.Resources.GetMatch . }}
+        {{ with .Params.avatar }}
+          {{ $local := $.Resources.GetMatch . }}
           {{ if $local }}
-            {{ $resized := $local.Fit "256x256" }}  <!-- ✅ Hugo 缩放到 256x256 -->
+            {{ $resized := $local.Fit "256x256" }}
             {{ $avatar = $resized.RelPermalink }}
           {{ else }}
-            {{ $avatar = printf "/%s" . }}
+            {{ $avatar = . | relURL }}
           {{ end }}
         {{ end }}
-
         {{ if $avatar }}
-          <img src="{{ $avatar }}" alt="{{ $page.Title }}" 
+          <img src="{{ $avatar }}" alt="{{ .Title }}" 
                class="w-32 h-32 rounded-full object-cover shadow-md mb-4">
-        {{ else }}
-          <img src="/images/default-avatar.png" alt="Default avatar" 
-               class="w-32 h-32 rounded-full mb-4 opacity-60">
         {{ end }}
 
-        <h3 class="text-xl font-semibold">{{ $page.Title }}</h3>
-        {{ with $page.Params.organization }}
-          <p class="text-gray-600">{{ . }}</p>
-        {{ end }}
-        {{ with $page.Params.group }}
-          <p class="text-gray-500">Group {{ . }}</p>
-        {{ end }}
-        {{ with $page.Params.interests }}
+        <h3 class="text-xl font-semibold">{{ .Title }}</h3>
+        {{ with .Params.role }}<p class="text-gray-600">{{ . }}</p>{{ end }}
+        {{ with .Params.group }}<p class="text-gray-500">{{ . }}</p>{{ end }}
+        {{ with .Params.interests }}
           <p class="text-sm text-gray-500 mt-2">{{ delimit . ", " }}</p>
         {{ end }}
       </div>
@@ -53,41 +45,29 @@
   </section>
 
   <!-- Postgraduate Students -->
-  <section class="mb-12">
-    <h2 class="text-3xl font-bold mb-6 text-center">Postgraduate Students</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-      {{ range where .Site.RegularPages "Params.role" "Postgraduate Student" }}
-      {{ $page := . }}
+  <section class="mb-12 text-center">
+    <h2 class="text-3xl font-bold mb-6">Postgraduate Students</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-center">
+      {{ range where .Site.Pages "Params.role" "Postgraduate Student" }}
       <div class="bg-white shadow-md rounded-lg p-6 flex flex-col items-center text-center">
-
-        <!-- 头像 -->
         {{ $avatar := "" }}
-        {{ with $page.Params.avatar }}
-          {{ $local := $page.Resources.GetMatch . }}
+        {{ with .Params.avatar }}
+          {{ $local := $.Resources.GetMatch . }}
           {{ if $local }}
             {{ $resized := $local.Fit "256x256" }}
             {{ $avatar = $resized.RelPermalink }}
           {{ else }}
-            {{ $avatar = printf "/%s" . }}
+            {{ $avatar = . | relURL }}
           {{ end }}
         {{ end }}
-
         {{ if $avatar }}
-          <img src="{{ $avatar }}" alt="{{ $page.Title }}" 
+          <img src="{{ $avatar }}" alt="{{ .Title }}" 
                class="w-32 h-32 rounded-full object-cover shadow-md mb-4">
-        {{ else }}
-          <img src="/images/default-avatar.png" alt="Default avatar" 
-               class="w-32 h-32 rounded-full mb-4 opacity-60">
         {{ end }}
 
-        <h3 class="text-xl font-semibold">{{ $page.Title }}</h3>
-        {{ with $page.Params.organization }}
-          <p class="text-gray-600">{{ . }}</p>
-        {{ end }}
-        {{ with $page.Params.group }}
-          <p class="text-gray-500">Group {{ . }}</p>
-        {{ end }}
-        {{ with $page.Params.interests }}
+        <h3 class="text-xl font-semibold">{{ .Title }}</h3>
+        {{ with .Params.group }}<p class="text-gray-500">{{ . }}</p>{{ end }}
+        {{ with .Params.interests }}
           <p class="text-sm text-gray-500 mt-2">{{ delimit . ", " }}</p>
         {{ end }}
       </div>
@@ -96,41 +76,29 @@
   </section>
 
   <!-- Graduated Postgraduates -->
-  <section class="mb-12">
-    <h2 class="text-3xl font-bold mb-6 text-center">Graduated Postgraduates</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-      {{ range where .Site.RegularPages "Params.role" "Graduated Postgraduate" }}
-      {{ $page := . }}
+  <section class="mb-12 text-center">
+    <h2 class="text-3xl font-bold mb-6">Graduated Postgraduates</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-center">
+      {{ range where .Site.Pages "Params.role" "Graduated Postgraduate" }}
       <div class="bg-white shadow-md rounded-lg p-6 flex flex-col items-center text-center">
-
-        <!-- 头像 -->
         {{ $avatar := "" }}
-        {{ with $page.Params.avatar }}
-          {{ $local := $page.Resources.GetMatch . }}
+        {{ with .Params.avatar }}
+          {{ $local := $.Resources.GetMatch . }}
           {{ if $local }}
             {{ $resized := $local.Fit "256x256" }}
             {{ $avatar = $resized.RelPermalink }}
           {{ else }}
-            {{ $avatar = printf "/%s" . }}
+            {{ $avatar = . | relURL }}
           {{ end }}
         {{ end }}
-
         {{ if $avatar }}
-          <img src="{{ $avatar }}" alt="{{ $page.Title }}" 
+          <img src="{{ $avatar }}" alt="{{ .Title }}" 
                class="w-32 h-32 rounded-full object-cover shadow-md mb-4">
-        {{ else }}
-          <img src="/images/default-avatar.png" alt="Default avatar" 
-               class="w-32 h-32 rounded-full mb-4 opacity-60">
         {{ end }}
 
-        <h3 class="text-xl font-semibold">{{ $page.Title }}</h3>
-        {{ with $page.Params.organization }}
-          <p class="text-gray-600">{{ . }}</p>
-        {{ end }}
-        {{ with $page.Params.group }}
-          <p class="text-gray-500">Group {{ . }}</p>
-        {{ end }}
-        {{ with $page.Params.interests }}
+        <h3 class="text-xl font-semibold">{{ .Title }}</h3>
+        {{ with .Params.group }}<p class="text-gray-500">{{ . }}</p>{{ end }}
+        {{ with .Params.interests }}
           <p class="text-sm text-gray-500 mt-2">{{ delimit . ", " }}</p>
         {{ end }}
       </div>
@@ -138,12 +106,9 @@
     </div>
   </section>
 
-  <!-- 团队介绍文字 -->
-  <footer class="text-center mt-12 max-w-2xl mx-auto text-gray-700">
-    <p>
-      Our research team consists of dedicated professionals and students working together
-      to advance knowledge in our field. We are committed to excellence in research and education.
-    </p>
+  <!-- Footer description -->
+  <footer class="text-center mt-12 text-gray-700 max-w-2xl mx-auto">
+    <p>Our research team consists of dedicated professionals and students working together to advance knowledge in our field. We are committed to excellence in research and education.</p>
   </footer>
 
 </div>
