@@ -1,8 +1,7 @@
-
 ---
 title: "张三"
 role: "Postgraduate Student"
-avatar: "avatar.jpg"
+avatar: "zhangsan.jpg"
 organizations:
   - name: "武汉理工大学"
 interests:
