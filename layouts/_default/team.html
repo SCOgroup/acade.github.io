@@ -22,16 +22,19 @@
         {{ with $page.Params.avatar }}
           {{ $local := $page.Resources.GetMatch . }}
           {{ if $local }}
-            {{ $avatar = $local.RelPermalink }}
+            {{ $resized := $local.Fit "256x256" }}  <!-- ✅ Hugo 缩放到 256x256 -->
+            {{ $avatar = $resized.RelPermalink }}
           {{ else }}
             {{ $avatar = printf "/%s" . }}
           {{ end }}
         {{ end }}
 
         {{ if $avatar }}
-          <img src="{{ $avatar }}" alt="{{ $page.Title }}" class="w-32 h-32 rounded-full mb-4 object-cover shadow-md">
+          <img src="{{ $avatar }}" alt="{{ $page.Title }}" 
+               class="w-32 h-32 rounded-full object-cover shadow-md mb-4">
         {{ else }}
-          <img src="/images/default-avatar.png" alt="Default avatar" class="w-32 h-32 rounded-full mb-4 opacity-60">
+          <img src="/images/default-avatar.png" alt="Default avatar" 
+               class="w-32 h-32 rounded-full mb-4 opacity-60">
         {{ end }}
 
         <h3 class="text-xl font-semibold">{{ $page.Title }}</h3>
@@ -62,16 +65,19 @@
         {{ with $page.Params.avatar }}
           {{ $local := $page.Resources.GetMatch . }}
           {{ if $local }}
-            {{ $avatar = $local.RelPermalink }}
+            {{ $resized := $local.Fit "256x256" }}
+            {{ $avatar = $resized.RelPermalink }}
           {{ else }}
             {{ $avatar = printf "/%s" . }}
           {{ end }}
         {{ end }}
 
         {{ if $avatar }}
-          <img src="{{ $avatar }}" alt="{{ $page.Title }}" class="w-32 h-32 rounded-full mb-4 object-cover shadow-md">
+          <img src="{{ $avatar }}" alt="{{ $page.Title }}" 
+               class="w-32 h-32 rounded-full object-cover shadow-md mb-4">
         {{ else }}
-          <img src="/images/default-avatar.png" alt="Default avatar" class="w-32 h-32 rounded-full mb-4 opacity-60">
+          <img src="/images/default-avatar.png" alt="Default avatar" 
+               class="w-32 h-32 rounded-full mb-4 opacity-60">
         {{ end }}
 
         <h3 class="text-xl font-semibold">{{ $page.Title }}</h3>
@@ -102,16 +108,19 @@
         {{ with $page.Params.avatar }}
           {{ $local := $page.Resources.GetMatch . }}
           {{ if $local }}
-            {{ $avatar = $local.RelPermalink }}
+            {{ $resized := $local.Fit "256x256" }}
+            {{ $avatar = $resized.RelPermalink }}
           {{ else }}
             {{ $avatar = printf "/%s" . }}
           {{ end }}
         {{ end }}
 
         {{ if $avatar }}
-          <img src="{{ $avatar }}" alt="{{ $page.Title }}" class="w-32 h-32 rounded-full mb-4 object-cover shadow-md">
+          <img src="{{ $avatar }}" alt="{{ $page.Title }}" 
+               class="w-32 h-32 rounded-full object-cover shadow-md mb-4">
         {{ else }}
-          <img src="/images/default-avatar.png" alt="Default avatar" class="w-32 h-32 rounded-full mb-4 opacity-60">
+          <img src="/images/default-avatar.png" alt="Default avatar" 
+               class="w-32 h-32 rounded-full mb-4 opacity-60">
         {{ end }}
 
         <h3 class="text-xl font-semibold">{{ $page.Title }}</h3>
