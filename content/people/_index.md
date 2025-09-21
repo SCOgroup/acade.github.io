@@ -1,22 +1,17 @@
 ---
-title: Research Team
-type: landing
+widget: people
+headless: true
+title: "Research Team"
+weight: 10
 
-cascade:
-  - _target:
-      kind: page
-    params:
-      show_breadcrumb: true
+content:
+  title: "Our Team"
+  user_groups:
+    - Staff
+    - Postgraduate Students
+    - Graduated Postgraduates
 
-sections:
-  - block: collection
-    id: teaching
-    content:
-      title: Research Team
-      filters:
-        folders:
-          - people
-    design:
-      view: article-grid
-      columns: 3
+design:
+  view: card
+  columns: 3
 ---
