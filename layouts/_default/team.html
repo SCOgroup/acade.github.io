@@ -14,33 +14,34 @@
     <h2 class="text-3xl font-bold mb-6 text-center">Staff</h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
       {{ range where .Site.RegularPages "Params.role" "Staff" }}
+      {{ $page := . }}
       <div class="bg-white shadow-md rounded-lg p-6 flex flex-col items-center text-center">
 
         <!-- 头像 -->
         {{ $avatar := "" }}
-        {{ with .Params.avatar }}
-          {{ $local := .Page.Resources.GetMatch . }}  <!-- Page Bundle 内图片 -->
+        {{ with $page.Params.avatar }}
+          {{ $local := $page.Resources.GetMatch . }}
           {{ if $local }}
             {{ $avatar = $local.RelPermalink }}
           {{ else }}
-            {{ $avatar = printf "/%s" . }}          <!-- fallback static -->
+            {{ $avatar = printf "/%s" . }}
           {{ end }}
         {{ end }}
 
         {{ if $avatar }}
-          <img src="{{ $avatar }}" alt="{{ .Title }}" class="w-32 h-32 rounded-full mb-4 object-cover shadow-md">
+          <img src="{{ $avatar }}" alt="{{ $page.Title }}" class="w-32 h-32 rounded-full mb-4 object-cover shadow-md">
         {{ else }}
           <img src="/images/default-avatar.png" alt="Default avatar" class="w-32 h-32 rounded-full mb-4 opacity-60">
         {{ end }}
 
-        <h3 class="text-xl font-semibold">{{ .Title }}</h3>
-        {{ with .Params.organization }}
+        <h3 class="text-xl font-semibold">{{ $page.Title }}</h3>
+        {{ with $page.Params.organization }}
           <p class="text-gray-600">{{ . }}</p>
         {{ end }}
-        {{ with .Params.group }}
+        {{ with $page.Params.group }}
           <p class="text-gray-500">Group {{ . }}</p>
         {{ end }}
-        {{ with .Params.interests }}
+        {{ with $page.Params.interests }}
           <p class="text-sm text-gray-500 mt-2">{{ delimit . ", " }}</p>
         {{ end }}
       </div>
@@ -53,12 +54,13 @@
     <h2 class="text-3xl font-bold mb-6 text-center">Postgraduate Students</h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
       {{ range where .Site.RegularPages "Params.role" "Postgraduate Student" }}
+      {{ $page := . }}
       <div class="bg-white shadow-md rounded-lg p-6 flex flex-col items-center text-center">
 
         <!-- 头像 -->
         {{ $avatar := "" }}
-        {{ with .Params.avatar }}
-          {{ $local := .Page.Resources.GetMatch . }}
+        {{ with $page.Params.avatar }}
+          {{ $local := $page.Resources.GetMatch . }}
           {{ if $local }}
             {{ $avatar = $local.RelPermalink }}
           {{ else }}
@@ -67,19 +69,19 @@
         {{ end }}
 
         {{ if $avatar }}
-          <img src="{{ $avatar }}" alt="{{ .Title }}" class="w-32 h-32 rounded-full mb-4 object-cover shadow-md">
+          <img src="{{ $avatar }}" alt="{{ $page.Title }}" class="w-32 h-32 rounded-full mb-4 object-cover shadow-md">
         {{ else }}
           <img src="/images/default-avatar.png" alt="Default avatar" class="w-32 h-32 rounded-full mb-4 opacity-60">
         {{ end }}
 
-        <h3 class="text-xl font-semibold">{{ .Title }}</h3>
-        {{ with .Params.organization }}
+        <h3 class="text-xl font-semibold">{{ $page.Title }}</h3>
+        {{ with $page.Params.organization }}
           <p class="text-gray-600">{{ . }}</p>
         {{ end }}
-        {{ with .Params.group }}
+        {{ with $page.Params.group }}
           <p class="text-gray-500">Group {{ . }}</p>
         {{ end }}
-        {{ with .Params.interests }}
+        {{ with $page.Params.interests }}
           <p class="text-sm text-gray-500 mt-2">{{ delimit . ", " }}</p>
         {{ end }}
       </div>
@@ -92,12 +94,13 @@
     <h2 class="text-3xl font-bold mb-6 text-center">Graduated Postgraduates</h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
       {{ range where .Site.RegularPages "Params.role" "Graduated Postgraduate" }}
+      {{ $page := . }}
       <div class="bg-white shadow-md rounded-lg p-6 flex flex-col items-center text-center">
 
         <!-- 头像 -->
         {{ $avatar := "" }}
-        {{ with .Params.avatar }}
-          {{ $local := .Page.Resources.GetMatch . }}
+        {{ with $page.Params.avatar }}
+          {{ $local := $page.Resources.GetMatch . }}
           {{ if $local }}
             {{ $avatar = $local.RelPermalink }}
           {{ else }}
@@ -106,19 +109,19 @@
         {{ end }}
 
         {{ if $avatar }}
-          <img src="{{ $avatar }}" alt="{{ .Title }}" class="w-32 h-32 rounded-full mb-4 object-cover shadow-md">
+          <img src="{{ $avatar }}" alt="{{ $page.Title }}" class="w-32 h-32 rounded-full mb-4 object-cover shadow-md">
         {{ else }}
           <img src="/images/default-avatar.png" alt="Default avatar" class="w-32 h-32 rounded-full mb-4 opacity-60">
         {{ end }}
 
-        <h3 class="text-xl font-semibold">{{ .Title }}</h3>
-        {{ with .Params.organization }}
+        <h3 class="text-xl font-semibold">{{ $page.Title }}</h3>
+        {{ with $page.Params.organization }}
           <p class="text-gray-600">{{ . }}</p>
         {{ end }}
-        {{ with .Params.group }}
+        {{ with $page.Params.group }}
           <p class="text-gray-500">Group {{ . }}</p>
         {{ end }}
-        {{ with .Params.interests }}
+        {{ with $page.Params.interests }}
           <p class="text-sm text-gray-500 mt-2">{{ delimit . ", " }}</p>
         {{ end }}
       </div>
