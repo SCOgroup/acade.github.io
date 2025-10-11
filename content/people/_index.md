@@ -1,5 +1,5 @@
 ---
-widget: people
+widget: team
 headless: true
 title: "Research Team"
 weight: 10
