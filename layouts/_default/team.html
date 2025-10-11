@@ -1,43 +1,24 @@
 {{ define "main" }}
 <div class="container mx-auto px-6 py-12">
 
-  <!-- Header -->
-  <header class="text-center mb-8">
-    <h1 class="text-4xl font-bold mb-2">{{ .Title }}</h1>
-    {{ with .Description }}
-      <p class="text-lg text-gray-600">{{ . }}</p>
-    {{ end }}
-    {{ with .Content }}
-      <div class="mt-4 text-gray-700 max-w-2xl mx-auto">{{ . }}</div>
-    {{ end }}
-  </header>
-
   <!-- Staff -->
-  <section class="mb-12 text-center">
+  <section class="mb-12">
     <h2 class="text-3xl font-bold mb-6">Staff</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-center">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
       {{ range where .Site.Pages "Params.role" "Staff" }}
       <div class="bg-white shadow-md rounded-lg p-6 flex flex-col items-center text-center">
-        {{ $avatar := "" }}
         {{ with .Params.avatar }}
-          {{ $local := $.Resources.GetMatch . }}
-          {{ if $local }}
-            {{ $resized := $local.Fit "256x256" }}
-            {{ $avatar = $resized.RelPermalink }}
-          {{ else }}
-            {{ $avatar = . | relURL }}
-          {{ end }}
+        <img src="{{ . | relURL }}" alt="{{ $.Title }}" class="w-32 h-32 rounded-full mb-4">
         {{ end }}
-        {{ if $avatar }}
-          <img src="{{ $avatar }}" alt="{{ .Title }}" 
-               class="w-32 h-32 rounded-full object-cover shadow-md mb-4">
-        {{ end }}
-
         <h3 class="text-xl font-semibold">{{ .Title }}</h3>
-        {{ with .Params.role }}<p class="text-gray-600">{{ . }}</p>{{ end }}
-        {{ with .Params.group }}<p class="text-gray-500">{{ . }}</p>{{ end }}
+        {{ with .Params.role }}
+        <p class="text-gray-600">{{ . }}</p>
+        {{ end }}
+        {{ with .Params.group }}
+        <p class="text-gray-500">{{ replace . "group: " "" }}</p>
+        {{ end }}
         {{ with .Params.interests }}
-          <p class="text-sm text-gray-500 mt-2">{{ delimit . ", " }}</p>
+        <p class="text-sm text-gray-500 mt-2">{{ delimit . ", " }}</p>
         {{ end }}
       </div>
       {{ end }}
@@ -45,30 +26,20 @@
   </section>
 
   <!-- Postgraduate Students -->
-  <section class="mb-12 text-center">
+  <section class="mb-12">
     <h2 class="text-3xl font-bold mb-6">Postgraduate Students</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-center">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
       {{ range where .Site.Pages "Params.role" "Postgraduate Student" }}
       <div class="bg-white shadow-md rounded-lg p-6 flex flex-col items-center text-center">
-        {{ $avatar := "" }}
         {{ with .Params.avatar }}
-          {{ $local := $.Resources.GetMatch . }}
-          {{ if $local }}
-            {{ $resized := $local.Fit "256x256" }}
-            {{ $avatar = $resized.RelPermalink }}
-          {{ else }}
-            {{ $avatar = . | relURL }}
-          {{ end }}
+        <img src="{{ . | relURL }}" alt="{{ $.Title }}" class="w-32 h-32 rounded-full mb-4">
         {{ end }}
-        {{ if $avatar }}
-          <img src="{{ $avatar }}" alt="{{ .Title }}" 
-               class="w-32 h-32 rounded-full object-cover shadow-md mb-4">
-        {{ end }}
-
         <h3 class="text-xl font-semibold">{{ .Title }}</h3>
-        {{ with .Params.group }}<p class="text-gray-500">{{ . }}</p>{{ end }}
+        {{ with .Params.group }}
+        <p class="text-gray-500">{{ replace . "group: " "" }}</p>
+        {{ end }}
         {{ with .Params.interests }}
-          <p class="text-sm text-gray-500 mt-2">{{ delimit . ", " }}</p>
+        <p class="text-sm text-gray-500 mt-2">{{ delimit . ", " }}</p>
         {{ end }}
       </div>
       {{ end }}
@@ -76,40 +47,25 @@
   </section>
 
   <!-- Graduated Postgraduates -->
-  <section class="mb-12 text-center">
+  <section class="mb-12">
     <h2 class="text-3xl font-bold mb-6">Graduated Postgraduates</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-center">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
       {{ range where .Site.Pages "Params.role" "Graduated Postgraduate" }}
       <div class="bg-white shadow-md rounded-lg p-6 flex flex-col items-center text-center">
-        {{ $avatar := "" }}
         {{ with .Params.avatar }}
-          {{ $local := $.Resources.GetMatch . }}
-          {{ if $local }}
-            {{ $resized := $local.Fit "256x256" }}
-            {{ $avatar = $resized.RelPermalink }}
-          {{ else }}
-            {{ $avatar = . | relURL }}
-          {{ end }}
+        <img src="{{ . | relURL }}" alt="{{ $.Title }}" class="w-32 h-32 rounded-full mb-4">
         {{ end }}
-        {{ if $avatar }}
-          <img src="{{ $avatar }}" alt="{{ .Title }}" 
-               class="w-32 h-32 rounded-full object-cover shadow-md mb-4">
-        {{ end }}
-
         <h3 class="text-xl font-semibold">{{ .Title }}</h3>
-        {{ with .Params.group }}<p class="text-gray-500">{{ . }}</p>{{ end }}
+        {{ with .Params.group }}
+        <p class="text-gray-500">{{ replace . "group: " "" }}</p>
+        {{ end }}
         {{ with .Params.interests }}
-          <p class="text-sm text-gray-500 mt-2">{{ delimit . ", " }}</p>
+        <p class="text-sm text-gray-500 mt-2">{{ delimit . ", " }}</p>
         {{ end }}
       </div>
       {{ end }}
     </div>
   </section>
-
-  <!-- Footer description -->
-  <footer class="text-center mt-12 text-gray-700 max-w-2xl mx-auto">
-    <p>Our research team consists of dedicated professionals and students working together to advance knowledge in our field. We are committed to excellence in research and education.</p>
-  </footer>
 
 </div>
 {{ end }}
