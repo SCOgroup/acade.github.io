@@ -1,6 +1,6 @@
 ---
 # Display name
-title: 智能系统感知控制优化课题组
+title: 智能系统感知控制优化课题
 
 # Is this the primary user of the site?
 superuser: true
