@@ -1,17 +1,27 @@
+
 ---
-widget: team
-headless: true
-title: "Research Team"
-weight: 10
+title: People
+date: 2022-10-24
 
-content:
-  title: "Our Team"
-  user_groups:
-    - Staff
-    - Postgraduate Students
-    - Graduated Postgraduates
+type: landing
 
-design:
-  view: card
-  columns: 3
+sections:
+  - block:resume-biography
+    content:
+      title: Meet the Team
+      # Choose which groups/teams of users to display.
+      #   Edit `user_groups` in each user's profile to add them to one or more of these groups.
+      user_groups:
+          - Principal Investigators
+          - Researchers
+          - Grad Students
+          - Administration
+          - Visitors
+          - Alumni
+      sort_by: Params.last_name
+      sort_ascending: true
+    design:
+      show_interests: false
+      show_role: true
+      show_social: true
 ---
