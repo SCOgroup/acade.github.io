@@ -71,6 +71,7 @@ highlight_name: false
 user_groups:
   - 课题组负责人
   - 2025级学生
+  - 2026级学生
 
 cv: "uploads/resume.pdf"
 
