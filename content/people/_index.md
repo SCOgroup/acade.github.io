@@ -16,7 +16,7 @@ sections:
           - Grad Students
           - Administration
           - 2025级学生
-          - Alumni
+          - 2024级学生
       sort_by: Params.last_name
       sort_ascending: true
     design:
