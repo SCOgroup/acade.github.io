@@ -71,8 +71,7 @@ email: ''
 #   Set this to `[]` or comment out if you are not using People widget.
 user_groups:
   - 课题组负责人
-  - 2025级学生
-  - 2024级学生
+
 cv: "uploads/resume.pdf"
 ---
 
