@@ -26,16 +26,16 @@ sections:
           size: cover
           position: center
           parallax: false
-  - block: collection
-    id: publication
-    content:
-      title: Featured Publications
-      filters:
-        folders:
-          - publication
-        featured_only: true
-    design:
-      view: card
+#  - block: collection
+#    id: publication
+#    content:
+#     title: Featured Publications
+#    filters:
+#     folders:
+#          - publication
+#        featured_only: true
+#   design:
+#      view: card
   - block: collection
     content:
       title: Recent News
