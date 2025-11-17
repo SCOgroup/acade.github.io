@@ -1,5 +1,5 @@
 ---
-title: 📈 恭喜刘鑫等同学在期刊Reliability Engineering & System Safety发表论文"Multi-scenario robust stochastic programming based distributed energy resources allocation in distribution networks: Balancing economic efficiency and resilience"
+title: '📈 恭喜刘鑫等同学在期刊Reliability Engineering & System Safety发表论文"Multi-scenario robust stochastic programming based distributed energy resources allocation in distribution networks: Balancing economic efficiency and resilience"'
 summary: Use popular tools such as Plotly, Mermaid, and data frames.
 date: 2025-10-24
 authors:
