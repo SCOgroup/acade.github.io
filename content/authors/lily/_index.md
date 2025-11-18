@@ -1,14 +1,14 @@
 ---
 # Display name
-title: Alice Wu 吳恩達
+title: 王知喆
 
 # Full name (for SEO)
-first_name: Alice
-last_name: Wu
+first_name: 王
+last_name: 知喆
 
 # Username (this should match the folder name)
 authors:
-  - 吳恩達
+  - 王知喆
 
 # Is this the primary user of the site?
 superuser: false
