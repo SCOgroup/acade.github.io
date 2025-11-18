@@ -17,7 +17,7 @@ sections:
           - Administration
           - 2025级学生
           - 2024级学生
-    - 2023级学生
+          - 2023级学生
       sort_by: Params.last_name
       sort_ascending: true
     design:
