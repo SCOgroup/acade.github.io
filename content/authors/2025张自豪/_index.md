@@ -8,7 +8,8 @@ first_name: 张
 last_name: 自豪
 
 # Username (this should match the folder name)
-
+authors:
+  - 张自豪
 # Is this the primary user of the site?
 superuser: false
 
