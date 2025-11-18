@@ -1,17 +1,17 @@
 
 ---
 # Display name
-title: Nelson Bighetti
+title: 陈昊贤
 
 # Full Name (for SEO)
-first_name: Nelson
-last_name: Bighetti
+first_name: 陈
+last_name: 昊贤
 
 # Is this the primary user of the site?
 superuser: true
 
 # Role/position
-role: Professor of Artificial Intelligence
+# role: Professor of Artificial Intelligence
 
 # Organizations/Affiliations
 organizations:
