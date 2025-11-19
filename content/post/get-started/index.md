@@ -3,6 +3,8 @@ title: '🎉 恭喜刘鑫等同学在期刊Reliability Engineering & System Safe
 summary: Take full control of your personal brand and privacy by migrating away from the big tech platforms!
 date: 2025-09-22
 
+# 点击标题跳转的链接
+link: 'https://www.sciencedirect.com/science/article/abs/pii/S0951832025009494'
 # Featured image
 # Place an image named `featured.jpg/png` in this page's folder and customize its options here.
 image:
