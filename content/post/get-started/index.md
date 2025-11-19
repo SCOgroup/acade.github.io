@@ -8,6 +8,9 @@ date: 2025-09-22
 image:
   caption: 'Image credit: [**Unsplash**](https://unsplash.com)'
 
+params:
+  external_link: 'https://www.sciencedirect.com/science/article/abs/pii/S0951832025009494'
+
 authors:
   - admin
   - Ted
