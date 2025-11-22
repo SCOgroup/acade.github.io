@@ -148,11 +148,11 @@
   text-decoration: none;
 }
 
-/* People 页面：每行固定 4 个头像 */
+/* People 页面：每行固定 4 个头像，并让最后一行居中 */
 .people-widget .user-group-row .d-flex {
   display: grid !important;
-  grid-template-columns: repeat(4, max-content) !important;
-  justify-content: center !important; /* 整体居中 */
-  column-gap: 2rem !important; /* 与原来一致 */
-  row-gap: 3rem !important;    /* 与原来视觉一致 */
+  grid-template-columns: repeat(4, 1fr) !important;
+  justify-items: center !important;
+  column-gap: 2rem !important;
+  row-gap: 3rem !important;
 }
