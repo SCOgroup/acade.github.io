@@ -27,12 +27,6 @@
   color: #666;
 }
 
-/* 让人物卡片在 grid 格子内真正居中 */
-.people-widget .people-person {
-  margin-left: auto !important;
-  margin-right: auto !important;
-}
-
 /* User group (Researchers / Visitors) */
 .user-group-row {
   width: 100%;
@@ -152,14 +146,5 @@
 .cv-link a:hover {
   color: #0056b3;  /* 深蓝色 */
   text-decoration: none;
-}
-/* =======================
-   强制 People 每行 4 个
-   ======================= */
-.user-group-row .d-flex {
-  display: grid !important;
-  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
-  justify-items: center !important;
-  gap: 2rem !important;
 }
 
