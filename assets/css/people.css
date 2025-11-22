@@ -45,7 +45,7 @@
 }
 
 
-/* Container for people (flex layout) 
+/* Container for people (flex layout) */
 .user-group-row .d-flex {
   display: flex;
   flex-wrap: wrap;
@@ -54,7 +54,7 @@
   width: 100%;
   max-width: 1200px;
 }
-*/
+
 /* ============================
    强制 People 页面每行最多 4 人
    ============================ */
