@@ -3,8 +3,8 @@
 title: 田猛
 
 # Full Name (for SEO)
-first_name: 田
-last_name: 猛
+first_name:田
+last_name:猛
 
 # Is this the primary user of the site?
 superuser: true
