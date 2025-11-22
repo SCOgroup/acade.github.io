@@ -44,17 +44,6 @@
   text-align: center;
 }
 
-
-/* Container for people (flex layout) */
-.user-group-row .d-flex {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem; /* space between people */
-  width: 100%;
-  max-width: 1200px;
-}
-
 /* ============================
    强制 People 页面每行最多 4 人
    ============================ */
