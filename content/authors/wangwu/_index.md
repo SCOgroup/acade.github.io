@@ -1,9 +1,9 @@
 ---
 # Display name
-title: 田猛
+title: 董猛
 
 # Full Name (for SEO)
-first_name: 田
+first_name: 董
 last_name: 猛
 
 # Is this the primary user of the site?
