@@ -147,3 +147,13 @@
   color: #0056b3;  /* 深蓝色 */
   text-decoration: none;
 }
+/* =======================
+   强制 People 每行 4 个
+   ======================= */
+.user-group-row .d-flex {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  justify-items: center !important;
+  gap: 2rem !important;
+}
+
