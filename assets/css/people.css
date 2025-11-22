@@ -147,12 +147,3 @@
   color: #0056b3;  /* 深蓝色 */
   text-decoration: none;
 }
-
-/* People 页面：每行固定 4 个头像，并让最后一行居中 */
-.people-widget .user-group-row .d-flex {
-  display: grid !important;
-  grid-template-columns: repeat(4, 1fr) !important;
-  justify-items: center !important;
-  column-gap: 2rem !important;
-  row-gap: 3rem !important;
-}
