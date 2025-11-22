@@ -27,6 +27,12 @@
   color: #666;
 }
 
+/* 让人物卡片在 grid 格子内真正居中 */
+.people-widget .people-person {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
 /* User group (Researchers / Visitors) */
 .user-group-row {
   width: 100%;
