@@ -43,6 +43,7 @@
   margin-bottom: 1.5rem;
   text-align: center;
 }
+
 .user-group-row .d-flex {
   display: flex;
   flex-wrap: wrap;
@@ -51,6 +52,7 @@
   width: 100%;
   max-width: 1200px;
 }
+
 /* Each person block */
 .people-person {
   display: flex;
