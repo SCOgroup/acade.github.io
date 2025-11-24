@@ -43,18 +43,14 @@
   margin-bottom: 1.5rem;
   text-align: center;
 }
-
-/* ============================
-   强制 People 页面每行最多 4 人
-   ============================ */
-.people-widget .user-group-row .d-flex {
-  display: grid !important;
-  grid-template-columns: repeat(4, max-content); /* 每行最多 4 个 */
-  justify-content: center !important; /* 最后一行自动居中 */
-  column-gap: 4rem; /* 保持头像左右间距 */
-  row-gap: 4rem;    /* 保持上下间距 */
+.user-group-row .d-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem; /* space between people */
+  width: 100%;
+  max-width: 1200px;
 }
-
 /* Each person block */
 .people-person {
   display: flex;
