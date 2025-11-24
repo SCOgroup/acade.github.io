@@ -44,6 +44,7 @@
   text-align: center;
 }
 
+/* Container for people (flex layout) */
 .user-group-row .d-flex {
   display: flex;
   flex-wrap: wrap;
@@ -146,4 +147,3 @@
   color: #0056b3;  /* 深蓝色 */
   text-decoration: none;
 }
-
