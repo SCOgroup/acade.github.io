@@ -14,9 +14,9 @@ organizations:
     url: https://www.whut.edu.cn/
 
 # Need to use another icon? Simply download the SVG icon to your `assets/media/icons/` folder.
-profiles:
-  - icon: brands/weixin
-    url: https://weixin.qq.com
+# profiles:
+#  - icon: brands/weixin
+#    url: https://weixin.qq.com
 
 work:
   - position: Director of Cloud Infrastructure
