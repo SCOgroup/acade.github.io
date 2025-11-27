@@ -1,10 +1,10 @@
-/* 只作用于首页的 resume-biography-3 模块 */
+/* 左侧头像+课题组 整体垂直对齐右侧“关于我们”部分 */
 .resume-biography-3 .row {
   display: flex;
-  align-items: center; /* 左右整体垂直居中 */
+  align-items: center;
 }
 
-/* 如果头像需要再向下偏一点 */
+/* 左侧头像再往下偏一点 */
 .resume-biography-3 .col-lg-4 {
-  margin-top: 30px; /* 数值可以调 */
+  margin-top: 20px;
 }
