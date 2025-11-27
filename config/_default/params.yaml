@@ -60,4 +60,4 @@ features:
     enable: false
 
 custom_css:
-  - homepage.css
+  - css/homepage.css
