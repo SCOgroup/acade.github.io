@@ -1,13 +1,15 @@
-/* 解决方案：下移左侧栏，使其与右侧正文对齐 */
-.dark .col-12.col-lg-4 {
-  padding-top: 4rem !important; /* 这个值控制下移距离，可根据效果微调 */
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  margin-top: 3rem !important; /* 核心参数：这个值将左侧栏下推 */
+/* 核心解决方案：下移左侧栏与右侧正文对齐 */
+.dark .biography-section .row {
+    align-items: start !important;
+    padding-top: 2rem !important;
 }
 
-/* 确保右侧内容也有适当的上边距 */
-.dark .col-12.col-lg-8 {
-  padding-top: 2rem !important;
+.dark .col-12.col-lg-4 {
+    margin-top: 2rem !important;
+    padding-top: 0 !important;
+}
+
+/* 确保布局稳定 */
+.dark .avatar {
+    margin-bottom: 1rem !important;
 }
