@@ -1,0 +1,27 @@
+/* 调整简历区块的布局 */
+.dark .biography-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-top: 4rem !important;
+}
+
+/* 调整头像和姓名的位置 */
+.dark .avatar {
+  margin-top: 3rem !important;
+}
+
+.dark .name {
+  margin-top: 1.5rem !important;
+  margin-bottom: 2rem !important;
+}
+
+/* 或者直接针对整个左侧区域 */
+.dark .col-12.col-lg-4 {
+  padding-top: 4rem !important;
+}
+
+/* 调整右侧内容区域 */
+.dark .col-12.col-lg-8 {
+  padding-top: 4rem !important;
+}
