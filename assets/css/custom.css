@@ -1,27 +1,73 @@
-/* 调整简历区块的布局 */
-.dark .biography-wrapper {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  padding-top: 4rem !important;
+/* 解决左侧标题被头像遮挡的问题 - 完整方案 */
+.dark .biography-section {
+  position: relative;
+  overflow: visible !important;
 }
 
-/* 调整头像和姓名的位置 */
+/* 调整头像位置和大小 */
 .dark .avatar {
-  margin-top: 3rem !important;
+  width: 120px !important;
+  height: 120px !important;
+  margin: 2rem auto 1rem !important;
+  display: block;
+  z-index: 1;
+  position: relative;
 }
 
+/* 确保课题组标题有正确的位置和层级 */
 .dark .name {
-  margin-top: 1.5rem !important;
-  margin-bottom: 2rem !important;
+  position: relative !important;
+  z-index: 2 !important;
+  margin: 0 auto !important;
+  padding: 1rem 0 2rem 0 !important;
+  text-align: center;
+  width: 100%;
+  clear: both;
 }
 
-/* 或者直接针对整个左侧区域 */
+/* 左侧栏整体调整 */
 .dark .col-12.col-lg-4 {
-  padding-top: 4rem !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  padding-top: 1rem !important;
+  min-height: auto !important;
 }
 
-/* 调整右侧内容区域 */
+/* 右侧内容区域调整 */
 .dark .col-12.col-lg-8 {
-  padding-top: 4rem !important;
+  padding-top: 2rem !important;
+}
+
+/* 确保生物信息区域的间距 */
+.dark .biography-content {
+  padding: 2rem 0 !important;
+}
+
+/* 移动端适配 */
+@media (max-width: 992px) {
+  .dark .avatar {
+    width: 100px !important;
+    height: 100px !important;
+    margin: 1rem auto 0.5rem !important;
+  }
+  
+  .dark .name {
+    padding: 0.5rem 0 1rem 0 !important;
+  }
+  
+  .dark .col-12.col-lg-8 {
+    padding-top: 1rem !important;
+  }
+}
+
+/* 强制确保文本可见性 */
+.dark .name h1,
+.dark .name h2,
+.dark .name .text-body {
+  position: relative !important;
+  z-index: 10 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
