@@ -1,15 +1,16 @@
-/* 核心解决方案：下移左侧栏与右侧正文对齐 */
-.dark .biography-section .row {
-    align-items: start !important;
-    padding-top: 2rem !important;
-}
-
+/* 下移整个左侧部分 */
 .dark .col-12.col-lg-4 {
-    margin-top: 2rem !important;
-    padding-top: 0 !important;
+  transform: translateY(60px) !important;
 }
 
 /* 确保布局稳定 */
-.dark .avatar {
-    margin-bottom: 1rem !important;
+.dark .biography-section .row {
+  align-items: flex-start !important;
+  min-height: 100vh;
+}
+
+/* 确保右侧内容位置不变 */
+.dark .col-12.col-lg-8 {
+  position: relative;
+  z-index: 1;
 }
