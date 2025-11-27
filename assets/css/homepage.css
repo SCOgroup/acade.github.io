@@ -1,10 +1,8 @@
-/* 只作用于首页的 resume-biography-3 模块 */
-.resume-biography-3 .row {
+div.resume-biography-3 .row {
   display: flex !important;
-  align-items: center !important; /* 左右整体垂直居中 */
+  align-items: center !important;
 }
 
-/* 头像模块向下偏移一点 */
-.resume-biography-3 .col-lg-4 {
-  margin-top: 40px; /* 数值可调整 */
+div.resume-biography-3 .col-lg-4 {
+  margin-top: 40px !important;
 }
