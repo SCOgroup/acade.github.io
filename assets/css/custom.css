@@ -1,73 +1,25 @@
-/* 解决左侧标题被头像遮挡的问题 - 完整方案 */
-.dark .biography-section {
-  position: relative;
-  overflow: visible !important;
-}
-
-/* 调整头像位置和大小 */
-.dark .avatar {
-  width: 120px !important;
-  height: 120px !important;
-  margin: 2rem auto 1rem !important;
-  display: block;
-  z-index: 1;
-  position: relative;
-}
-
-/* 确保课题组标题有正确的位置和层级 */
-.dark .name {
-  position: relative !important;
-  z-index: 2 !important;
-  margin: 0 auto !important;
-  padding: 1rem 0 2rem 0 !important;
-  text-align: center;
-  width: 100%;
-  clear: both;
-}
-
-/* 左侧栏整体调整 */
-.dark .col-12.col-lg-4 {
+/* 只作用于首页的 resume-biography-3 模块 */
+.resume-biography-3 .row {
   display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  justify-content: flex-start !important;
-  padding-top: 1rem !important;
-  min-height: auto !important;
+  align-items: center !important; /* 左右内容垂直居中 */
 }
 
-/* 右侧内容区域调整 */
-.dark .col-12.col-lg-8 {
-  padding-top: 2rem !important;
+/* 头像模块向下偏移一点，使布局更居中 */
+.resume-biography-3 .col-lg-4 {
+  margin-top: 40px; /* 可根据视觉效果微调，比如 20-70 */
 }
 
-/* 确保生物信息区域的间距 */
-.dark .biography-content {
-  padding: 2rem 0 !important;
+/* 左侧个人简介文字稍微下移，使标题和文字视觉更平衡 */
+.resume-biography-3 .col-lg-8 {
+  margin-top: 20px;
 }
 
-/* 移动端适配 */
-@media (max-width: 992px) {
-  .dark .avatar {
-    width: 100px !important;
-    height: 100px !important;
-    margin: 1rem auto 0.5rem !important;
-  }
-  
-  .dark .name {
-    padding: 0.5rem 0 1rem 0 !important;
-  }
-  
-  .dark .col-12.col-lg-8 {
-    padding-top: 1rem !important;
-  }
+/* 头像圆润一些（可选） */
+.resume-biography-3 img {
+  border-radius: 12px;  /* 想变成圆可以写 50% */
 }
 
-/* 强制确保文本可见性 */
-.dark .name h1,
-.dark .name h2,
-.dark .name .text-body {
-  position: relative !important;
-  z-index: 10 !important;
-  opacity: 1 !important;
-  visibility: visible !important;
+/* 标题与下一块之间留点空间（可选） */
+.resume-biography-3 {
+  margin-bottom: 40px;
 }
