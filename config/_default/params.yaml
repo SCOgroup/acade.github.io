@@ -59,4 +59,4 @@ features:
   privacy_pack:
     enable: false
 custom_css:
-  - homepage.css
+  - css/homepage.css
