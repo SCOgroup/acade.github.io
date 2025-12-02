@@ -9,8 +9,9 @@
   margin-top: 7rem !important;
 }
 
-.resume-biography-3 .space-y-3 h1 {
-  margin-top: 4rem !important;
+/* 下移"铁锤子课题组"标题 */
+.dark .text-3xl.font-bold {
+  margin-top: 4rem !important; /* 或者您想要的距离 */
 }
 
 /* 或者直接针对整个左侧区域 */
