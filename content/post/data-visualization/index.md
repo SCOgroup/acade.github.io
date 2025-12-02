@@ -1,7 +1,7 @@
 ---
 title: 🎉 恭喜刘鑫获得研究生国家奖学金
 summary: Use popular tools such as Plotly, Mermaid, and data frames.
-date: 2025-10-24T00:00:00+08:00  # 完整时间+时区
+date: "2025-10-24"
 authors:
   - admin
 tags:
