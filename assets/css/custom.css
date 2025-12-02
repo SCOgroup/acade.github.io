@@ -11,7 +11,7 @@
 
 /* 下移"铁锤子课题组"标题 */
 .dark .text-3xl.font-bold {
-  margin-top: 7rem !important; /* 或者您想要的距离 */
+  margin-top: 9rem !important; /* 或者您想要的距离 */
 }
 
 /* 或者直接针对整个左侧区域 */
