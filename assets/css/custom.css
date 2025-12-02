@@ -8,10 +8,9 @@
 .dark .avatar {
   margin-top: 7rem !important;
 }
-
-.dark .name {
-  margin-top: 10rem !important;
-  margin-bottom: 2rem !important;
+/* 暗色主题下下移名字模块 */
+.dark .resume-biography .space-y-3 {
+  margin-top: 3rem !important;   /* 数值越大越向下 */
 }
 
 /* 或者直接针对整个左侧区域 */
