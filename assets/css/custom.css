@@ -1,7 +1,5 @@
 /* 调整简历区块的布局 */
 .dark .biography-wrapper {
-  display: flex;
-  flex-direction: column;
   min-height: 100vh;
   padding-top: 4rem !important;
 }
