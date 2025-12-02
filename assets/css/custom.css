@@ -10,8 +10,8 @@
 }
 
 /* 暗色主题下下移名字模块 */
-.dark .resume-biography .space-y-3 {
-  margin-top: 10rem !important;   /* 数值越大越向下 */
+.dark .resume-biography-3 .space-y-3 {
+  margin-top: 6rem !important;
 }
 
 /* 或者直接针对整个左侧区域 */
