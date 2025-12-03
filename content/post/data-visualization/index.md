@@ -16,10 +16,6 @@ image:
 
 ---
 
-Hugo Blox is designed to give technical content creators a seamless experience. You can focus on the content and Hugo Blox handles the rest.
-
-Use popular tools such as Plotly, Mermaid, and data frames.
-
 ## Charts
 
 Hugo Blox supports the popular [Plotly](https://plot.ly/) format for interactive data visualizations. With Plotly, you can design almost any kind of visualization you can imagine!
