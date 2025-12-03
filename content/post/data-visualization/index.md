@@ -13,7 +13,7 @@ tags:
   - Markdown
 image:
   caption: 'Image credit: [**Unsplash**](https://unsplash.com)'
-url: "#"
+no_link: true
 
 ---
 
