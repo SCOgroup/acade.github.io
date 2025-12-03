@@ -1,16 +1,14 @@
 {{ $item := .item }}
 {{ $page := .page }}
-{{ $summary := partial "functions/get_summary" $item }}
-{{ $summary = $summary | page.RenderString }}
 
 <article class="md:grid md:grid-cols-4 md:items-baseline">
   <div class="md:col-span-3 group relative flex flex-col items-start">
     <h2 class="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
       <div
         class="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 dark:bg-zinc-800/50 sm:-inset-x-6 sm:rounded-2xl"></div>
-      <a href="{{$item.RelPermalink}}">
+      <a href="{{ $item.RelPermalink }}">
         <span class="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl"></span>
-        <span class="relative z-10">{{$item.Title}}</span>
+        <span class="relative z-10">{{ $item.Title }}</span>
       </a>
     </h2>
 
@@ -20,10 +18,15 @@
       {{ time.Format (site.Params.hugoblox.locale.date_format | default ":date_long") $item.Date }}
     </time>
 
-    {{ $summary := partial "functions/get_summary" $item | default "" }}
-    {{ if and $summary (not (eq $summary $item.Content)) }}
-      <p class="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400 line-clamp-3">{{ $summary }}</p>
+    {{/* ==== 摘要逻辑（仅基于 front matter 的 summary 字段） ==== */}}
+    {{ $fmSummary := $item.Params.summary | default "" }}
+    {{ if $fmSummary }}
+      {{/* 如果 front matter 有 summary，就渲染（并把它渲染为页面字符串） */}}
+      <p class="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400 line-clamp-3">
+        {{ $fmSummary | page.RenderString }}
+      </p>
     {{ end }}
+    {{/* ===================================================== */}}
 
     <div aria-hidden="true" class="relative z-10 mt-4 flex items-center text-sm font-medium text-primary-500">
       {{ T "read_more" | default "Read more" }}
