@@ -16,6 +16,7 @@ image:
 
 ---
 
+
 ## Charts
 
 Hugo Blox supports the popular [Plotly](https://plot.ly/) format for interactive data visualizations. With Plotly, you can design almost any kind of visualization you can imagine!
