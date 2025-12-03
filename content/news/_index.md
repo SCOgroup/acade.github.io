@@ -25,7 +25,7 @@ sections:
       offset: 0
       order: desc
     design:
-      view: date-title-summary
+      view: my-new-view
       spacing:
         padding: [0, 0, 0, 0]
 ---
