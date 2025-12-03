@@ -1,6 +1,6 @@
 ---
 title: 🎉 恭喜刘鑫获得研究生国家奖学金
-summary: Use popular tools such as Plotly, Mermaid, and data frames.
+summary: 
 date: 2025-10-24
 publishDate: 2025-10-24
 lastmod: 2025-10-24
