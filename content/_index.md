@@ -60,7 +60,7 @@ sections:
       order: desc
     design:
       # Choose a layout view
-      view: date-title-summary-design
+      view: date-title-summary
       # Reduce spacing
       spacing:
         padding: [4, 0, 0, 0]
