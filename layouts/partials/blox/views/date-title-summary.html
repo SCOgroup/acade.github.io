@@ -15,6 +15,7 @@
       datetime="{{ time.Format "2006-01-02" $item.Date }}">
       {{ time.Format (site.Params.hugoblox.locale.date_format | default ":date_long") $item.Date }}
     </time>
+    
    {{ $summary := $item.Params.summary | default "" }}
 {{ if $summary }}
   <p class="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400 line-clamp-3">{{ $summary | page.RenderString }}</p>
