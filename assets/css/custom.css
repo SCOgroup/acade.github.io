@@ -23,18 +23,15 @@
 .dark .col-12.col-lg-8 {
   padding-top: 4rem !important;
 }
-
 /* 安全方案：仅在 date-title-summary 视图下禁用摘要点击 */
 .collection-view-date-title-summary article > span {
   pointer-events: none !important;
 }
-
 .collection-view-date-title-summary article p.line-clamp-3 {
   pointer-events: none !important;
   cursor: text !important;
   user-select: text !important;
 }
-
 .collection-view-date-title-summary h2 a,
 .collection-view-date-title-summary h3 a {
   pointer-events: auto !important;
