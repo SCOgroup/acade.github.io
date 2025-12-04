@@ -27,12 +27,8 @@
 span.absolute.-inset-x-4.-inset-y-6.z-20 {
   display: none !important;
 }
-/* 隐藏特定文章的摘要 */
-article:has(span.relative.z-10:contains("获得")) p.text-sm {
+/* 如果摘要只有"恭喜" */
+p.text-sm.text-zinc-600:contains("恭喜"),
+p.text-sm.dark\\:text-zinc-400:contains("恭喜") {
   display: none !important;
-}
-
-/* 调整Read More位置（摘要隐藏后） */
-article:has(span.relative.z-10:contains("获得")) div[aria-hidden="true"] {
-  margin-top: 0.5rem !important;
 }
