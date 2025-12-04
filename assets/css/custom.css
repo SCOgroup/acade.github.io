@@ -27,8 +27,3 @@
 span.absolute.-inset-x-4.-inset-y-6.z-20 {
   display: none !important;
 }
-/* 如果摘要只有"恭喜" */
-p.text-sm.text-zinc-600:contains("恭喜"),
-p.text-sm.dark\\:text-zinc-400:contains("恭喜") {
-  display: none !important;
-}
