@@ -23,3 +23,34 @@
 .dark .col-12.col-lg-8 {
   padding-top: 4rem !important;
 }
+
+
+
+
+/* 安全方案：只针对date-title-summary视图 */
+.collection-view-date-title-summary {
+  /* 1. 禁用那个覆盖层span */
+  span.absolute.-inset-x-4.-inset-y-6.z-20 {
+    pointer-events: none !important;
+  }
+  
+  /* 2. 确保摘要不可点击 */
+  article p.line-clamp-3 {
+    pointer-events: none !important;
+    cursor: text !important;
+    user-select: text !important; /* 允许文字选择 */
+  }
+  
+  /* 3. 确保标题仍然可点击 */
+  h2 a, h3 a {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+    position: relative;
+    z-index: 100 !important;
+  }
+  
+  /* 4. 可选：移除整个区域的悬停背景效果 */
+  .group:hover .bg-zinc-50 {
+    opacity: 0 !important;
+  }
+}
