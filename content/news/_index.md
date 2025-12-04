@@ -27,5 +27,5 @@ sections:
     design:
       view: date-title-summary
       spacing:
-        padding: [4, 0, 0, 0]
+        padding: [0, 0, 0, 0]
 ---
