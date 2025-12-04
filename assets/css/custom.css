@@ -39,3 +39,7 @@
   position: relative;
   z-index: 100 !important;
 }
+/* 隐藏文章摘要 */
+.collection-view-date-title-summary p {
+  display: none !important;
+}
