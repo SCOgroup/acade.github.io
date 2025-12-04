@@ -24,25 +24,21 @@
   padding-top: 4rem !important;
 }
 
-/* 安全方案：只针对date-title-summary视图 */
-.collection-view-date-title-summary {
-  /* 1. 禁用那个覆盖层span */
-  span.absolute.-inset-x-4.-inset-y-6.z-20 {
-    pointer-events: none !important;
-  }
-  
-  /* 2. 确保摘要不可点击 */
-  article p.line-clamp-3 {
-    pointer-events: none !important;
-    cursor: text !important;
-    user-select: text !important; /* 允许文字选择 */
-  }
-  
-  /* 3. 确保标题仍然可点击 */
-  h2 a, h3 a {
-    pointer-events: auto !important;
-    cursor: pointer !important;
-    position: relative;
-    z-index: 100 !important;
-  }
-  }
+/* 安全方案：仅在 date-title-summary 视图下禁用摘要点击 */
+.collection-view-date-title-summary article > span {
+  pointer-events: none !important;
+}
+
+.collection-view-date-title-summary article p.line-clamp-3 {
+  pointer-events: none !important;
+  cursor: text !important;
+  user-select: text !important;
+}
+
+.collection-view-date-title-summary h2 a,
+.collection-view-date-title-summary h3 a {
+  pointer-events: auto !important;
+  cursor: pointer !important;
+  position: relative;
+  z-index: 100 !important;
+}
