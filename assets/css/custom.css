@@ -23,3 +23,7 @@
 .dark .col-12.col-lg-8 {
   padding-top: 4rem !important;
 }
+
+span.absolute.-inset-x-4.-inset-y-6.z-20 {
+  display: none !important;
+}
