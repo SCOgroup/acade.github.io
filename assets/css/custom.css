@@ -27,7 +27,7 @@
 span.absolute.-inset-x-4.-inset-y-6.z-20 {
   display: none !important;
 }
-.project-page .container {
+.flex.flex-col.items-center > .container.max-w-\[65ch\] {
     border: none !important;
     box-shadow: none !important;
     background: transparent !important;
