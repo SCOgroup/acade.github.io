@@ -27,3 +27,8 @@
 span.absolute.-inset-x-4.-inset-y-6.z-20 {
   display: none !important;
 }
+.project-page .container {
+    border: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+}
