@@ -11,7 +11,7 @@ main:
     url: /news/
     weight: 11
   - name: Publications
-    url: /publication/
+    url: /publications/
     weight: 12
   - name: Projects
     url: /project/
