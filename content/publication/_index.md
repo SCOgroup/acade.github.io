@@ -1,20 +1,12 @@
 ---
-title: "Publications"
-type: page
+title: Publications
+cms_exclude: true
+
+# View.
+view: citation
+
+# Optional header image (relative to `static/media/` folder).
+banner:
+  caption: ''
+  image: ''
 ---
-
-## 📰 Journal Articles
-
-{{< publications category="2" >}}
-
----
-
-## 📘 Conference Papers
-
-{{< publications category="1" >}}
-
----
-
-## 🛠️ Patents
-
-{{< publications category="3" >}}
