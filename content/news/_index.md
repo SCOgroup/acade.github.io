@@ -1,5 +1,5 @@
 ---
-title: "News"
+title: "课题组新闻"
 date: 2024-05-19
 type: landing
 
@@ -9,7 +9,7 @@ design:
 sections:
   - block: collection
     content:
-      title: News
+      title: 课题组新闻
       subtitle: "动态与公告"
       # text: "这里展示实验室或团队的新闻、公告与成果发布。"
       page_type: post
