@@ -37,6 +37,7 @@ span.absolute.-inset-x-4.-inset-y-6.z-20 {
 .text-primary-500.text-sm[aria-hidden="true"]:has(svg) {
   display: none !important;
 }
+
 h1.lg\:text-6xl {
   font-size: 2rem !important;  /* 换成你想要的大小 */
 }
