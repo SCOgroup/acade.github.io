@@ -41,3 +41,8 @@ span.absolute.-inset-x-4.-inset-y-6.z-20 {
 h1.lg\:text-6xl {
   font-size: 2rem !important;  /* 换成你想要的大小 */
 }
+/* 禁用项目卡片点击 */
+article.project-item a {
+  pointer-events: none !important;
+  cursor: default !important;
+}
