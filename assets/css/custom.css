@@ -46,3 +46,4 @@ a[href*="/project/scikit/"] {
   pointer-events: none !important;
   cursor: default !important;
 }
+@import "course-card.css";
