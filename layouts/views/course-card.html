@@ -1,0 +1,33 @@
+<div class="course-card">
+  <div class="course-card-image">
+    {{ with .Params.featured }}
+      <img src="{{ .filename | relURL }}" alt="{{ $.Title }}">
+    {{ end }}
+  </div>
+
+  <div class="course-card-content">
+    <h3 class="course-card-title">
+      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    </h3>
+
+    {{ with .Summary }}
+      <p class="course-card-summary">{{ . }}</p>
+    {{ end }}
+
+    <ul class="course-card-meta">
+      {{ if .Params.tags }}
+      <li>📘 类型：{{ delimit .Params.tags ", " }}</li>
+      {{ end }}
+
+      {{ if .Params.semester }}
+      <li>📅 学期：{{ .Params.semester }}</li>
+      {{ end }}
+    </ul>
+
+    <a class="course-card-btn" href="{{ .RelPermalink }}">
+      查看课程 →
+    </a>
+  </div>
+</div>
+
+<hr>
