@@ -18,6 +18,6 @@ sections:
         folders:
           - teaching
     design:
-      view: card-wide
+      view: article-grid
       columns: 1
 ---
