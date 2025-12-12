@@ -18,6 +18,6 @@ sections:
         folders:
           - teaching
     design:
-      view: list
+      view: showcase
       columns: 1
 ---
