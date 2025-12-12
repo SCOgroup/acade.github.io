@@ -1,0 +1,46 @@
+{{ define "main" }}
+
+<div class="teaching-page">
+
+  {{ range .Pages }}
+  <div class="course-card">
+    
+    <div class="course-card-image">
+      <img src="{{ .Params.image }}" alt="{{ .Title }}">
+    </div>
+
+    <div class="course-card-content">
+      <h2 class="course-title">{{ .Title }}</h2>
+
+      <div class="course-meta">
+        <span class="course-university">{{ .Params.university }}</span>
+
+        <div class="course-teachers">
+          {{ range .Params.teachers }}
+            <span class="teacher">{{ . }}</span>
+          {{ end }}
+        </div>
+      </div>
+
+      <p class="course-description">
+        {{ .Params.summary }}
+      </p>
+
+      <div class="course-footer">
+        <div class="course-progress">
+          <span class="dot"></span>
+          {{ .Params.progress }}
+        </div>
+
+        <div class="course-participants">
+          {{ .Params.participants }} 人参加
+        </div>
+      </div>
+    </div>
+
+  </div>
+  {{ end }}
+
+</div>
+
+{{ end }}
