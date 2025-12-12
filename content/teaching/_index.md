@@ -18,6 +18,6 @@ sections:
         folders:
           - teaching
     design:
-      view: community/course-card
+      view: course-card
       columns: 1
 ---
