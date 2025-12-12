@@ -52,9 +52,11 @@ a[href*="/project/scikit/"] {
   padding: 20px;
   border-radius: 16px;
   box-shadow: 0 4px 18px rgba(0,0,0,0.08);
-  margin-bottom: 30px;
+  margin: 0 auto 30px auto;
   background: #fff;
   transition: transform .2s ease, box-shadow .2s ease;
+  max-width: 900px;           /* ⭐ 限制横向宽度 */
+  width: 100%;
 }
 
 .course-card:hover {
