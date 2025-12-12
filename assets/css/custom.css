@@ -1,4 +1,5 @@
 @import "course-card.css";
+
 /* 调整简历区块的布局 */
 .dark .biography-wrapper {
   min-height: 100vh;
