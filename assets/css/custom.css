@@ -122,3 +122,10 @@ a[href*="/project/scikit/"] {
 .course-participants {
   color: #999;
 }
+.teaching-title {
+  text-align: center;
+  font-size: 36px;      /* 字体更大 */
+  font-weight: 700;     /* 更粗体 */
+  margin-bottom: 40px;  /* 与课程卡片拉开距离 */
+  margin-top: 20px;
+}
