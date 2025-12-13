@@ -46,23 +46,24 @@ a[href*="/project/scikit/"] {
   pointer-events: none !important;
   cursor: default !important;
 }
-.course-card {
-  display: flex;
-  gap: 32px;
-  padding: 24px;
-  margin: 0 auto;
-  max-width: 900px;
-  background: transparent;
-  box-shadow: none;
-  border-radius: 0;
-  border-bottom: 1px solid #ebebeb;
-}
 
 .course-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 28px rgba(0,0,0,0.12);
 }
+.course-card {
+  display: flex;
+  gap: 32px;
+  padding: 24px 0;
+  max-width: 900px;
+  margin: 0 auto;
 
+  /* 关键 */
+  background: transparent;
+  box-shadow: none;
+  border-radius: 0;
+  border-bottom: 1px solid #ebebeb;
+}
 .course-card-image img {
   width: 260px;
   height: 150px;
