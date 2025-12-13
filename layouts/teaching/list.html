@@ -7,7 +7,7 @@
   {{ range .Pages }}
   <div class="course-card">
     <div class="course-card-image">
-      <img src="{{ .Params.image }}" alt="{{ .Title }}">
+<img src="{{ .RelPermalink }}{{ .Params.image.filename }}" alt="{{ .Title }}">
     </div>
 
     <div class="course-card-content">
