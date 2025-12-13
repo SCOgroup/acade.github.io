@@ -48,15 +48,14 @@ a[href*="/project/scikit/"] {
 }
 .course-card {
   display: flex;
-  gap: 20px;
-  padding: 20px;
-  border-radius: 16px;
-  box-shadow: 0 4px 18px rgba(0,0,0,0.08);
-  margin: 0 auto 30px auto;
-  background: #fff;
-  transition: transform .2s ease, box-shadow .2s ease;
+  gap: 32px;
+  padding: 24px;
+  margin: 0 auto;
   max-width: 900px;
-  width: 100%;
+  background: transparent;
+  box-shadow: none;
+  border-radius: 0;
+  border-bottom: 1px solid #ebebeb;
 }
 
 .course-card:hover {
