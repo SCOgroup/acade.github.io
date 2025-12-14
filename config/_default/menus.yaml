@@ -19,6 +19,6 @@ main:
   - name: People
     url: /people/
     weight: 14
-  - name: 课程教学
+  - name: Teaching
     url: /teaching/
     weight: 40
