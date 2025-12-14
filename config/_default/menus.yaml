@@ -10,7 +10,7 @@ main:
   - name: News
     url: /news/
     weight: 11
-  - name: Publications
+  - name: 研究成果
     url: /publications/
     weight: 12
   - name: Projects
