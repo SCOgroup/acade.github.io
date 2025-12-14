@@ -55,7 +55,7 @@ a[href*="/project/scikit/"] {
   display: flex;
   gap: 32px;
   padding: 24px 0;
-  max-width: 900px;
+  max-width: 1000px;
   margin: 0 auto;
 
   /* 关键 */
