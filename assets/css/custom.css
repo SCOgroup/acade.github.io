@@ -131,3 +131,8 @@ a[href*="/project/scikit/"] {
   margin-bottom: 40px;  /* 与课程卡片拉开距离 */
   margin-top: 20px;
 }
+/* 放大导航栏左上角课题组名称 */
+.navbar-brand {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
