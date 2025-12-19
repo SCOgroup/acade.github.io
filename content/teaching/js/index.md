@@ -4,6 +4,7 @@ summary: Easily learn JavaScript in 10 minutes!
 date: 2023-10-24
 type: docs
 math: false
+semester: "2024 春季"
 tags:
   - JavaScript
 image:
