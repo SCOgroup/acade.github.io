@@ -29,10 +29,10 @@
 
       <div class="course-footer">
         <div class="course-progress">
-          <span class="dot"></span>
-          {{ .Params.progress }}
-        </div>
-
+  {{ range .Params.teachers }}
+    <span class="teacher">{{ . }}</span>
+  {{ end }}
+</div>
         <div class="course-participants">
           {{ .Params.semester }}
         </div>
