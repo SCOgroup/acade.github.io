@@ -4,6 +4,9 @@ summary: Easily learn Python in 10 minutes!
 date: 2023-10-24
 type: docs
 math: false
+university: 武汉理工大学
+teachers:
+  - 老师
 semester: "2024 春季"
 tags:
   - Python
