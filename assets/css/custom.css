@@ -130,6 +130,7 @@ a[href*="/project/scikit/"] {
   margin-bottom: 40px;  /* 与课程卡片拉开距离 */
   margin-top: 20px;
 }
+
 /* ===== Photos page ===== */
 .photos-page {
   max-width: 1200px;
