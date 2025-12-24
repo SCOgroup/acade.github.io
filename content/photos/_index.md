@@ -1,4 +1,4 @@
 ---
-title: "Photos & Media"
+title: "照片墙"
 type: photos
 ---
