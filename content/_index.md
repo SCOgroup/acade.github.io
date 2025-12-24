@@ -38,7 +38,7 @@ sections:
 #      view: card
   - block: collection
     content:
-      title: Recent News
+      title: 近期新闻
       subtitle: ''
       text: ''
       # Page type to display. E.g. post, talk, publication...
