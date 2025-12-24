@@ -1,0 +1,50 @@
+<div class="project-block">
+  <h3>{{ .Title }}</h3>
+
+  {{/* ===== 视频区域 ===== */}}
+ {{ with .Params.videos }}
+  <div class="project-video-grid">
+
+    {{ range . }}
+      <div class="project-video">
+
+        {{ if eq .type "local" }}
+          {{ with $.Resources.GetMatch .src }}
+            <video controls preload="metadata">
+              <source src="{{ .RelPermalink }}" type="video/mp4">
+            </video>
+          {{ end }}
+
+        {{ else if eq .type "bilibili" }}
+          <iframe
+            src="https://player.bilibili.com/player.html?bvid={{ .video_id }}"
+            frameborder="0"
+            allowfullscreen>
+          </iframe>
+
+        {{ else if eq .type "youtube" }}
+          <iframe
+            src="https://www.youtube.com/embed/{{ .video_id }}"
+            frameborder="0"
+            allowfullscreen>
+          </iframe>
+
+        {{ end }}
+
+      </div>
+    {{ end }}
+
+  </div>
+{{ end }}
+
+
+  {{/* ===== 图片 ===== */}}
+  {{ $images := .Resources.ByType "image" }}
+  {{ if gt (len $images) 0 }}
+    <div class="photo-grid">
+      {{ range $images }}
+        <img src="{{ .RelPermalink }}" alt="">
+      {{ end }}
+    </div>
+  {{ end }}
+</div>
