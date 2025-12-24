@@ -22,3 +22,6 @@ main:
   - name: 课程教学
     url: /teaching/
     weight: 40
+  - name: 照片墙
+    url: /photos/
+    weight: 50
