@@ -214,3 +214,7 @@ a[href*="/project/scikit/"] {
     grid-template-columns: 1fr;
   }
 }
+a[href="/acade.github.io/post/data-visualization/"] {
+  pointer-events: none;
+  cursor: default;
+}
