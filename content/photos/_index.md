@@ -1,4 +1,4 @@
 ---
-title: "照片墙"
+title: " 照片墙 "
 type: photos
 ---
