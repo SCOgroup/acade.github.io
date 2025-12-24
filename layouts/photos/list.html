@@ -1,0 +1,46 @@
+{{ define "main" }}
+
+<div class="photos-page">
+
+  <header class="page-header">
+    <h1>{{ .Title }}</h1>
+  </header>
+
+  <!-- ================= Group Photos ================= -->
+<section class="photos-section">
+
+  {{ $found := false }}
+
+  {{ range .Site.RegularPages }}
+    {{ if strings.HasPrefix .File.Path "photos/group/" }}
+      {{ if not $found }}{{ $found = true }}{{ end }}
+      {{ partial "photo-grid.html" . }}
+    {{ end }}
+  {{ end }}
+
+  {{ if not $found }}
+    <p class="empty-hint">No group photos yet.</p>
+  {{ end }}
+</section>
+
+  <!-- ================= Projects & Presentations ================= -->
+  <section class="projects-section" style="margin-top:48px;">
+    
+{{ $projects := slice }}
+{{ range .Site.RegularPages }}
+  {{ if strings.HasPrefix .File.Path "photos/projects/" }}
+    {{ $projects = $projects | append . }}
+  {{ end }}
+{{ end }}
+
+   {{ if gt (len $projects) 0 }}
+    {{ range $projects }}
+      {{ partial "project-block.html" . }}
+    {{ end }}
+  {{ end }}
+</section>
+
+       
+</div>
+
+{{ end }}
