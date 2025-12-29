@@ -30,16 +30,6 @@
         <button class="filter-btn" data-year="{{ . }}">{{ . }}</button>
         {{ end }}
       </div>
-      
-      {{/* 类型筛选 */}}
-      <div class="filter-group">
-        <span class="filter-label">Type:</span>
-        <button class="filter-btn active" data-type="all">All</button>
-        <button class="filter-btn" data-type="1">Conference</button>
-        <button class="filter-btn" data-type="2">Journal</button>
-        <button class="filter-btn" data-type="3">Patent</button>
-      </div>
-    </div>
     
     {{/* 搜索框 */}}
     <div class="search-box">
@@ -54,19 +44,9 @@
     {{ range $sortedPages }}
     <div class="publication-card" 
          data-year="{{ .Date.Format "2006" }}"
-         data-type="{{ with .Params.publication_types }}{{ index . 0 }}{{ else }}unknown{{ end }}">
-      
+
       {{/* 徽章 */}}
       <div class="publication-badges">
-        {{ with .Params.publication_types }}
-          {{ if eq (index . 0) "1" }}
-          <span class="badge badge-conference">Conference</span>
-          {{ else if eq (index . 0) "2" }}
-          <span class="badge badge-journal">Journal</span>
-        {{ else if eq (index . 0) "3" }}
-    <span class="badge badge-patent">Patent</span>
-          {{ end }}
-        {{ end }}
         
         {{ with .Params.publication_short }}
         <span class="badge badge-venue">{{ . }}</span>
