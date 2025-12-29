@@ -30,6 +30,16 @@
         <button class="filter-btn" data-year="{{ . }}">{{ . }}</button>
         {{ end }}
       </div>
+      
+      {{/* 类型筛选 */}}
+      <div class="filter-group">
+        <span class="filter-label">Type:</span>
+        <button class="filter-btn active" data-type="all">All</button>
+        <button class="filter-btn" data-type="1">Conference</button>
+        <button class="filter-btn" data-type="2">Journal</button>
+        <button class="filter-btn" data-type="3">Patent</button>
+      </div>
+    </div>
     
     {{/* 搜索框 */}}
     <div class="search-box">
@@ -44,9 +54,19 @@
     {{ range $sortedPages }}
     <div class="publication-card" 
          data-year="{{ .Date.Format "2006" }}"
-
+         data-type="{{ with .Params.publication_types }}{{ index . 0 }}{{ else }}unknown{{ end }}">
+      
       {{/* 徽章 */}}
       <div class="publication-badges">
+        {{ with .Params.publication_types }}
+          {{ if eq (index . 0) "1" }}
+          <span class="badge badge-conference">Conference</span>
+          {{ else if eq (index . 0) "2" }}
+          <span class="badge badge-journal">Journal</span>
+        {{ else if eq (index . 0) "3" }}
+    <span class="badge badge-patent">Patent</span>
+          {{ end }}
+        {{ end }}
         
         {{ with .Params.publication_short }}
         <span class="badge badge-venue">{{ . }}</span>
@@ -436,6 +456,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const noResults = document.getElementById('no-results-message');
   
   let activeYear = 'all';
+  let activeType = 'all';
   let searchText = '';
   
   // 筛选按钮点击
@@ -451,6 +472,15 @@ document.addEventListener('DOMContentLoaded', function() {
         activeYear = this.dataset.year;
       }
       
+      if (this.dataset.type) {
+        // 移除所有类型按钮的 active 类
+        document.querySelectorAll('.filter-btn[data-type]').forEach(b => {
+          b.classList.remove('active');
+        });
+        this.classList.add('active');
+        activeType = this.dataset.type;
+      }
+      
       filterPublications();
     });
   });
@@ -463,7 +493,8 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // 清除筛选
   clearBtn.addEventListener('click', function() {
-    activeYear = 'all'
+    activeYear = 'all';
+    activeType = 'all';
     searchText = '';
     searchInput.value = '';
     
@@ -484,6 +515,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     cards.forEach(card => {
       const year = card.dataset.year;
+      const type = card.dataset.type;
       const title = card.querySelector('.publication-title').textContent.toLowerCase();
       const authors = card.querySelector('.publication-authors').textContent.toLowerCase();
       const venue = card.querySelector('.publication-venue').textContent.toLowerCase();
@@ -491,6 +523,7 @@ document.addEventListener('DOMContentLoaded', function() {
       
       // 应用筛选条件
       const yearMatch = activeYear === 'all' || activeYear === year;
+      const typeMatch = activeType === 'all' || activeType === type;
       
       // 搜索匹配
       const searchMatch = !searchText || 
@@ -499,7 +532,7 @@ document.addEventListener('DOMContentLoaded', function() {
         venue.includes(searchText) ||
         badges.includes(searchText);
       
-      if (yearMatch && searchMatch) {
+      if (yearMatch && typeMatch && searchMatch) {
         card.style.display = 'block';
         // 添加淡入动画
         setTimeout(() => {
