@@ -7,9 +7,6 @@ author_notes:
 - "Equal contribution"
 date: "2024-09-22T00:00:00Z"
 
-# Publication type.
-# Accepts a single type but formatted as a YAML list (for Hugo requirements).
-# Enter a publication type from the CSL standard.
 publication_types: ["1"]
 
 # Publication name and optional abbreviated publication name.
