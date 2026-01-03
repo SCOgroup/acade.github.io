@@ -2,12 +2,16 @@
 title: "Resilience enhancement of cyber-physical distribution systems via mobile power sources and unmanned aerial vehicles[J]"
 authors:
 - Meng Tian
+- Ziyang Zhu
+- Zhengcheng Dong*
+- Le Zhao
+- Hongtai Yao
 author_notes:
 - "Equal contribution"
 - "Equal contribution"
 date: "2024-09-22T00:00:00Z"
 
-publication_types: ["1"]
+publication_types: ["2"]
 
 # Publication name and optional abbreviated publication name.
 publication: "Reliability Engineering & System Safety"
