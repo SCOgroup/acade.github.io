@@ -1,7 +1,12 @@
 ---
-title: "Multi-scenario robust stochastic programming based distributed energy resources allocation in distribution networks: Balancing economic efficiency and resilience"
+title: "Multi-scenario robust stochastic programming based distributed energy resources allocation in distribution networks: Balancing economic efficiency and resilience[J]"
 authors:
 - Xin Liu
+- Meng Tian*
+- Zhengcheng Dong
+- Linhai Guo
+- Yufeng Zhou
+- Yu Wang
 author_notes:
 - "Equal contribution"
 - "Equal contribution"
@@ -13,10 +18,10 @@ publishDate: "2017-01-01T00:00:00Z"
 # Publication type.
 # Accepts a single type but formatted as a YAML list (for Hugo requirements).
 # Enter a publication type from the CSL standard.
-publication_types: ["3"]
+publication_types: ["2"]
 
 # Publication name and optional abbreviated publication name.
-publication: "Reliability Engineering & System Safety"
+publication: "Reliability Engineering & System Safety, 2025: 111749"
 publication_short: ""
 link: "https://www.sciencedirect.com/science/article/abs/pii/S0951832025009494"
 
