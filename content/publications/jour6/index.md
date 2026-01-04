@@ -2,7 +2,7 @@
 title: "Coordinated repair crew dispatch problem for cyber-physical distribution system[J]"
 authors:
 - Meng Tian
-- Zhengcheng. Dong*
+- Zhengcheng Dong*
 - Li. Gong
 - Xianpei. Wang
 author_notes:
