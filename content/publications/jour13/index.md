@@ -5,7 +5,7 @@ authors:
 - Meng Tian*
 - Ruoli Tang
 - Xin Li
--Jingang Lai
+- Jingang Lai
 author_notes:
 - "Equal contribution"
 - "Equal contribution"
