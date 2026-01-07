@@ -1,0 +1,23 @@
+---
+title: "输电网虚假数据攻击研究综述[J]"
+authors:
+- 王先培
+- 田猛
+- 董政呈
+- 朱国威
+- 龙嘉川
+- 代荡荡
+- 张其林
+author_notes:
+- "Equal contribution"
+- "Equal contribution"
+date: "2021-09-22T00:00:00Z"
+
+publication_types: ["2"]
+
+# Publication name and optional abbreviated publication name.
+publication: "电网技术,2016,11:3406-3414"
+publication_short: ""
+
+abstract: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.
+---
