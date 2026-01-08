@@ -1,12 +1,12 @@
 ---
-title: scikit-learn
-date: 2023-10-26
+title: 1.	2025~2026
+date: 武汉氢能与燃料电池产业技术研究院有限公司
 tags:
   - Hugo
   - Wowchemy
   - Markdown
 ---
 
-scikit-learn is a Python module for machine learning built on top of SciPy and is distributed under the 3-Clause BSD license.
+夏钨氢能电控
 
 <!--more-->
