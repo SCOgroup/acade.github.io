@@ -1,11 +1,18 @@
 ---
-title: PyTorch
-date: 2023-10-26
-tags:
-  - Hugo
-  - Wowchemy
-  - Markdown
----
-PyTorch is a Python package that provides tensor computation (like NumPy) with strong GPU acceleration.
+# 标题现在是简短的项目名
+title: "夏钨氢能电控"
 
-<!--more-->
+date: 2026-12-31
+
+# --- 自定义字段 ---
+# 项目周期
+year_range: "2025~2026"
+# 合作单位/公司全称
+client: "武汉氢能与燃料电池产业技术研究院有限公司"
+# 仍然使用这个“身份证”来触发特殊布局
+project_type: "科研项目"
+
+tags:
+  - 氢能
+  - 电控
+---
