@@ -1,5 +1,5 @@
 {{/* Wowchemy View component for displaying content as a card. */}}
-{{/* FINAL VERSION: Handles multiple layouts via 'project_type' flag. */}}
+{{/* FINAL VERSION (FIXED): Handles multiple layouts via 'project_type' flag. */}}
 
 {{ $item := . }}
 {{ $widget := .page }}
@@ -16,7 +16,7 @@
 
 <div class="card-simple">
 
-  {{/* --- Feature Image (if exists) - This part remains unchanged --- */}}
+  {{/* --- Feature Image (if exists) --- */}}
   {{ $resource := ($item.Resources.ByType "image").GetMatch "*feature*" }}
   {{ if $resource }}
     {{ $image := $resource.Fit "550x350 q75" }}
@@ -57,14 +57,15 @@
         </div>
       {{ end }}
 
-      {{ if and $show_summary (ne (striptags $summary) "") }}
+      {{/* --- FIX IS HERE --- */}}
+      {{ if and $show_summary (ne ($summary | plainify) "") }}
         <p class="card-text">{{ $summary | truncate 150 }}</p>
       {{ end }}
 
     {{ end }}
     {{/* --- END OF CUSTOM LOGIC --- */}}
 
-    {{/* --- Common elements (tags, etc.) can be placed here if needed for both layouts --- */}}
+    {{/* --- Common elements (tags, etc.) --- */}}
     {{ if and $show_tags $item.Params.tags }}
       <div class="card-tags" style="margin-top: 15px;">
         {{ partial "page_metadata_tags" $item }}
