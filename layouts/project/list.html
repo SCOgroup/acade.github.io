@@ -1,0 +1,33 @@
+{{ define "main" }}
+<div class="project-list">
+
+  {{ range .Pages }}
+  <div class="project-card">
+
+    <!-- 左侧：年份 -->
+    <div class="project-left">
+      {{ with .Params.years }}
+        <div class="project-years">{{ . }}</div>
+      {{ end }}
+    </div>
+
+    <!-- 右侧：公司 + 项目名 -->
+    <div class="project-right">
+      {{ with .Params.company }}
+        <div class="project-company">{{ . }}</div>
+      {{ end }}
+
+      {{ with .Params.project_name }}
+        <div class="project-name">{{ . }}</div>
+      {{ end }}
+
+      {{ with .Params.summary }}
+        <div class="project-summary">{{ . }}</div>
+      {{ end }}
+    </div>
+
+  </div>
+  {{ end }}
+
+</div>
+{{ end }}
