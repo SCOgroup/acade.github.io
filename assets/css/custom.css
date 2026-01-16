@@ -255,3 +255,8 @@ a[href="/acade.github.io/post/data-visualization/"] {
   font-size: 0.9rem;
   color: #666;
 }
+.project-wrapper {
+  max-width: 900px;   /* ⭐ 核心：控制横向宽度 */
+  margin: 0 auto;     /* 居中 */
+  padding: 0 1rem;    /* 小屏防贴边 */
+}
