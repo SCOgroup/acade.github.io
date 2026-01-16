@@ -218,3 +218,40 @@ a[href="/acade.github.io/post/data-visualization/"] {
   pointer-events: none;
   cursor: default;
 }
+.project-card {
+  display: flex;
+  padding: 1.2rem 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.project-left {
+  width: 120px;
+  font-weight: 600;
+  color: #666;
+  flex-shrink: 0;
+}
+
+.project-years {
+  font-size: 1rem;
+}
+
+.project-right {
+  flex: 1;
+}
+
+.project-company {
+  font-size: 0.95rem;
+  color: #444;
+  margin-bottom: 0.3rem;
+}
+
+.project-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.project-summary {
+  font-size: 0.9rem;
+  color: #666;
+}
