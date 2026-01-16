@@ -1,5 +1,6 @@
 {{ define "main" }}
-<div class="project-list">
+<div class="project-wrapper">
+  <div class="project-list">
 
   {{ range .Pages }}
   <div class="project-card">
@@ -29,5 +30,6 @@
   </div>
   {{ end }}
 
+  </div>
 </div>
 {{ end }}
