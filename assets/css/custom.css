@@ -254,6 +254,11 @@ a[href="/acade.github.io/post/data-visualization/"] {
     0 8px 24px rgba(0, 0, 0, 0.08),
     0 2px 8px rgba(0, 0, 0, 0.04);
 }
+.project-list {
+  width: 900px;
+  display: flex;
+  flex-direction: column;
+}
 
 /* 年份 */
 .project-years {
