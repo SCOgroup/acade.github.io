@@ -218,41 +218,24 @@ a[href="/acade.github.io/post/data-visualization/"] {
   pointer-events: none;
   cursor: default;
 }
-/* ===== 新增：为容器内的横线添加样式 ===== */
-.project-divider {
-  border: none;
-  border-top: 1px solid #e6e6e6;
-  margin: 2rem 0; /* 上下留出间距 */
+.project-section {
+  max-width: 900px;   /* 可调，和横线视觉一致 */
 }
 
 .project-card {
-  display: grid;
-  grid-template-columns: 160px 1fr;
-  align-items: start;          /* ⭐ 不再 center */
+  display: flex;
+  align-items: center;
   padding: 1.5rem 0;
   border-bottom: 1px solid #e6e6e6;
 }
 
-/* 在项目之间添加边框，但最后一个项目下面没有 */
-.project-card:not(:last-of-type) {
-    border-bottom: 1px solid #e6e6e6;
-}
-
-
-/* 左侧：年份 */
 .project-left {
-  width: 160px;         /* 固定列，形成对齐体系 */
-  flex-shrink: 0;
+  width: 160px;
   font-weight: 600;
   color: #666;
+  flex-shrink: 0;
 }
 
-/* 年份微调 */
-.project-years {
-  font-size: 1rem;
-}
-
-/* 右侧：公司 + 项目 */
 .project-right {
   flex: 1;
 }
@@ -260,16 +243,10 @@ a[href="/acade.github.io/post/data-visualization/"] {
 .project-company {
   font-size: 0.95rem;
   color: #444;
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.3rem;
 }
 
 .project-name {
   font-size: 1.1rem;
   font-weight: 600;
-}
-
-.project-summary {
-  font-size: 0.9rem;
-  color: #666;
-  margin-top: 0.3rem;
 }
