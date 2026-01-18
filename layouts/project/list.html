@@ -1,36 +1,41 @@
 {{ define "main" }}
 <div class="project-page-center">
 
-  <!-- 页面标题 -->
-  <div class="project-page-header">
-    <h1 class="project-page-title">项目</h1>
-  </div>
+  <!-- 统一居中容器 -->
+  <div class="project-wrapper">
 
-  <div class="project-list">
-    {{ range .Pages }}
-    <div class="project-card">
-
-      <div class="project-year">
-        {{ .Params.years }}
-      </div>
-
-      <div class="project-body">
-        {{ with .Params.project_name }}
-          <div class="project-title">{{ . }}</div>
-        {{ end }}
-
-        {{ with .Params.company }}
-          <div class="project-org">{{ . }}</div>
-        {{ end }}
-
-        {{ with .Params.summary }}
-          <div class="project-desc">{{ . }}</div>
-        {{ end }}
-      </div>
-
+    <!-- 页面标题 -->
+    <div class="project-page-header">
+      <h1 class="project-page-title">项目</h1>
     </div>
-    {{ end }}
-  </div>
 
+    <!-- 项目列表 -->
+    <div class="project-list">
+      {{ range .Pages }}
+      <div class="project-card">
+
+        <div class="project-year">
+          {{ .Params.years }}
+        </div>
+
+        <div class="project-body">
+          {{ with .Params.project_name }}
+            <div class="project-title">{{ . }}</div>
+          {{ end }}
+
+          {{ with .Params.company }}
+            <div class="project-org">{{ . }}</div>
+          {{ end }}
+
+          {{ with .Params.summary }}
+            <div class="project-desc">{{ . }}</div>
+          {{ end }}
+        </div>
+
+      </div>
+      {{ end }}
+    </div>
+
+  </div>
 </div>
 {{ end }}
