@@ -235,11 +235,17 @@ a[href="/acade.github.io/post/data-visualization/"] {
   grid-template-columns: 140px 1fr;
   column-gap: 40px;
 
-  padding: 28px 0;
-  border-bottom: 1px solid #e5e5e5;
+  padding: 24px 28px;
+  margin-bottom: 20px;
 
-  /* 🔑 关键点 */
-  align-items: start;
+  background: #ffffff;
+  border-radius: 12px;
+
+  /* 默认状态：几乎没有阴影 */
+  box-shadow: 0 0 0 rgba(0,0,0,0);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 /* 年份 */
