@@ -263,7 +263,7 @@ a[href="/acade.github.io/post/data-visualization/"] {
 /* 年份 */
 .project-years {
   font-size: 18px;
-  color: #666;
+  color: #2563eb;
   text-align: right;
 
   /* 🔑 与右侧第一行严格对齐 */
@@ -285,9 +285,7 @@ a[href="/acade.github.io/post/data-visualization/"] {
   line-height: 1.4;
   color: #111;
 }
-.project-card:hover .project-years {
-  color: #2563eb; /* 科技蓝 */
-}
+
 .project-company {
   font-weight: 400;
   font-size: 1rem;
