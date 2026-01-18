@@ -218,91 +218,72 @@ a[href="/acade.github.io/post/data-visualization/"] {
   pointer-events: none;
   cursor: default;
 }
-/* 页面整体居中 */
+/* ===== Project list (research style) ===== */
+
 .project-page-center {
   display: flex;
   justify-content: center;
 }
 
-/* 列表宽度锁死，防止视觉漂移 */
 .project-list {
-  width: 900px;
+  width: 100%;
+  max-width: 880px;
 }
 
-/* 🔥 核心：Grid 对齐体系 */
+/* 单个项目卡片 */
 .project-card {
-  display: grid;
-  grid-template-columns: 140px 1fr;
-  column-gap: 40px;
-
-  padding: 24px 28px;
-  margin-bottom: 20px;
+  display: flex;
+  gap: 36px;
+  padding: 28px 32px;
+  margin-bottom: 18px;
 
   background: #ffffff;
-  border-radius: 12px;
+  border-radius: 14px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.04);
 
-  /* 默认状态：几乎没有阴影 */
-  box-shadow: 0 0 0 rgba(0,0,0,0);
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
+
 .project-card:hover {
-  transform: translateY(-6px);
-
-  box-shadow:
-    0 8px 24px rgba(0, 0, 0, 0.08),
-    0 2px 8px rgba(0, 0, 0, 0.04);
-}
-.project-list {
-  width: 900px;
-  display: flex;
-  flex-direction: column;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 32px rgba(0,0,0,0.10);
 }
 
-/* 年份 */
-.project-years {
-  font-size: 18px;
-  color: #2563eb;
-  text-align: right;
+/* 年份：像时间标签 */
+.project-year {
+  flex-shrink: 0;
+  width: 110px;
 
-  /* 🔑 与右侧第一行严格对齐 */
-  line-height: 1.4;
-  padding-top: 2px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #6b7280;
+
+  padding-top: 4px;
 }
 
-/* 右侧整体 */
-.project-content {
+/* 右侧主体 */
+.project-body {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
 
-/* 项目名（第一行，对齐参考） */
+/* 项目名（视觉中心） */
 .project-title {
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 1.4;
-  color: #111;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #111827;
 }
 
-.project-company {
-  font-weight: 400;
-  font-size: 1rem;
-  color: #374151;
+/* 单位 / 基金 */
+.project-org {
+  font-size: 0.95rem;
+  color: #4b5563;
 }
 
-.project-years {
-  font-family: "Inter", sans-serif;
-  font-weight: 500;
-  letter-spacing: 0.5px;
+/* 描述 */
+.project-desc {
+  font-size: 0.92rem;
   color: #6b7280;
-}
-/* 公司名 */
-
-/* 简介 */
-.project-summary {
-  font-size: 14px;
-  color: #666;
   line-height: 1.6;
 }
