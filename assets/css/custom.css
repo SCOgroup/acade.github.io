@@ -218,13 +218,6 @@ a[href="/acade.github.io/post/data-visualization/"] {
   pointer-events: none;
   cursor: default;
 }
-/* ===== Project section：和横线共用居中体系 ===== */
-.project-section {
-  max-width: 900px;     /* ⭐ 和横线视觉一致 */
-  margin: 0 auto;       /* ⭐ 真正横向居中 */
-  padding: 0 1rem;
-}
-
 /* ===== 新增：为容器内的横线添加样式 ===== */
 .project-divider {
   border: none;
