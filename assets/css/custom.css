@@ -288,6 +288,11 @@ a[href="/acade.github.io/post/data-visualization/"] {
 .project-card:hover .project-years {
   color: #2563eb; /* 科技蓝 */
 }
+.project-company {
+  font-weight: 400;
+  font-size: 1rem;
+  color: #374151;
+}
 
 .project-years {
   font-family: "Inter", sans-serif;
