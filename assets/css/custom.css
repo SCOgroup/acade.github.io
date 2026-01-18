@@ -225,13 +225,27 @@ a[href="/acade.github.io/post/data-visualization/"] {
   padding: 0 1rem;
 }
 
+/* ===== 新增：为容器内的横线添加样式 ===== */
+.project-divider {
+  border: none;
+  border-top: 1px solid #e6e6e6;
+  margin: 2rem 0; /* 上下留出间距 */
+}
+
 /* ===== 单条 project ===== */
 .project-card {
   display: flex;
   align-items: center;
   padding: 1.6rem 0;
-  border-bottom: 1px solid #e6e6e6;
+  /* 移除这里的 border-bottom，因为卡片之间不再需要横线 */
+  /* border-bottom: 1px solid #e6e6e6; */
 }
+
+/* 在项目之间添加边框，但最后一个项目下面没有 */
+.project-card:not(:last-of-type) {
+    border-bottom: 1px solid #e6e6e6;
+}
+
 
 /* 左侧：年份 */
 .project-left {
