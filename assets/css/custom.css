@@ -218,24 +218,35 @@ a[href="/acade.github.io/post/data-visualization/"] {
   pointer-events: none;
   cursor: default;
 }
+/* ===== Project section：和横线共用居中体系 ===== */
 .project-section {
-  max-width: 900px;   /* 可调，和横线视觉一致 */
+  max-width: 900px;     /* ⭐ 和横线视觉一致 */
+  margin: 0 auto;       /* ⭐ 真正横向居中 */
+  padding: 0 1rem;
 }
 
+/* ===== 单条 project ===== */
 .project-card {
   display: flex;
   align-items: center;
-  padding: 1.5rem 0;
+  padding: 1.6rem 0;
   border-bottom: 1px solid #e6e6e6;
 }
 
+/* 左侧：年份 */
 .project-left {
-  width: 160px;
+  width: 160px;         /* 固定列，形成对齐体系 */
+  flex-shrink: 0;
   font-weight: 600;
   color: #666;
-  flex-shrink: 0;
 }
 
+/* 年份微调 */
+.project-years {
+  font-size: 1rem;
+}
+
+/* 右侧：公司 + 项目 */
 .project-right {
   flex: 1;
 }
@@ -243,10 +254,16 @@ a[href="/acade.github.io/post/data-visualization/"] {
 .project-company {
   font-size: 0.95rem;
   color: #444;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.35rem;
 }
 
 .project-name {
   font-size: 1.1rem;
   font-weight: 600;
+}
+
+.project-summary {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 0.3rem;
 }
