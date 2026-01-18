@@ -1,33 +1,36 @@
 {{ define "main" }}
 <div class="project-page-center">
-  <div class="project-list">
 
+  <!-- 页面标题 -->
+  <div class="project-page-header">
+    <h1 class="project-page-title">项目</h1>
+  </div>
+
+  <div class="project-list">
     {{ range .Pages }}
     <div class="project-card">
 
-      <!-- 年份 -->
-      {{ with .Params.years }}
-      <div class="project-years">{{ . }}</div>
-      {{ end }}
+      <div class="project-year">
+        {{ .Params.years }}
+      </div>
 
-      <!-- 右侧内容 -->
-      <div class="project-content">
+      <div class="project-body">
         {{ with .Params.project_name }}
           <div class="project-title">{{ . }}</div>
         {{ end }}
 
         {{ with .Params.company }}
-          <div class="project-company">{{ . }}</div>
+          <div class="project-org">{{ . }}</div>
         {{ end }}
 
         {{ with .Params.summary }}
-          <div class="project-summary">{{ . }}</div>
+          <div class="project-desc">{{ . }}</div>
         {{ end }}
       </div>
 
     </div>
     {{ end }}
-
   </div>
+
 </div>
 {{ end }}
