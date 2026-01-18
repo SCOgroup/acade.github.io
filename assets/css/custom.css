@@ -218,79 +218,52 @@ a[href="/acade.github.io/post/data-visualization/"] {
   pointer-events: none;
   cursor: default;
 }
-/* ===============================
-   Projects 页面 · 结构级排版
-   =============================== */
-
-.project-page-center {
-  width: 100vw;
-  display: flex;
-  justify-content: center;
+/* ===== Project section：和横线共用居中体系 ===== */
+.project-section {
+  max-width: 900px;     /* ⭐ 和横线视觉一致 */
+  margin: 0 auto;       /* ⭐ 真正横向居中 */
+  padding: 0 1rem;
 }
 
-.project-list {
-  width: 100%;
-  max-width: 900px;
-  padding: 0 1.5rem;
-}
-
-/* 单个项目卡片 */
+/* ===== 单条 project ===== */
 .project-card {
-  padding: 1.2rem 0;
-  border-bottom: 1px solid #eaeaea;
+  display: flex;
+  align-items: center;
+  padding: 1.6rem 0;
+  border-bottom: 1px solid #e6e6e6;
 }
 
-/* ⭐ 核心：年份 + 公司 同一行同一基线 */
-.project-header {
-  display: grid;
-  grid-template-columns: 140px 1fr;
-  align-items: baseline;     /* 关键：基线对齐 */
-  column-gap: 1.2rem;
-}
-
-/* 年份 */
-.project-years {
-  font-size: 1rem;
+/* 左侧：年份 */
+.project-left {
+  width: 160px;         /* 固定列，形成对齐体系 */
+  flex-shrink: 0;
   font-weight: 600;
   color: #666;
-  white-space: nowrap;
 }
 
-/* 公司 */
+/* 年份微调 */
+.project-years {
+  font-size: 1rem;
+}
+
+/* 右侧：公司 + 项目 */
+.project-right {
+  flex: 1;
+}
+
 .project-company {
   font-size: 0.95rem;
   color: #444;
+  margin-bottom: 0.35rem;
 }
 
-/* 项目名称：严格对齐公司 */
 .project-name {
-  margin-left: calc(140px + 1.2rem);
   font-size: 1.1rem;
   font-weight: 600;
-  margin-top: 0.15rem;
 }
 
-/* 项目摘要 */
 .project-summary {
-  margin-left: calc(140px + 1.2rem);
-  margin-top: 0.3rem;
   font-size: 0.9rem;
   color: #666;
-  line-height: 1.6;
-}
-
-/* ===== 移动端适配 ===== */
-@media (max-width: 640px) {
-  .project-header {
-    grid-template-columns: 1fr;
-  }
-
-  .project-name,
-  .project-summary {
-    margin-left: 0;
-  }
-
-  .project-years {
-    margin-bottom: 0.2rem;
-  }
+  margin-top: 0.3rem;
 }
