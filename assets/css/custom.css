@@ -302,14 +302,3 @@ a[href="/acade.github.io/post/data-visualization/"] {
   margin-bottom: 12px;
   text-align: center;
 }
-
-/* 下方那条“学术线” */
-.project-page-title::after {
-  content: "";
-  display: block;
-  width: 48px;
-  height: 3px;
-  margin-top: 10px;
-  background: #2563eb; /* 学术蓝 */
-  border-radius: 2px;
-}
