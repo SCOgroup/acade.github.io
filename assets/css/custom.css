@@ -285,6 +285,9 @@ a[href="/acade.github.io/post/data-visualization/"] {
   line-height: 1.4;
   color: #111;
 }
+.project-card:hover .project-years {
+  color: #2563eb; /* 科技蓝 */
+}
 
 /* 公司名 */
 .project-company {
