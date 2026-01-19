@@ -158,6 +158,31 @@ a[href*="/project/scikit/"] {
   transform: scale(1.03);
   box-shadow: 0 12px 32px rgba(0,0,0,0.15);
 }
+/* ===== Project video grid ===== */
+.project-video-grid {
+  display: grid;
+  gap: 24px;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+
+/* 默认：横向视频 */
+.project-video video,
+.project-video iframe {
+  width: 100%;
+  max-width: 720px;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+/* 竖向视频（手机比例） */
+.project-video.vertical-video video,
+.project-video.vertical-video iframe {
+  max-width: 360px;
+  aspect-ratio: 9 / 16;
+}
 
 /* 移动端 */
 @media (max-width: 768px) {
