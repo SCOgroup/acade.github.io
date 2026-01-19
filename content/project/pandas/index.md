@@ -1,13 +1,6 @@
 ---
-title: Pandas
-date: 2023-10-26
-external_link: https://github.com/pandas-dev/pandas
-tags:
-  - Hugo
-  - Wowchemy
-  - Markdown
+title: "PyTorch"
+years: "2018~2020"
+company: "国家自然科学基金青年基金"
+project_name: "基于博弈论的不确定信息下电力虚假数据攻击与防御行为特征研究"
 ---
-
-Flexible and powerful data analysis / manipulation library for Python, providing labeled data structures.
-
-<!--more-->
