@@ -2,41 +2,40 @@
   <h3>{{ .Title }}</h3>
 
   {{/* ===== 视频区域 ===== */}}
- {{ with .Params.videos }}
-  <div class="project-video-grid">
+  {{ with .Params.videos }}
+    <div class="project-video-grid">
 
-    {{ range . }}
-      <div class="project-video">
+      {{ range . }}
+        <div class="project-video {{ if eq .orientation "vertical" }}vertical-video{{ end }}">
 
-        {{ if eq .type "local" }}
-          {{ with $.Resources.GetMatch .src }}
-            <video controls preload="metadata">
-              <source src="{{ .RelPermalink }}" type="video/mp4">
-            </video>
+          {{ if eq .type "local" }}
+            {{ with $.Resources.GetMatch .src }}
+              <video controls preload="metadata">
+                <source src="{{ .RelPermalink }}" type="video/mp4">
+              </video>
+            {{ end }}
+
+          {{ else if eq .type "bilibili" }}
+            <iframe
+              src="https://player.bilibili.com/player.html?bvid={{ .video_id }}"
+              frameborder="0"
+              allowfullscreen>
+            </iframe>
+
+          {{ else if eq .type "youtube" }}
+            <iframe
+              src="https://www.youtube.com/embed/{{ .video_id }}"
+              frameborder="0"
+              allowfullscreen>
+            </iframe>
+
           {{ end }}
 
-        {{ else if eq .type "bilibili" }}
-          <iframe
-            src="https://player.bilibili.com/player.html?bvid={{ .video_id }}"
-            frameborder="0"
-            allowfullscreen>
-          </iframe>
+        </div>
+      {{ end }}
 
-        {{ else if eq .type "youtube" }}
-          <iframe
-            src="https://www.youtube.com/embed/{{ .video_id }}"
-            frameborder="0"
-            allowfullscreen>
-          </iframe>
-
-        {{ end }}
-
-      </div>
-    {{ end }}
-
-  </div>
-{{ end }}
-
+    </div>
+  {{ end }}
 
   {{/* ===== 图片 ===== */}}
   {{ $images := .Resources.ByType "image" }}
