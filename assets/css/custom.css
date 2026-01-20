@@ -248,8 +248,6 @@ a[href*="/project/scikit/"] {
   display: block;
   border: none;
 }
-
-
 /* 移动端：一行一个 */
 @media (max-width: 768px) {
   .project-video-grid {
