@@ -8,29 +8,32 @@
       {{ range . }}
         <div class="project-video {{ if eq .orientation "vertical" }}vertical-video{{ end }}">
 
-          {{ if eq .type "local" }}
-            {{ with $.Resources.GetMatch .src }}
-              <video controls preload="metadata">
-                <source src="{{ .RelPermalink }}" type="video/mp4">
-              </video>
+          <div class="video-wrapper {{ if eq .orientation "vertical" }}vertical{{ end }}">
+
+            {{ if eq .type "local" }}
+              {{ with $.Resources.GetMatch .src }}
+                <video controls preload="metadata">
+                  <source src="{{ .RelPermalink }}" type="video/mp4">
+                </video>
+              {{ end }}
+
+            {{ else if eq .type "bilibili" }}
+              <iframe
+                src="https://player.bilibili.com/player.html?bvid={{ .video_id }}"
+                frameborder="0"
+                allowfullscreen>
+              </iframe>
+
+            {{ else if eq .type "youtube" }}
+              <iframe
+                src="https://www.youtube.com/embed/{{ .video_id }}"
+                frameborder="0"
+                allowfullscreen>
+              </iframe>
+
             {{ end }}
 
-          {{ else if eq .type "bilibili" }}
-            <iframe
-              src="https://player.bilibili.com/player.html?bvid={{ .video_id }}"
-              frameborder="0"
-              allowfullscreen>
-            </iframe>
-
-          {{ else if eq .type "youtube" }}
-            <iframe
-              src="https://www.youtube.com/embed/{{ .video_id }}"
-              frameborder="0"
-              allowfullscreen>
-            </iframe>
-
-          {{ end }}
-
+          </div>
         </div>
       {{ end }}
 
