@@ -183,7 +183,6 @@ a[href*="/project/scikit/"] {
   max-width: 360px;
   aspect-ratio: 9 / 16;
 }
-
 /* 移动端 */
 @media (max-width: 768px) {
   .photo-grid {
