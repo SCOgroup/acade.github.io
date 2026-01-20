@@ -224,14 +224,32 @@ a[href*="/project/scikit/"] {
 }
 
 /* 统一 video / iframe 尺寸 */
-.project-video video,
-.project-video iframe {
+/* ===== 视频比例控制层 ===== */
+.video-wrapper {
+  overflow: hidden;
   width: 100%;
+}
+
+/* 横屏视频 */
+.video-wrapper:not(.vertical) {
   aspect-ratio: 16 / 9;
+}
+
+/* 竖屏视频 */
+.video-wrapper.vertical {
+  aspect-ratio: 9 / 16;
+}
+
+/* 真正的播放元素 */
+.video-wrapper video,
+.video-wrapper iframe {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   display: block;
   border: none;
 }
+
 
 /* 移动端：一行一个 */
 @media (max-width: 768px) {
