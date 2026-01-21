@@ -158,37 +158,7 @@ a[href*="/project/scikit/"] {
   transform: scale(1.03);
   box-shadow: 0 12px 32px rgba(0,0,0,0.15);
 }
-/* ===== Project video grid ===== */
-.project-video-grid {
-  display: grid;
-  gap: 24px;
-  justify-content: center;
-  margin-bottom: 32px;
-}
 
-/* 默认：横向视频 */
-.project-video video,
-.project-video iframe {
-  width: 100%;
-  max-width: 720px;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-}
-
-/* 竖向视频（手机比例） */
-.project-video.vertical-video video,
-.project-video.vertical-video iframe {
-  max-width: 360px;
-  aspect-ratio: 9 / 16;
-}
-/* 移动端 */
-@media (max-width: 768px) {
-  .photo-grid {
-    grid-template-columns: repeat(1, 1fr);
-  }
-}
 /* Photos 页面中的小标题（相册名 / 项目名） */
 .photos-page h3 {
   font-size: 1.4rem;
@@ -206,7 +176,7 @@ a[href*="/project/scikit/"] {
   margin: 24px 0 12px;
   color: #0b3c6d;   /* 学术深蓝 */
 }
-/* ===== 视频网格（一行两个） ===== */
+/* ===== Project video grid ===== */
 .project-video-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -214,40 +184,44 @@ a[href*="/project/scikit/"] {
   margin: 24px 0;
 }
 
-/* 单个视频卡片 */
+@media (max-width: 768px) {
+  .project-video-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 单个视频项：用于居中 */
 .project-video {
-  background: #111;
+  display: flex;
+  justify-content: center;
+}
+
+/* ===== 视频比例控制层（核心） ===== */
+.video-wrapper {
+  width: 100%;
+  max-width: 720px;
+  aspect-ratio: 16 / 9;
   border-radius: 14px;
   overflow: hidden;
-  box-shadow: 0 10px 28px rgba(0,0,0,0.15);
-}
-
-/* 统一 video / iframe 尺寸 */
-/* ===== 视频比例控制层 ===== */
-.video-wrapper {
-  overflow: hidden;
-  width: 100%;
-}
-
-/* 横屏视频 */
-.video-wrapper:not(.vertical) {
-  aspect-ratio: 16 / 9;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
 }
 
 /* 竖屏视频 */
 .video-wrapper.vertical {
+  max-width: 360px;
   aspect-ratio: 9 / 16;
 }
 
-/* 真正的播放元素 */
+/* 实际播放元素 */
 .video-wrapper video,
 .video-wrapper iframe {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;   /* 关键：不裁内容 */
   display: block;
   border: none;
 }
+
 /* 移动端：一行一个 */
 @media (max-width: 768px) {
   .project-video-grid {
