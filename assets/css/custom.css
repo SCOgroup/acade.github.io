@@ -184,12 +184,6 @@ a[href*="/project/scikit/"] {
   margin: 24px 0;
 }
 
-@media (max-width: 768px) {
-  .project-video-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
 /* 单个视频项：用于居中 */
 .project-video {
   display: flex;
@@ -221,7 +215,6 @@ a[href*="/project/scikit/"] {
   display: block;
   border: none;
 }
-
 /* 移动端：一行一个 */
 @media (max-width: 768px) {
   .project-video-grid {
