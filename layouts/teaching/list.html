@@ -6,9 +6,6 @@
 <h1 class="teaching-title">{{ .Title }}</h1>
   {{ range .Pages }}
   <div class="course-card">
-    <div class="course-card-image">
-<img src="{{ .RelPermalink }}{{ .Params.image.filename }}" alt="{{ .Title }}">
-    </div>
 
     <div class="course-card-content">
       <h2 class="course-title">{{ .Title }}</h2>
