@@ -127,22 +127,6 @@ a[href*="/project/scikit/"] {
   margin-bottom: 40px;  /* 与课程卡片拉开距离 */
   margin-top: 20px;
 }
-/* ===== Teaching narrow list override ===== */
-.course-card.narrow {
-  padding: 12px 0;
-  margin-bottom: 14px;
-
-  background: transparent;
-  border-radius: 0;
-  box-shadow: none;
-
-  border-bottom: 1px solid rgba(0,0,0,0.08);
-}
-
-.course-card.narrow:hover {
-  transform: none;
-  box-shadow: none;
-}
 
 /* ===== Photos page ===== */
 .photos-page {
