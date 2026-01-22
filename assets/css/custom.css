@@ -45,29 +45,26 @@ a[href*="/project/scikit/"] {
   pointer-events: none !important;
   cursor: default !important;
 }
+/* ===== Teaching course card（对齐 Project 风格） ===== */
+.course-card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+
+  padding: 28px 32px;
+  margin: 0 auto 20px;
+  max-width: 880px;
+
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
 
 .course-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 28px rgba(0,0,0,0.12);
-}
-.course-card {
-  display: flex;
-  gap: 32px;
-  padding: 24px 0;
-  max-width: 1000px;
-  margin: 0 auto;
-
-  /* 关键 */
-  background: transparent;
-  box-shadow: none;
-  border-radius: 0;
-  border-bottom: 1px solid #ebebeb;
-}
-.course-card-image img {
-  width: 260px;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 12px;
+  box-shadow: 0 10px 32px rgba(0,0,0,0.10);
 }
 
 .course-card-content {
