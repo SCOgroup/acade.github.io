@@ -120,6 +120,7 @@ a[href*="/project/scikit/"] {
 .course-participants {
   color: #999;
 }
+
 .teaching-title {
   text-align: center;
   font-size: 36px;      /* 字体更大 */
@@ -127,7 +128,6 @@ a[href*="/project/scikit/"] {
   margin-bottom: 40px;  /* 与课程卡片拉开距离 */
   margin-top: 20px;
 }
-
 /* ===== Photos page ===== */
 .photos-page {
   max-width: 1200px;
