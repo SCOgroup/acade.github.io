@@ -2,21 +2,27 @@
 
 <div class="teaching-page">
 
+  <!-- 页面标题 -->
   <h1 class="teaching-title">{{ .Title }}</h1>
 
+  <!-- 课程列表 -->
   {{ range .Pages }}
   <div class="course-card">
 
-    <!-- 第一行 -->
+    <!-- 第一行：课程名（左） + 课程属性（右） -->
     <div class="course-line course-line-main">
-      <span class="course-bar">┃</span>
 
-      <span class="course-title">{{ .Title }}</span>
+      <!-- 左侧：竖线 + 课程名（一个整体） -->
+      <div class="course-left">
+        <span class="course-bar">┃</span>
+        <span class="course-title">{{ .Title }}</span>
+      </div>
 
-      <!-- 右侧信息 -->
+      <!-- 右侧：课程属性 -->
       <span class="course-meta-inline">
-        {{ .Params.level }} &nbsp;|&nbsp; {{ .Params.grade }} &nbsp;|&nbsp; {{ .Params.semester }}
+        {{ .Params.level }} | {{ .Params.grade }} | {{ .Params.semester }}
       </span>
+
     </div>
 
     <!-- 第二行：教师（无竖线） -->
