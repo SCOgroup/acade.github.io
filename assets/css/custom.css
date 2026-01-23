@@ -45,88 +45,101 @@ a[href*="/project/scikit/"] {
   pointer-events: none !important;
   cursor: default !important;
 }
-/* ===== Teaching course card（对齐 Project 风格） ===== */
-.course-card {
+/* ================================
+   Teaching Page – Final CSS
+   横向 · 窄 · 有阴影 · 学术风
+   ================================ */
+
+/* 页面整体 */
+.teaching-page {
+  max-width: 960px;
+  margin: 0 auto;
+  padding-bottom: 40px;
+}
+
+/* 页面标题 */
+.teaching-title {
+  text-align: center;
+  font-size: 34px;
+  font-weight: 700;
+  margin: 24px 0 36px;
+  color: #0f172a;
+}
+
+/* 课程卡片（横向窄卡） */
+.course-card.narrow.horizontal {
+  background: #ffffff;
+  border-radius: 10px;
+
+  padding: 14px 22px;
+  margin-bottom: 14px;
+
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.08),
+    0 0 1px rgba(0, 0, 0, 0.04);
+
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+/* 悬浮效果 */
+.course-card.narrow.horizontal:hover {
+  transform: translateY(-1.5px);
+  box-shadow:
+    0 6px 18px rgba(0, 0, 0, 0.12),
+    0 0 1px rgba(0, 0, 0, 0.04);
+}
+
+/* 第一行：课程名 + 元信息 */
+.course-line-main {
   display: flex;
-  flex-direction: column;
+  align-items: baseline;
   gap: 14px;
 
-  padding: 28px 32px;
-  margin: 0 auto 20px;
-  max-width: 880px;
-
-  background: #ffffff;
-  border-radius: 14px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.04);
-
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  font-size: 15px;
+  color: #111827;
 }
 
-.course-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 32px rgba(0,0,0,0.10);
+/* 左侧竖线 */
+.course-bar {
+  color: #2563eb;
+  font-weight: 700;
 }
 
-.course-card-content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
+/* 课程名 */
 .course-title {
-  margin: 0 0 10px 0;
-  font-size: 22px;
   font-weight: 600;
 }
 
-.course-meta {
-  display: flex;
-  gap: 10px;
-  font-size: 14px;
-  color: #888;
+/* 课程信息（本科 / 年级 / 学期） */
+.course-meta-inline {
+  font-size: 13px;
+  color: #6b7280;
+  white-space: nowrap;
 }
 
-.course-teachers .teacher {
-  margin-right: 6px;
+/* 第二行：教师（无竖线） */
+.course-line-teacher {
+  margin-left: 16px;
+  margin-top: 4px;
+
+  font-size: 13px;
+  color: #475569;
 }
 
-.course-description {
-  margin: 15px 0;
-  color: #444;
-  line-height: 1.6;
-}
+/* 移动端适配 */
+@media (max-width: 640px) {
+  .course-card.narrow.horizontal {
+    padding: 12px 16px;
+  }
 
-.course-footer {
-  margin-top: auto;
-  display: flex;
-  justify-content: space-between;
-  font-size: 14px;
-  color: #666;
-}
+  .course-line-main {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
 
-.course-progress {
-  display: flex;
-  align-items: center;
-}
-
-.course-progress .dot {
-  width: 10px;
-  height: 10px;
-  margin-right: 6px;
-  background: #53B880;
-  border-radius: 50%;
-}
-
-.course-participants {
-  color: #999;
-}
-
-.teaching-title {
-  text-align: center;
-  font-size: 36px;      /* 字体更大 */
-  font-weight: 700;     /* 更粗体 */
-  margin-bottom: 40px;  /* 与课程卡片拉开距离 */
-  margin-top: 20px;
+  .course-meta-inline {
+    font-size: 12px;
+  }
 }
 
 /* ===== Photos page ===== */
