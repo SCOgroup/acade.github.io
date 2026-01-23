@@ -68,7 +68,9 @@ a[href*="/project/scikit/"] {
 .course-card.narrow.horizontal {
   padding: 30px 32px;     /* ↑ 上下 & 左右都更大 */
   margin-bottom: 18px;   /* 卡片之间更从容 */
-
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
   background: #ffffff;
   border-radius: 12px;   /* 稍微更圆一点 */
 
