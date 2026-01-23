@@ -65,6 +65,7 @@ a[href*="/project/scikit/"] {
   background: #fff;
   border-radius: 16px;
   max-width: 780px;
+  margin: 0 auto 18px;
   padding: 24px 32px;
   margin-bottom: 20px;
   
