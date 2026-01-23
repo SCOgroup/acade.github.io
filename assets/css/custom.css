@@ -66,16 +66,15 @@ a[href*="/project/scikit/"] {
   color: #0f172a;
 }
 
-/* 课程卡片（横向窄卡） */
 .course-card.narrow.horizontal {
-  background: #ffffff;
-  border-radius: 10px;
+  padding: 20px 28px;     /* ↑ 上下 & 左右都更大 */
+  margin-bottom: 18px;   /* 卡片之间更从容 */
 
-  padding: 14px 22px;
-  margin-bottom: 14px;
+  background: #ffffff;
+  border-radius: 12px;   /* 稍微更圆一点 */
 
   box-shadow:
-    0 2px 8px rgba(0, 0, 0, 0.08),
+    0 3px 10px rgba(0, 0, 0, 0.08),
     0 0 1px rgba(0, 0, 0, 0.04);
 
   transition: box-shadow 0.2s ease, transform 0.2s ease;
