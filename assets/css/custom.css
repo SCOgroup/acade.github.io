@@ -103,6 +103,7 @@ a[href*="/project/scikit/"] {
 /* 课程名 */
 .course-title {
   font-weight: 600;
+  font-size: 22px;
 }
 
 /* 课程信息（本科 / 年级 / 学期） */
