@@ -73,7 +73,6 @@ a[href*="/project/scikit/"] {
   margin-right: auto;
   background: #ffffff;
   border-radius: 12px;   /* 稍微更圆一点 */
-
   box-shadow:
     0 3px 10px rgba(0, 0, 0, 0.08),
     0 0 1px rgba(0, 0, 0, 0.04);
