@@ -64,7 +64,7 @@ a[href*="/project/scikit/"] {
 .course-card {
   background: #fff;
   border-radius: 16px;
-
+  max-width: 780px;
   padding: 24px 32px;
   margin-bottom: 20px;
 
