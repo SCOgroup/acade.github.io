@@ -91,11 +91,8 @@ a[href*="/project/scikit/"] {
 /* 第一行：课程名 + 元信息 */
 .course-line-main {
   display: flex;
-  align-items: baseline;
-  gap: 14px;
-
-  font-size: 15px;
-  color: #111827;
+  justify-content: space-between;
+  align-items: center;
 }
 
 /* 左侧竖线 */
