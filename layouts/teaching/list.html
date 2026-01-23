@@ -7,17 +7,21 @@
   {{ range .Pages }}
   <div class="course-card narrow horizontal">
 
-    <!-- 第一行 -->
+    <!-- 第一行：标题（左） + 课程性质（右） -->
     <div class="course-line course-line-main">
-      <span class="course-bar">┃</span>
-      <span class="course-title">{{ .Title }}</span>
 
-      <span class="course-meta-inline">
+      <div class="course-left">
+        <span class="course-bar">┃</span>
+        <span class="course-title">{{ .Title }}</span>
+      </div>
+
+      <div class="course-right">
         {{ .Params.level }} · {{ .Params.grade }} · {{ .Params.semester }}
-      </span>
+      </div>
+
     </div>
 
-    <!-- 第二行：教师 -->
+    <!-- 第二行：教师（不带竖线） -->
     <div class="course-line course-line-teacher">
       {{ range $i, $t := .Params.teachers }}
         {{ if $i }} / {{ end }}{{ $t }}
