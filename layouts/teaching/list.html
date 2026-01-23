@@ -5,23 +5,21 @@
   <h1 class="teaching-title">{{ .Title }}</h1>
 
   {{ range .Pages }}
-  <div class="course-card narrow horizontal">
+  <div class="course-card">
 
-    <!-- 第一行：标题（左） + 课程性质（右） -->
+    <!-- 第一行 -->
     <div class="course-line course-line-main">
+      <span class="course-bar">┃</span>
 
-      <div class="course-left">
-        <span class="course-bar">┃</span>
-        <span class="course-title">{{ .Title }}</span>
-      </div>
+      <span class="course-title">{{ .Title }}</span>
 
-      <div class="course-right">
-        {{ .Params.level }} · {{ .Params.grade }} · {{ .Params.semester }}
-      </div>
-
+      <!-- 右侧信息 -->
+      <span class="course-meta-inline">
+        {{ .Params.level }} &nbsp;|&nbsp; {{ .Params.grade }} &nbsp;|&nbsp; {{ .Params.semester }}
+      </span>
     </div>
 
-    <!-- 第二行：教师（不带竖线） -->
+    <!-- 第二行：教师（无竖线） -->
     <div class="course-line course-line-teacher">
       {{ range $i, $t := .Params.teachers }}
         {{ if $i }} / {{ end }}{{ $t }}
