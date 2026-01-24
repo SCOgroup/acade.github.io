@@ -26,11 +26,11 @@
     </div>
 
     <!-- 第二行：教师（无竖线） -->
-    <div class="course-line course-line-teacher">
-      {{ range $i, $t := .Params.teachers }}
-        {{ if $i }} / {{ end }}{{ $t }}
-      {{ end }}
-    </div>
+<div class="course-line course-line-teacher">
+  {{ range .Params.teachers }}
+    <span class="teacher-name">{{ . }}</span>
+  {{ end }}
+</div>
 
   </div>
   {{ end }}
