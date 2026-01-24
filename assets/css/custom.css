@@ -123,6 +123,11 @@ a[href*="/project/scikit/"] {
   color: #666;
 }
 
+.teacher-name {
+  margin-right: 16px;   /* 老师之间的间距 */
+  white-space: nowrap;
+}
+
 /* ===== Photos page ===== */
 .photos-page {
   max-width: 1200px;
