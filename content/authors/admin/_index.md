@@ -116,8 +116,8 @@ awards:
       Object-oriented programming (OOP) lets you specify relationships between functions and the objects that they can act on, helping you manage complexity in your code. This is an intermediate level course, providing an introduction to OOP, using the S3 and R6 systems. S3 is a great day-to-day R programming tool that simplifies some of the functions that you write. R6 is especially useful for industry-specific analyses, working with web APIs, and building GUIs.
 ---
 
-铁锤子课题组依托武汉理工大学自动化学院和智能控制与智能系统研究中心，秉承[“钉钉子精神”](https://www.dswxyjy.org.cn/n1/2023/1106/c244516-40111236.html)，先后承担并完成国家级/省部级项目9项及多项企业项目，累计发表论文80多篇，省部级科技进步奖二等奖1项、科技进步三等奖1项，其他奖励多项。课题组目前主要有四个研究方向：<br>
-（1）电力系统数字化，主要研究内容包括：电力系统信息网络安全与防护、电力设备/系统在线监测与故障诊断、电网工程数据智能处理与优化。<br>
-（2）电力系统规划运行，主要研究内容包括：(信息)物理电力系统韧性提升、新型配用电系统/综合能源系统低碳规划运行。<br>
-（3）无人机开发与应用，主要研究内容包括：大载重/长航时氢动力无人机平台、室内/室外无人机平台。<br>
-（4）人工智能方法应用，主要研究内容包括：人工智能在电力系统和无人机等领域部署应用。<br>
+**铁锤子课题组**依托武汉理工大学自动化学院和智能控制与智能系统研究中心，秉承[“钉钉子精神”](https://www.dswxyjy.org.cn/n1/2023/1106/c244516-40111236.html)，先后承担并完成国家级/省部级项目9项及多项企业项目，累计发表论文80多篇，省部级科技进步奖二等奖1项、科技进步三等奖1项，其他奖励多项。课题组目前主要有四个研究方向：<br>
+（1）**电力系统数字化**，主要研究内容包括：电力系统信息网络安全与防护、电力设备/系统在线监测与故障诊断、电网工程数据智能处理与优化。<br>
+（2）**电力系统规划运行**，主要研究内容包括：(信息)物理电力系统韧性提升、新型配用电系统/综合能源系统低碳规划运行。<br>
+（3）**无人机开发与应用**，主要研究内容包括：大载重/长航时氢动力无人机平台、室内/室外无人机平台。<br>
+（4）**人工智能方法应用**，主要研究内容包括：人工智能在电力系统和无人机等领域部署应用。<br>
