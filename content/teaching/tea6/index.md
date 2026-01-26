@@ -5,4 +5,5 @@ grade: "研一下"
 semester: "春季"
 teachers:
   - 董政呈
+weight: 6
 ---
