@@ -311,3 +311,7 @@ a[href="/acade.github.io/post/data-visualization/"] {
   margin-bottom: 12px;
   text-align: center;
 }
+/* 隐藏 Hugo Blox Builder 页脚宣传 */
+.powered-by {
+    display: none !important;
+}
