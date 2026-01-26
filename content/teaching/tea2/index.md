@@ -6,4 +6,5 @@ semester: "春季"
 teachers:
   - 田猛
   - 董政呈
+weight: 1
 ---
