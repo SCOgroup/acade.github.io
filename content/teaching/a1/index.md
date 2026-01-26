@@ -6,4 +6,5 @@ semester: "秋季"
 teachers:
   - 田猛
   - 董政呈
+weight: 4
 ---
