@@ -35,8 +35,8 @@ header:
     show_search: true
     show_theme_chooser: true
     logo:
-      image: logo.png
-      text: 铁锤子课题组
+      image: "logo.png"
+      text: "铁锤子课题组"
 
 # Site footer
 footer:
