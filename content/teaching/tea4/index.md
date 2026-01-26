@@ -6,4 +6,5 @@ semester: "暑期"
 teachers:
   - 田猛
   - 董政呈
+weight: 4
 ---
