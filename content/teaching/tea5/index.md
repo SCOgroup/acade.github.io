@@ -5,4 +5,5 @@ grade: "研一上"
 semester: "秋季"
 teachers:
   - 田猛
+weight: 5
 ---
