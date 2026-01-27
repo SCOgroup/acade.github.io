@@ -279,7 +279,7 @@ a[href="/acade.github.io/post/data-visualization/"] {
 
 /* 项目名（视觉中心） */
 .project-title {
-  font-size: 1.85rem;
+  font-size: 1.15rem;
   font-weight: 600;
   color: #111827;
 }
@@ -305,8 +305,8 @@ a[href="/acade.github.io/post/data-visualization/"] {
 }
 
 .project-page-title {
-  font-size: 1.8rem;
-  font-weight: 600;
+  font-size: 1.85rem;
+  font-weight: 700;
   color: #111827;
   margin-bottom: 12px;
   text-align: center;
