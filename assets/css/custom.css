@@ -1,5 +1,5 @@
 /* 调整简历区块的布局 */
-.section-collection h2 {
+.section-collection h2.text-base {
   font-size: 18px !important;
 }
 
