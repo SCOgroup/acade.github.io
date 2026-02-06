@@ -1,7 +1,8 @@
 /* 调整简历区块的布局 */
-.section-collection h2 > a > span.relative.z-10 {
-  font-size: 1.5rem !important;
+.section-collection h2 {
+  font-size: 18px !important;
 }
+
 .dark .biography-wrapper {
   min-height: 100vh;
   padding-top: 4rem !important;
