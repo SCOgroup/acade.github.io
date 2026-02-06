@@ -1,4 +1,15 @@
 /* 调整简历区块的布局 */
+/* 首页 - 近期新闻 - 标题字体 */
+.view-date-title-summary .article-title {
+  font-size: 16px;      /* 改这里 */
+  line-height: 1.6;
+}
+
+/* 如果你那句话在 summary 里 */
+.view-date-title-summary .article-summary {
+  font-size: 14px;
+  line-height: 1.6;
+}
 .dark .biography-wrapper {
   min-height: 100vh;
   padding-top: 4rem !important;
