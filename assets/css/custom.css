@@ -1,10 +1,6 @@
 /* 调整简历区块的布局 */
-@layer utilities {
-  /* 新闻标题文字本体 */
-  .section-collection a > span.relative.z-10 {
-    font-size: 18px;
-    line-height: 1.45;
-  }
+h2 > a > span.relative.z-10 {
+  font-size: 18px !important;
 }
 
 .dark .biography-wrapper {
