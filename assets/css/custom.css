@@ -323,14 +323,17 @@ a[href="/acade.github.io/post/data-visualization/"] {
   padding-top: 2rem !important;
 }
 
-/* People 页面：理念链接 hover 强制蓝色 */
-.people-page p a {
-  color: inherit !important;
-  text-decoration: none !important;
-  border-bottom: 1px solid rgba(0,0,0,0.2);
+/* 强制覆盖 “钉钉子精神” 链接颜色 */
+a[href^="https://www.dswxyjy.org.cn/n1/"] {
+  color: #0b3c6d !important;            /* 默认深蓝 */
+  text-decoration-color: transparent !important; /* 默认不显示下划线 */
+  border-bottom: 1px solid transparent !important;
+  transition: color 0.2s ease, border-bottom-color 0.2s ease;
 }
 
-.people-page p a:hover {
-  color: #0b3c6d !important;              /* 学术深蓝 */
-  border-bottom-color: #0b3c6d !important;
+a[href^="https://www.dswxyjy.org.cn/n1/"]:hover,
+a[href^="https://www.dswxyjy.org.cn/n1/"]:focus {
+  color: #0b3c6d !important;            /* 学术深蓝 */
+  border-bottom-color: #0b3c6d !important; /* 下划线蓝 */
 }
+
