@@ -319,3 +319,6 @@ a[href="/acade.github.io/post/data-visualization/"] {
 .powered-by {
     display: none !important;
 }
+#section-people .section-heading {
+  margin-top: -24px;
+}
