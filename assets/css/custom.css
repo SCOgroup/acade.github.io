@@ -1,7 +1,7 @@
 /* 调整简历区块的布局 */
 /* 首页 - 近期新闻 - 标题字体 */
 .view-date-title-summary .article-title {
-  font-size: 16px;      /* 改这里 */
+  font-size: 18px;      /* 改这里 */
   line-height: 1.6;
 }
 
