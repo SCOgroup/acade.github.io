@@ -322,6 +322,7 @@ a[href="/acade.github.io/post/data-visualization/"] {
 #section-people {
   padding-top: 2rem !important;
 }
+
 /* People 页面：理念链接 hover 强制蓝色 */
 .people-page p a {
   color: inherit !important;
