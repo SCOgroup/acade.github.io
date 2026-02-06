@@ -322,3 +322,17 @@ a[href="/acade.github.io/post/data-visualization/"] {
 #section-people {
   padding-top: 2rem !important;
 }
+/* People 页面：理念类链接样式（钉钉子精神） */
+.people-page p a {
+  color: inherit;                 /* 不要蓝色 */
+  font-weight: 400;               /* 不加粗 */
+  text-decoration: none;          /* 去掉下划线 */
+
+  border-bottom: 1px solid rgba(0,0,0,0.15); /* 极弱提示 */
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.people-page p a:hover {
+  color: #0b3c6d;                 /* 学术深蓝 */
+  border-bottom-color: #0b3c6d;
+}
