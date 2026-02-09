@@ -47,7 +47,7 @@ sections:
       count: 5
       archive:
         text: 查看全部
-        link: /news/
+        link: news/
       # Filter on criteria
       filters:
         author: ""
