@@ -9,7 +9,4 @@ tags:
   - Hugo
   - Hugo Blox
   - Markdown
-image:
-  caption: 'Image credit: [**Unsplash**](https://unsplash.com)'
-
 ---
