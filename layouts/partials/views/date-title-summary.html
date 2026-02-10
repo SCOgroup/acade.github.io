@@ -14,10 +14,10 @@
     <time
       class="md:hidden relative z-10 order-first mb-3 flex items-center text-sm text-zinc-400 dark:text-zinc-500 pl-1"
       datetime="{{ time.Format "2006-01-02" $displayDate }}">
-      {{ if eq $item.Params.date_display "month" }}
+     {{ if eq $item.Params.date_display "month" }}
   {{ time.Format "2006年1月" $displayDate }}
 {{ else }}
-  {{ time.Format (site.Params.hugoblox.locale.date_format | default ":date_long") $displayDate }}
+  {{ time.Format "2006年1月2日" $displayDate }}
 {{ end }}
     </time>
     <p class="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400 line-clamp-3">{{$summary}}</p>
@@ -33,7 +33,7 @@
     datetime="{{ time.Format "2006-01-02" $displayDate }}">{{ if eq $item.Params.date_display "month" }}
   {{ time.Format "2006年1月" $displayDate }}
 {{ else }}
-  {{ time.Format (site.Params.hugoblox.locale.date_format | default ":date_long") $displayDate }}
+  {{ time.Format "2006年1月2日" $displayDate }}
 {{ end }}
   </time>
 </article>
