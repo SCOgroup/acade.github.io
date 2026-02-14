@@ -71,10 +71,14 @@
         {{ with .Params.publication_short }}
         <span class="badge badge-venue">{{ . }}</span>
         {{ end }}
-        
-        {{ with .Date }}
-        <span class="badge badge-year">{{ .Format "2006" }}</span>
-        {{ end }}
+        {{ with .Params.publication_types }}
+  {{ if ne (index . 0) "3" }}
+    {{ with $.Date }}
+      <span class="badge badge-year">{{ .Format "2006" }}</span>
+    {{ end }}
+  {{ end }}
+{{ end }}
+
       </div>
       
       {{/* 标题 */}}
