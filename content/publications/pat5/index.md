@@ -1,12 +1,11 @@
 ---
 title: "一种考虑光伏与线路开关状态不确定的配电网优化方法"
 authors:
+- 龚立
 - 田猛
-- 刘鑫
-- 董政呈
-- 邓欢
-- 王豫
-- 周玉峰
+- 王先培
+- 王少飞
+- 郑涵
 author_notes:
 - "Equal contribution"
 - "Equal contribution"
