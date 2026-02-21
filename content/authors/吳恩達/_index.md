@@ -72,7 +72,7 @@ email: ''
 user_groups:
   - 课题组负责人
 
-cv: "uploads/resume.pdf"
+cv: "uploads/董政呈个人简历2026.1-网站.pdf"
 ---
 
 吳恩達 is a professor of artificial intelligence at the Stanford AI Lab. His research interests include distributed robotics, mobile computing and programmable matter. He leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
