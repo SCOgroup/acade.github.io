@@ -10,7 +10,7 @@ last_name: 猛
 superuser: true
 
 # Role/position
-role: Professor of Artificial Intelligence
+role: 副教授
 
 # Organizations/Affiliations
 organizations:
