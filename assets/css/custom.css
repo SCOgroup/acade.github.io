@@ -346,3 +346,12 @@ a[href^="https://www.dswxyjy.org.cn/n1/"]:focus {
 time.text-sm {
   font-size: 16px;
 }
+.research-link {
+  color: #1a73e8 !important;
+  text-decoration-color: #1a73e8 !important;
+}
+
+.research-link:hover {
+  color: #0b57d0 !important;
+  text-decoration-color: #0b57d0 !important;
+}
