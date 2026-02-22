@@ -119,7 +119,7 @@ awards:
 **铁锤子课题组**依托武汉理工大学自动化学院和智能控制与智能系统研究中心，秉承<a href="https://www.dswxyjy.org.cn/n1/2023/1106/c244516-40111236.html" 
    class="research-link" 
    target="_blank">
-钉钉子精神
+<strong>钉钉子精神</strong>
 </a>，先后承担并完成国家级/省部级项目9项及多项企业项目，累计发表论文80多篇，省部级科技进步奖二等奖1项、科技进步三等奖1项，其他奖励多项。课题组目前主要有四个研究方向：<br>
 （1）<a href="uploads/电力系统数字化.pdf" class="research-link" target="_blank">
 <strong>电力系统数字化</strong>
