@@ -6,38 +6,36 @@
     <h1>{{ .Title }}</h1>
   </header>
 
-  <!-- ================= Group Photos ================= -->
-<section class="photos-section">
+  {{/* ===== 1️⃣ 先收集所有 group + project 页面 ===== */}}
+  {{ $all := slice }}
 
-  {{ $found := false }}
-
-    {{ range (.Site.RegularPages.ByDate.Reverse) }}
-    {{ if strings.HasPrefix .File.Path "photos/group/" }}
-      {{ if not $found }}{{ $found = true }}{{ end }}
-      {{ partial "photo-grid.html" . }}
+  {{ range .Site.RegularPages }}
+    {{ if or (strings.HasPrefix .File.Path "photos/group/")
+             (strings.HasPrefix .File.Path "photos/projects/") }}
+        {{ $all = $all | append . }}
     {{ end }}
   {{ end }}
 
-</section>
+  {{/* ===== 2️⃣ 按时间倒序排序 ===== */}}
+  {{ $all = $all.ByDate.Reverse }}
 
-  <!-- ================= Projects & Presentations ================= -->
-  <section class="projects-section" style="margin-top:48px;">
-    
-{{ $projects := slice }}
-{{ range (.Site.RegularPages.ByDate.Reverse) }}
-  {{ if strings.HasPrefix .File.Path "photos/projects/" }}
-    {{ $projects = $projects | append . }}
-  {{ end }}
-{{ end }}
+  {{/* ===== 3️⃣ 统一时间线渲染 ===== */}}
+  <section class="timeline-section">
 
-   {{ if gt (len $projects) 0 }}
-    {{ range $projects }}
-      {{ partial "project-block.html" . }}
+    {{ range $all }}
+
+      {{ if strings.HasPrefix .File.Path "photos/group/" }}
+        {{ partial "photo-group.html" . }}
+
+      {{ else if strings.HasPrefix .File.Path "photos/projects/" }}
+        {{ partial "project-block.html" . }}
+
+      {{ end }}
+
     {{ end }}
-  {{ end }}
-</section>
 
-       
+  </section>
+
 </div>
 
 {{ end }}
