@@ -72,7 +72,7 @@ user_groups:
   - 课题组负责人
 
 
-cv: "uploads/resume.pdf"
+cv: "uploads/田猛个人简历2026(武汉理工大学)2026.01 - 网站.pdf"
 
 ---
 
