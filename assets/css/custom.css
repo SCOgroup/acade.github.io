@@ -323,26 +323,6 @@ a[href="/acade.github.io/post/data-visualization/"] {
   padding-top: 2rem !important;
 }
 
-/* 钉钉子精神 —— 明显可感知的学术链接效果 */
-a[href^="https://www.dswxyjy.org.cn/n1/"] {
-  color: #1e40af !important;          /* 更亮一点的学术蓝 */
-  font-weight: 500;                   /* 轻微强调 */
-  text-decoration: none !important;
-  border-bottom: 2px solid rgba(30, 64, 175, 0.25); /* 默认淡下划线 */
-  padding-bottom: 2px;
-  transition: 
-    color 0.2s ease,
-    border-bottom-color 0.2s ease,
-    background-color 0.2s ease;
-}
-
-a[href^="https://www.dswxyjy.org.cn/n1/"]:hover,
-a[href^="https://www.dswxyjy.org.cn/n1/"]:focus {
-  color: #1d4ed8 !important;          /* hover 更亮的蓝 */
-  border-bottom-color: #1d4ed8 !important;
-  background-color: rgba(29, 78, 216, 0.08); /* 关键：轻微底色 */
-  border-radius: 4px;
-}
 time.text-sm {
   font-size: 16px;
 }
