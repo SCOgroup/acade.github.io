@@ -1,10 +1,9 @@
 {{ define "main" }}
 
-  {{ if not .Params.disable_link }}
-
-    {{/* 正常文章渲染原主题内容 */}}
-    {{ partial "page_builder.html" . }}
-
+  {{ if .Params.disable_link }}
+    {{/* 什么都不输出 */}}
+  {{ else }}
+    {{ template "_internal/_default/single.html" . }}
   {{ end }}
 
 {{ end }}
