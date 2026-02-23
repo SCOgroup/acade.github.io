@@ -1,8 +1,10 @@
-{{ if not .Params.disable_link }}
+{{ define "main" }}
 
-  {{/* 正常 post 走主题默认布局 */}}
-  {{ define "main" }}
+  {{ if not .Params.disable_link }}
+
+    {{/* 正常文章渲染原主题内容 */}}
     {{ partial "page_builder.html" . }}
+
   {{ end }}
 
 {{ end }}
