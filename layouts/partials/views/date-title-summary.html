@@ -1,39 +1,90 @@
 {{ $item := .item }}
 {{ $page := .page }}
 {{ $summary := partial "functions/get_summary" $item }}
-{{ $summary =  $summary | page.RenderString }}
+{{ $summary = $summary | page.RenderString }}
 {{ $displayDate := .item.Params.event_start | default .item.Date }}
+{{ $disable := $item.Params.disable_link | default false }}
+
 <article class="md:grid md:grid-cols-4 md:items-baseline">
   <div class="md:col-span-3 group relative flex flex-col items-start">
-    <h2 class="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
+
+    <h2 class="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100 relative">
+
+      <!-- 背景 hover 效果 -->
       <div
-        class="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 dark:bg-zinc-800/50 sm:-inset-x-6 sm:rounded-2xl"></div>
-      <a href="{{$item.RelPermalink}}"><span
-        class="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl"></span><span class="relative z-10">{{$item.Title}}</span></a>
+        class="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition
+        group-hover:scale-100 group-hover:opacity-100
+        dark:bg-zinc-800/50 sm:-inset-x-6 sm:rounded-2xl
+        {{ if $disable }}pointer-events-none{{ end }}">
+      </div>
+
+      {{ if not $disable }}
+
+        <!-- 可跳转标题 -->
+        <a href="{{ $item.RelPermalink }}" class="relative z-10">
+          <span class="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl"></span>
+          <span class="relative z-30">{{ $item.Title }}</span>
+        </a>
+
+      {{ else }}
+
+        <!-- 不跳转标题 -->
+        <span class="relative z-30">
+          {{ $item.Title }}
+        </span>
+
+      {{ end }}
+
     </h2>
+
+    <!-- 手机日期 -->
     <time
       class="md:hidden relative z-10 order-first mb-3 flex items-center text-sm text-zinc-400 dark:text-zinc-500 pl-1"
       datetime="{{ time.Format "2006-01-02" $displayDate }}">
-     {{ if eq $item.Params.date_display "month" }}
-  {{ time.Format "2006年1月" $displayDate }}
-{{ else }}
-  {{ time.Format "2006年1月2日" $displayDate }}
-{{ end }}
+
+      {{ if eq $item.Params.date_display "month" }}
+        {{ time.Format "2006年1月" $displayDate }}
+      {{ else }}
+        {{ time.Format "2006年1月2日" $displayDate }}
+      {{ end }}
+
     </time>
-    <p class="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400 line-clamp-3">{{$summary}}</p>
-    <div aria-hidden="true" class="relative z-10 mt-4 flex items-center text-sm font-medium text-primary-500">
-    {{ T "read_more" | default "Read more" }}
-      <svg aria-hidden="true" class="ml-1 h-4 w-4 stroke-current" fill="none" viewBox="0 0 16 16">
-        <path d="M6.75 5.75 9.25 8l-2.5 2.25" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
-      </svg>
+
+    <!-- 摘要 -->
+    <p class="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400 line-clamp-3">
+      {{ $summary }}
+    </p>
+
+    <!-- Read More -->
+    <div class="relative z-10 mt-4 flex items-center text-sm font-medium text-primary-500">
+      {{ if not $disable }}
+        <a href="{{ $item.RelPermalink }}" class="flex items-center">
+          {{ T "read_more" | default "Read more" }}
+          <svg class="ml-1 h-4 w-4 stroke-current" fill="none" viewBox="0 0 16 16">
+            <path d="M6.75 5.75 9.25 8l-2.5 2.25"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"></path>
+          </svg>
+        </a>
+      {{ else }}
+        {{ T "read_more" | default "Read more" }}
+      {{ end }}
     </div>
+
   </div>
+
+  <!-- 桌面日期 -->
   <time
     class="mt-1 hidden md:block relative z-10 order-first mb-3 flex items-center text-sm text-zinc-400 dark:text-zinc-500"
-    datetime="{{ time.Format "2006-01-02" $displayDate }}">{{ if eq $item.Params.date_display "month" }}
-  {{ time.Format "2006年1月" $displayDate }}
-{{ else }}
-  {{ time.Format "2006年1月2日" $displayDate }}
-{{ end }}
+    datetime="{{ time.Format "2006-01-02" $displayDate }}">
+
+    {{ if eq $item.Params.date_display "month" }}
+      {{ time.Format "2006年1月" $displayDate }}
+    {{ else }}
+      {{ time.Format "2006年1月2日" $displayDate }}
+    {{ end }}
+
   </time>
+
 </article>
