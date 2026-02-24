@@ -19,7 +19,6 @@ tags:
   <figcaption style="text-align:center; font-size:14px; color:gray; margin-top:6px;">
   </figcaption>
 </figure>
-figure style="margin-bottom:10px;">
   <img src="photo2.jpg"
        style="display:block; margin:0 auto; max-width:100%; height:auto;">
   <figcaption style="text-align:center; font-size:14px; color:gray; margin-top:6px;">
