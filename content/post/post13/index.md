@@ -34,5 +34,5 @@ tags:
   审核：吕睿　编辑：李子根
 </div>
 <p style="text-align:right; margin-top:30px;">
-  来源：<a href="原文链接" target="_blank">武汉理工大学自动化学院官网</a>
+  来源：<a href="http://sa.whut.edu.cn/xyxw/xyxw/202411/t20241121_599570.shtml" target="_blank">武汉理工大学自动化学院官网</a>
 </p>
