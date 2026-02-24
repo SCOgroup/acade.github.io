@@ -33,3 +33,8 @@ tags:
   文：卢陆　图：卢陆<br>
   审核：吕睿　编辑：李子根
 </div>
+<hr style="margin-top:40px;">
+
+<div style="text-align:right; margin-top:15px; line-height:1.8; font-size:14px; color:#666;">
+  来源：<a href="http://sa.whut.edu.cn/xyxw/xyxw/202411/t20241121_599570.shtml" target="_blank">武汉理工大学自动化学院官网</a>
+</div>
