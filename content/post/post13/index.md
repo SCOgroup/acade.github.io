@@ -3,6 +3,7 @@ title: 田猛，董政呈和张清勇老师带队在第十九届“挑战杯”�
 summary: "​"
 date: 2024-11-22
 link: ""
+show_detail_button: true
 authors:
   - admin
 tags:
