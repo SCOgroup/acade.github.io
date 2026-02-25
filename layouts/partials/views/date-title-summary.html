@@ -4,7 +4,7 @@
 {{ $displayDate := $item.Params.event_start | default $item.Date }}
 {{ $disable := $item.Params.disable_link | default false }}
 
-<article class="md:grid md:grid-cols-4 md:items-baseline md:gap-6 py-6 border-b border-zinc-200 dark:border-zinc-700">
+<article class="md:grid md:grid-cols-4 md:items-baseline md:gap-6 py-6">
 
   <!-- 桌面端时间（左侧） -->
   <time
@@ -28,7 +28,10 @@
       {{ if not $disable }}
 
         <a href="{{ $item.RelPermalink }}"
-           class="hover:text-blue-600 transition duration-200 cursor-pointer">
+           class="cursor-pointer transition duration-200"
+           style="color:inherit;"
+           onmouseover="this.style.color='#2563eb'"
+           onmouseout="this.style.color=''">
           {{ $item.Title }}
         </a>
 
