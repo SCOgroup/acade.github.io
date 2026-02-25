@@ -1,6 +1,12 @@
-<article class="md:grid md:grid-cols-4 md:items-baseline">
+{{ $item := .item }}
+{{ $summary := partial "functions/get_summary" $item }}
+{{ $summary = $summary | page.RenderString }}
+{{ $displayDate := $item.Params.event_start | default $item.Date }}
+{{ $disable := $item.Params.disable_link | default false }}
 
-  <!-- 时间（桌面端在左） -->
+<article class="md:grid md:grid-cols-4 md:items-baseline md:gap-6">
+
+  <!-- 桌面端时间（左侧） -->
   <time
     class="hidden md:block mt-1 text-sm text-zinc-400 dark:text-zinc-500"
     datetime="{{ time.Format "2006-01-02" $displayDate }}">
@@ -16,27 +22,46 @@
   <!-- 内容区域 -->
   <div class="md:col-span-3 group relative flex flex-col items-start">
 
+    <!-- 标题 -->
     <h2 class="text-lg font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
 
+      <!-- hover 背景 -->
+      <div
+        class="absolute -inset-x-4 -inset-y-4 z-0 scale-95 bg-zinc-50 opacity-0 transition
+        group-hover:scale-100 group-hover:opacity-100
+        dark:bg-zinc-800/50 sm:rounded-xl">
+      </div>
+
       {{ if not $disable }}
+
         <a href="{{ $item.RelPermalink }}" class="relative z-10">
           {{ $item.Title }}
         </a>
+
       {{ else }}
+
         <span class="relative z-10">
           {{ $item.Title }}
         </span>
+
       {{ end }}
 
     </h2>
 
     <!-- 手机端时间 -->
     <time
-      class="md:hidden mb-2 text-sm text-zinc-400 dark:text-zinc-500"
+      class="md:hidden mt-1 text-sm text-zinc-400 dark:text-zinc-500"
       datetime="{{ time.Format "2006-01-02" $displayDate }}">
-      {{ time.Format "2006年1月2日" $displayDate }}
+
+      {{ if eq $item.Params.date_display "month" }}
+        {{ time.Format "2006年1月" $displayDate }}
+      {{ else }}
+        {{ time.Format "2006年1月2日" $displayDate }}
+      {{ end }}
+
     </time>
 
+    <!-- 摘要 -->
     <p class="mt-2 text-sm text-zinc-600 dark:text-zinc-400 line-clamp-3">
       {{ $summary }}
     </p>
