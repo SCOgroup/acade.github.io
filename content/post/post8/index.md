@@ -3,6 +3,7 @@ title: 陈泽瀚等研究生参加华为杯”第二十二届中国研究生数�
 summary: "​"
 date: 2025-12-20
 link: ""
+disable_link: true
 params:
   date_display: "month"
 authors:
