@@ -5,6 +5,7 @@ date: 2025-10-24
 publishDate: 2025-10-24
 lastmod: 2025-10-24
 link: ""
+disable_link: true
 authors:
   - admin
 tags:
