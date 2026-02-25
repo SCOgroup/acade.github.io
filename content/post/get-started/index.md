@@ -13,7 +13,7 @@ image:
 authors:
   - admin
   - Ted
-
+disable_link: true
 tags:
   - Academic
   - Hugo Blox
