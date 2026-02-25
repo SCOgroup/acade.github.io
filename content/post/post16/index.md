@@ -5,6 +5,7 @@ date: 2024-01-09
 link: ""
 authors:
   - admin
+disable_link: true
 tags:
   - Hugo
   - Hugo Blox
