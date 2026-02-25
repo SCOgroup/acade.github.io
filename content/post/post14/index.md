@@ -7,6 +7,7 @@ params:
   date_display: "month"
 authors:
   - admin
+disable_link: true
 tags:
   - Hugo
   - Hugo Blox
