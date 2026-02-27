@@ -72,9 +72,9 @@
         <span class="badge badge-venue">{{ . }}</span>
         {{ end }}
 
-        {{ with .Date }}
-        <span class="badge badge-year">{{ .Format "2006" }}</span>
-        {{ end }}
+       {{ if and .Date (ne (index .Params.publication_types 0) "3") }}
+<span class="badge badge-year">{{ .Date.Format "2006" }}</span>
+{{ end }}
       </div>
 
       {{/* 标题 */}}
