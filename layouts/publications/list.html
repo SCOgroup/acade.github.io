@@ -56,16 +56,21 @@
          data-year="{{ .Date.Format "2006" }}"
          data-type="{{ with .Params.publication_types }}{{ index . 0 }}{{ else }}unknown{{ end }}">
       
-      {{/* 徽章 */}}
- <div class="publication-badges">
+<div class="publication-badges">
   {{/* 类型徽章 */}}
   {{ with .Params.publication_types }}
-    {{ if eq (index . 0) "1" }}
+    {{ $type := index . 0 }}
+    {{ if eq $type "1" }}
       <span class="badge badge-conference">Conference</span>
-    {{ else if eq (index . 0) "2" }}
+    {{ else if eq $type "2" }}
       <span class="badge badge-journal">Journal</span>
-    {{ else if eq (index . 0) "3" }}
+    {{ else if eq $type "3" }}
       <span class="badge badge-patent">Patent</span>
+    {{ end }}
+
+    {{/* 年份徽章，仅显示 Conference/Journal */}}
+    {{ if and (ne $type "3") .Page.Date }}
+      <span class="badge badge-year">{{ .Page.Date.Format "2006" }}</span>
     {{ end }}
   {{ end }}
 
@@ -73,13 +78,7 @@
   {{ with .Params.publication_short }}
     <span class="badge badge-venue">{{ . }}</span>
   {{ end }}
-
-  {{/* 年份徽章，仅显示 Conference/Journal */}}
-  {{ if and .Date (with .Params.publication_types (ne (index . 0) "3")) }}
-    <span class="badge badge-year">{{ .Date.Format "2006" }}</span>
-  {{ end }}
 </div>
-{{ end }}
 
       </div>
       
