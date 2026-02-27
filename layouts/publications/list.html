@@ -71,11 +71,9 @@
         {{ with .Params.publication_short }}
         <span class="badge badge-venue">{{ . }}</span>
         {{ end }}
-        {{ with .Params.publication_types }}
+       {{ with .Params.publication_types }}
   {{ if ne (index . 0) "3" }}
-    {{ with $.Date }}
-      <span class="badge badge-year">{{ .Format "2006" }}</span>
-    {{ end }}
+    <span class="badge badge-year">{{ $.Page.Date.Format "2006" }}</span>
   {{ end }}
 {{ end }}
 
