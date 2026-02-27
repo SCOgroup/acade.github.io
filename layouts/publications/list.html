@@ -73,7 +73,9 @@
         {{ end }}
        {{ with .Params.publication_types }}
   {{ if ne (index . 0) "3" }}
-    <span class="badge badge-year">{{ $.Page.Date.Format "2006" }}</span>
+    {{ with .Date }}
+      <span class="badge badge-year">{{ .Format "2006" }}</span>
+    {{ end }}
   {{ end }}
 {{ end }}
 
