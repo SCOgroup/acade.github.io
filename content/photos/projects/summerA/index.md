@@ -7,4 +7,6 @@ videos:
     src: 氢动力无人机试飞.mp4
   - type: local
     src: 氢燃料电池.mp4
+  - type: local
+    src: 氢动力无人机50kg级.mp4
 ---
