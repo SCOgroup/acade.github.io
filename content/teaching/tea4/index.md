@@ -1,7 +1,7 @@
 ---
 title: "生产实习"
 level: "本科课程"
-grade: "大三上"
+grade: "大三下"
 semester: "暑期"
 teachers:
   - 田猛
