@@ -1,5 +1,5 @@
 ---
-title: "100kg级氢动力无人机和氢燃料电池平台"
+title: "100kg和50kg级氢动力无人机、氢燃料电池平台"
 date: 2026-01-30
 pinned: true
 videos:
